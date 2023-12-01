@@ -1351,7 +1351,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3660910684425375421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454f953aca78acc4cb673c5a28bdb4c4, type: 3}
+  m_Script: {fileID: 11500000, guid: b6e34e5c9e51d3e4b93981628dea37eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuActive: {fileID: 0}
@@ -1361,8 +1361,8 @@ MonoBehaviour:
   playerHPBar: {fileID: 18895456655290484}
   enemyCountText: {fileID: 7856726530839359426}
   player: {fileID: 0}
-  playerSpawnPos: {fileID: 0}
   playerScript: {fileID: 0}
+  playerSpawnPos: {fileID: 0}
   isPaused: 0
 --- !u!114 &2105267121744279393
 MonoBehaviour:
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3660910684425375421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dac58e652ace73641a973691dd43894b, type: 3}
+  m_Script: {fileID: 11500000, guid: a3dbe16a685f489439d50d1a705e3d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4049476610578602352
@@ -2997,7 +2997,7 @@ RectTransform:
   - {fileID: 7023552989818755128}
   - {fileID: 7443893807245392372}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
