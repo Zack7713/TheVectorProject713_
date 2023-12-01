@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    [Header("-----Components-----")]
     [SerializeField] private CharacterController controller;
-    [SerializeField] private float playerSpeed;
-    [SerializeField] private float playerHealth;//suggestion from intelisense that i like
-    [SerializeField] private float playerMaxHealth;//
-    [SerializeField] private float playerMinHealth;//^
+
+    [Header("-----Stats-----")]
+    [Range(1, 7)][SerializeField] private int HP;
+    [Range(1, 8)] [SerializeField] private float playerSpeed;
     [SerializeField] private float gravityValue;
     [SerializeField] private float jumpHeight;
     [SerializeField] private int jumpMax;
     [SerializeField] float sprintMod;
 
+    [Header("----- Weapon -----")]
     [SerializeField] int shootDamage;
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
