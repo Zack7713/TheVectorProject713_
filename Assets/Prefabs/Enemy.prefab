@@ -30,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922781059231212056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.999999, y: 1, z: 8.999999}
+  m_LocalPosition: {x: -9.852887, y: 0.9999999, z: 32.375584}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7608280483331435887}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1378095300634338483
 MonoBehaviour:
@@ -52,10 +52,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 5442912713059148401}
   agent: {fileID: 7510020409894356479}
-  bullet: {fileID: 2833825041346990925, guid: 6ee478b87e63557448a002881afded70, type: 3}
-  shootRate: 1
-  shootPos: {fileID: 7608280483331435887}
+  headPos: {fileID: 1920098735616220597}
   HP: 5
+  viewCone: 360
+  targetFaceSpeed: 10
+  shootRate: 1
+  bullet: {fileID: 2833825041346990925, guid: 6ee478b87e63557448a002881afded70, type: 3}
+  shootPos: {fileID: 7608280483331435887}
 --- !u!33 &3218746534525432677
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -196,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7740078396868227117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.59956, y: 0.5225401, z: -11.100981}
+  m_LocalPosition: {x: 0, y: 0.438, z: 0.635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
