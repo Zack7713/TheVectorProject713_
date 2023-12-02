@@ -45,6 +45,11 @@ public class gameManager : MonoBehaviour
             menuActive = menuPause;
             menuActive.SetActive(isPaused);
         }
+        if(enemiesRemaining <= 30)
+        {
+            
+        }
+     
     }
 
     public void statePaused() 
@@ -71,7 +76,7 @@ public class gameManager : MonoBehaviour
         enemyCountText.text = enemiesRemaining.ToString("0");
 
 
-        if (enemiesRemaining <= 0)
+        if (enemiesRemaining <= 0)//||zombies reach 30)
         {           
             statePaused();
             menuActive = menuWin;

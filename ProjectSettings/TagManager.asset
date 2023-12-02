@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player Spawn Pos
   - Zombie Spawn Pos
+  - Enemy Spawn Pos
   layers:
   - Default
   - TransparentFX
