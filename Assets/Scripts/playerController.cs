@@ -2,43 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class playerController : MonoBehaviour, IDamage
 {
-    [Header("-----Components-----")]
+    [Header("----- Components-----")]
     [SerializeField] private CharacterController controller;
 
-    [Header("-----Stats-----")]
-    [Range(1, 7)][SerializeField] private int HP;
-    [Range(1, 8)] [SerializeField] private float playerSpeed;
-    [SerializeField] private float gravityValue;
-    [SerializeField] private float jumpHeight;
-    [SerializeField] private int jumpMax;
-    [SerializeField] float sprintMod;
+    [Header("----- Stats -----")]
+    [Range(1, 10)][SerializeField] int HP;
+    [Range(1, 8)][SerializeField] private float playerSpeed;
+    [Range(8, 30)][SerializeField] private float jumpHeight;
+    [Range(-10, -40)][SerializeField] private float gravityValue;
+    [Range(1, 3)][SerializeField] int jumpMax;
+    [Range(1.5f, 3)][SerializeField] float sprintMod;
 
     [Header("----- Weapon -----")]
     [SerializeField] int shootDamage;
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
+    [SerializeField] GameObject cube;
 
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private Vector3 move;
     private int jumpCount;
     private bool isShooting;
-    // Start is called before the first frame update
-    void Start()
+    int HPOrig;
+    private void Start()
     {
-        
+
+        HPOrig = HP;
+        respawnPlayer();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
+        movement();
 
+    }
+
+    public void respawnPlayer()
+    {
+        HP = HPOrig;
+        updatePLayreUI();
+
+        controller.enabled = false;
+        transform.position = gameManager.instance.playerSpawnPos.transform.position;
+        controller.enabled = true;
+
+
+    }
+
+    void movement()
+    {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.red);
 
         sprint();
-        if (Input.GetButton("Shoot") && !isShooting)
+        if (!gameManager.instance.isPaused && Input.GetButton("Shoot") && !isShooting)
             StartCoroutine(shoot());
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -66,7 +86,6 @@ public class playerController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
-
     IEnumerator shoot()
     {
 
@@ -96,5 +115,20 @@ public class playerController : MonoBehaviour
         {
             playerSpeed /= sprintMod;
         }
+    }
+    public void takeDamage(int amount)
+    {
+        HP -= amount;
+        updatePLayreUI();
+
+        if (HP <= 0)
+        {
+            //im dead
+            gameManager.instance.youLose();
+        }
+    }
+    public void updatePLayreUI()
+    {
+        gameManager.instance.playerHPBar.fillAmount = (float)HP / HPOrig;
     }
 }
