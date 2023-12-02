@@ -21,7 +21,7 @@ public class gameManager : MonoBehaviour
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;
-
+    public GameObject enemySpawnPos;
     public bool isPaused;
     float timeScaleOriginal;
     int enemiesRemaining;
@@ -32,6 +32,7 @@ public class gameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
+        enemySpawnPos = GameObject.FindWithTag("Enemy Spawn Pos");
         timeScaleOriginal = Time.timeScale;
     }
 
