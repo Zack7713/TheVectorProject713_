@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 255943399822799176, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7423153
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 255943399822799176, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
       propertyPath: m_LocalPosition.y
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 255943399822799176, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0879028
+      value: 21.5
       objectReference: {fileID: 0}
     - target: {fileID: 255943399822799176, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
       propertyPath: m_LocalRotation.w
@@ -197,14 +197,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4891532032167103193, guid: 7de53a15d8377dd4b8240114a8957b50, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4891532032167103193, guid: 7de53a15d8377dd4b8240114a8957b50, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4891532032167103193, guid: 7de53a15d8377dd4b8240114a8957b50, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -247,10 +239,6 @@ PrefabInstance:
     - target: {fileID: 5161972334203858297, guid: 7de53a15d8377dd4b8240114a8957b50, type: 3}
       propertyPath: m_Name
       value: Floor
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161972334203858297, guid: 7de53a15d8377dd4b8240114a8957b50, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1098,34 +1086,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 365945961970553500, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1006
-      objectReference: {fileID: 0}
-    - target: {fileID: 365945961970553500, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1006
-      objectReference: {fileID: 0}
-    - target: {fileID: 365945961970553500, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 365945961970553500, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 365945961970553500, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3379350643539161878, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9a884ef71cf53db4694aec5b4abb3723, type: 3}
-    - target: {fileID: 3660910684425375421, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7844428337804794573, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1335,10 +1295,6 @@ PrefabInstance:
     - target: {fileID: 1922781059231212056, guid: bf42ddc44e1a3b443b60e6635641cba9, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7510020409894356479, guid: bf42ddc44e1a3b443b60e6635641cba9, type: 3}
-      propertyPath: m_Speed
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1896,14 +1852,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5997998221771324917, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
-      propertyPath: m_Height
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5997998221771324917, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
-      propertyPath: m_Radius
-      value: 0.001
-      objectReference: {fileID: 0}
     - target: {fileID: 6647152834527299108, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: m_Name
       value: player w_skin
