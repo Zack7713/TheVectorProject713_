@@ -50,17 +50,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7878165256008580063}
+  HP: 0
   playerSpeed: 5
-  playerHealth: 6
-  playerMaxHealth: 6
-  playerMinHealth: 0
-  gravityValue: -25
   jumpHeight: 12
+  gravityValue: -25
   jumpMax: 2
   sprintMod: 2
   shootDamage: 1
   shootRate: 0.5
   shootDist: 30
+  cube: {fileID: 0}
 --- !u!143 &7878165256008580063
 CharacterController:
   m_ObjectHideFlags: 0
