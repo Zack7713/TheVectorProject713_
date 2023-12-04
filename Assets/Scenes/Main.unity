@@ -2741,7 +2741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922781059231212056, guid: a98ddb0cac945fe49b4bbfd97ad61855, type: 3}
       propertyPath: m_Name
-      value: Creeper (1)
+      value: Creeper
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4544,6 +4544,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3140292406757688484, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
+      propertyPath: sensitivity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6647152834527299108, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: m_Name
       value: player w_skin
