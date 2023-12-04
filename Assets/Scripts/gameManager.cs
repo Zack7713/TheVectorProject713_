@@ -8,7 +8,7 @@ using System;
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
-       
+    [Header("------Menu Components-----")]  
     [SerializeField] GameObject menuActive;
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuWin;
@@ -17,14 +17,23 @@ public class gameManager : MonoBehaviour
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
+    [SerializeField] TMP_Text killCountText;
 
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;
-    public GameObject enemySpawnPos;
+    public GameObject walkerSpawnPos1;
+    [Header("------Enemy components-----")]
+    [SerializeField] GameObject walkerZombie;
+    [SerializeField] GameObject creeperZombie;
+    [SerializeField] GameObject bossZombie;
     public bool isPaused;
+    bool needsToSpawn;
+    public float spawnRate;
+
     float timeScaleOriginal;
     int enemiesRemaining;
+    int enemiesKilled;
 
     void Awake()
     {
@@ -32,23 +41,29 @@ public class gameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
-        enemySpawnPos = GameObject.FindWithTag("Enemy Spawn Pos");
+        walkerSpawnPos1 = GameObject.FindWithTag("Walker Spawn 1");
         timeScaleOriginal = Time.timeScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (!needsToSpawn)
+        {
+            StartCoroutine(spawnEnemies());
+        }
+            
+   
+     
+
         if (Input.GetButtonDown("Cancel") && menuActive == null)
         {
             statePaused();
             menuActive = menuPause;
             menuActive.SetActive(isPaused);
         }
-        if(enemiesRemaining <= 30)
-        {
-            
-        }
+
      
     }
 
@@ -75,19 +90,42 @@ public class gameManager : MonoBehaviour
         enemiesRemaining += amount;
         enemyCountText.text = enemiesRemaining.ToString("0");
 
-
-        if (enemiesRemaining <= 0)//||zombies reach 30)
-        {           
-            statePaused();
-            menuActive = menuWin;
-            menuActive.SetActive(true);
-        }
+       
+        //if (enemiesRemaining <= 0)//||zombies reach 30)
+        //{           
+        //    statePaused();
+        //    menuActive = menuWin;
+        //    menuActive.SetActive(true);
+        //}
     }
-
+    public void updateKillCount(int amount)
+    {
+        enemiesKilled += amount;
+        enemyCountText.text = enemiesKilled.ToString("0");
+    }
     public void youLose()
     {
         statePaused();
         menuActive = menuLose;
         menuActive.SetActive(true);
+    }
+
+    IEnumerator spawnEnemies()
+    {
+        if(enemiesRemaining<=20)
+        {
+           
+            needsToSpawn = true;
+       
+            Instantiate(walkerZombie, walkerSpawnPos1.transform.position, transform.rotation);
+            yield return new WaitForSeconds(spawnRate);
+            needsToSpawn = false;
+
+        }
+        else
+        {
+            needsToSpawn = false;
+        }
+
     }
 }

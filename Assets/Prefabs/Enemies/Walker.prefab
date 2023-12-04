@@ -59,6 +59,7 @@ MonoBehaviour:
   shootRate: 1
   bullet: {fileID: 2833825041346990925, guid: 6ee478b87e63557448a002881afded70, type: 3}
   shootPos: {fileID: 7608280483331435887}
+  walkerZombie: {fileID: 1922781059231212056}
 --- !u!33 &3218746534525432677
 MeshFilter:
   m_ObjectHideFlags: 0
