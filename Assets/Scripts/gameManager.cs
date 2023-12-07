@@ -8,7 +8,7 @@ using System;
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
-    [Header("------Menu Components-----")]  
+    [Header("------Menu Components-----")]
     [SerializeField] GameObject menuActive;
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuWin;
@@ -53,9 +53,9 @@ public class gameManager : MonoBehaviour
         {
             StartCoroutine(spawnEnemies());
         }
-            
-   
-     
+
+
+
 
         if (Input.GetButtonDown("Cancel") && menuActive == null)
         {
@@ -64,10 +64,10 @@ public class gameManager : MonoBehaviour
             menuActive.SetActive(isPaused);
         }
 
-     
+
     }
 
-    public void statePaused() 
+    public void statePaused()
     {
         isPaused = !isPaused;
         Time.timeScale = 0;
@@ -75,7 +75,7 @@ public class gameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
     }
 
-    public void stateUnpaused() 
+    public void stateUnpaused()
     {
         isPaused = !isPaused;
         Time.timeScale = timeScaleOriginal;
@@ -90,7 +90,7 @@ public class gameManager : MonoBehaviour
         enemiesRemaining += amount;
         enemyCountText.text = enemiesRemaining.ToString("0");
 
-       
+
         //if (enemiesRemaining <= 0)//||zombies reach 30)
         //{           
         //    statePaused();
@@ -112,11 +112,13 @@ public class gameManager : MonoBehaviour
 
     IEnumerator spawnEnemies()
     {
-        if(enemiesRemaining<=20)
+        float playerDistance = Vector3.Distance(player.transform.position, walkerSpawnPos1.transform.position);
+        //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
+        if (enemiesRemaining <= 20 && playerDistance < 10)
         {
-           
+
             needsToSpawn = true;
-       
+
             Instantiate(walkerZombie, walkerSpawnPos1.transform.position, transform.rotation);
             yield return new WaitForSeconds(spawnRate);
             needsToSpawn = false;
@@ -129,3 +131,4 @@ public class gameManager : MonoBehaviour
 
     }
 }
+

@@ -1360,11 +1360,16 @@ MonoBehaviour:
   menuLose: {fileID: 6689457862460066821}
   playerHPBar: {fileID: 18895456655290484}
   enemyCountText: {fileID: 7856726530839359426}
+  killCountText: {fileID: 0}
   player: {fileID: 0}
   playerScript: {fileID: 0}
   playerSpawnPos: {fileID: 0}
-  enemySpawnPos: {fileID: 0}
+  walkerSpawnPos1: {fileID: 0}
+  walkerZombie: {fileID: 1922781059231212056, guid: bf42ddc44e1a3b443b60e6635641cba9, type: 3}
+  creeperZombie: {fileID: 1922781059231212056, guid: a98ddb0cac945fe49b4bbfd97ad61855, type: 3}
+  bossZombie: {fileID: 1922781059231212056, guid: 130a0a5389bae1b49a90993fc2b3da4a, type: 3}
   isPaused: 0
+  spawnRate: 1
 --- !u!114 &2105267121744279393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2998,7 +3003,7 @@ RectTransform:
   - {fileID: 7023552989818755128}
   - {fileID: 7443893807245392372}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -27,12 +27,13 @@ public class playerController : MonoBehaviour, IDamage
     private int jumpCount;
     private bool isShooting;
     int HPOrig;
+
     private void Start()
     {
 
         HPOrig = HP;
         respawnPlayer();
-
+     
     }
 
     void Update()
@@ -44,7 +45,7 @@ public class playerController : MonoBehaviour, IDamage
     public void respawnPlayer()
     {
         HP = HPOrig;
-        updatePLayreUI();
+        updatePlayerUI();
 
         controller.enabled = false;
         transform.position = gameManager.instance.playerSpawnPos.transform.position;
@@ -119,7 +120,7 @@ public class playerController : MonoBehaviour, IDamage
     public void takeDamage(int amount)
     {
         HP -= amount;
-        updatePLayreUI();
+        updatePlayerUI();
 
         if (HP <= 0)
         {
@@ -127,8 +128,9 @@ public class playerController : MonoBehaviour, IDamage
             gameManager.instance.youLose();
         }
     }
-    public void updatePLayreUI()
+    public void updatePlayerUI()
     {
         gameManager.instance.playerHPBar.fillAmount = (float)HP / HPOrig;
     }
+
 }
