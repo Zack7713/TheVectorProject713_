@@ -19,14 +19,18 @@ public class gameManager : MonoBehaviour
     [SerializeField] TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
+    [SerializeField] TMP_Text WaveNumberText;
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;
     public GameObject walkerSpawnPos1;
+    public GameObject playerDamageScreen;
     [Header("------Enemy components-----")]
     [SerializeField] GameObject walkerZombie;
     [SerializeField] GameObject creeperZombie;
     [SerializeField] GameObject bossZombie;
+    [SerializeField] float playerDistanceWanted;
+    float playerDistance;
     public bool isPaused;
     bool needsToSpawn;
     public float spawnRate;
@@ -35,6 +39,8 @@ public class gameManager : MonoBehaviour
     int enemiesRemaining;
     int enemiesKilled;
     int pointAmount;
+    int waveNumber;
+    int waveLimit = 5;
 
     void Awake()
     {
@@ -103,11 +109,28 @@ public class gameManager : MonoBehaviour
     {
         enemiesKilled += amount;
         killCountText.text = enemiesKilled.ToString("0");
+        //round increase 
+        
+        if(enemiesKilled > waveLimit)
+        {
+            updateWaveNumber(+1);
+            waveLimit = waveLimit += waveNumber+6;
+            
+            if(waveLimit > 250)
+            {
+                waveLimit = 250;
+            }
+        }
     }
     public void updatePointCount(int amount)
     {
         pointAmount += amount;
-        pointAmountText.text = pointAmount.ToString("0");
+        pointAmountText.text = pointAmount.ToString("0000");
+    }
+    public void updateWaveNumber(int amount)
+    {
+        waveNumber += amount;
+        WaveNumberText.text = waveNumber.ToString("0");
     }
     public void youLose()
     {
@@ -118,9 +141,9 @@ public class gameManager : MonoBehaviour
 
     IEnumerator spawnEnemies()
     {
-        float playerDistance = Vector3.Distance(player.transform.position, walkerSpawnPos1.transform.position);
+        playerDistance = Vector3.Distance(player.transform.position, walkerSpawnPos1.transform.position);
         //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
-        if (enemiesRemaining <= 20 && playerDistance < 10)
+        if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
         {
 
             needsToSpawn = true;

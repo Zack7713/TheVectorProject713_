@@ -97,7 +97,7 @@ public class playerController : MonoBehaviour, IDamage
         {
             IDamage dmg = hit.collider.GetComponent<IDamage>();
 
-            if (dmg != null)
+            if (hit.transform != transform && dmg != null)
             {
                 dmg.takeDamage(shootDamage);
             }
@@ -121,7 +121,7 @@ public class playerController : MonoBehaviour, IDamage
     {
         HP -= amount;
         updatePlayerUI();
-
+        StartCoroutine(playerFlashDamage());
         if (HP <= 0)
         {
             //im dead
@@ -132,5 +132,10 @@ public class playerController : MonoBehaviour, IDamage
     {
         gameManager.instance.playerHPBar.fillAmount = (float)HP / HPOrig;
     }
-
+    IEnumerator playerFlashDamage()
+    {
+        gameManager.instance.playerDamageScreen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gameManager.instance.playerDamageScreen.SetActive(false);
+    }
 }
