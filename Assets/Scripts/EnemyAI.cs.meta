@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 <<<<<<<< HEAD:Assets/Scripts/cameraControls.cs.meta
+<<<<<<< Updated upstream
 guid: 874a2a79c17e44d4a80e2858f2b400ac
+=======
+guid: 13208b84ca3827143892057d63c15de1
+>>>>>>> Stashed changes
 ========
 guid: 5f149022bd71d2b45baa564e62d4f05d
 >>>>>>>> 6b8622a5bffe4d4725637a7fb16d3fb7cce0ac51:Assets/Scripts/EnemyAI.cs.meta
