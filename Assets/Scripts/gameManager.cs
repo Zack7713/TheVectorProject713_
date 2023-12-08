@@ -18,7 +18,7 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
-
+    [SerializeField] TMP_Text pointAmountText;
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;
@@ -34,6 +34,7 @@ public class gameManager : MonoBehaviour
     float timeScaleOriginal;
     int enemiesRemaining;
     int enemiesKilled;
+    int pointAmount;
 
     void Awake()
     {
@@ -101,7 +102,12 @@ public class gameManager : MonoBehaviour
     public void updateKillCount(int amount)
     {
         enemiesKilled += amount;
-        enemyCountText.text = enemiesKilled.ToString("0");
+        killCountText.text = enemiesKilled.ToString("0");
+    }
+    public void updatePointCount(int amount)
+    {
+        pointAmount += amount;
+        pointAmountText.text = pointAmount.ToString("0");
     }
     public void youLose()
     {
