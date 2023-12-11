@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class playerController : MonoBehaviour, IDamage
 {
     [Header("----- Components-----")]
     [SerializeField] private CharacterController controller;
+    [SerializeField] Animator anim;
 
     [Header("----- Stats -----")]
     [Range(1, 10)][SerializeField] int HP;
@@ -39,8 +41,9 @@ public class playerController : MonoBehaviour, IDamage
 
     void Update()
     {
+   
         movement();
-
+        
     }
 
     public void respawnPlayer()
@@ -58,13 +61,14 @@ public class playerController : MonoBehaviour, IDamage
     void movement()
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.red);
-
+       
         sprint();
         if (!gameManager.instance.isPaused && Input.GetButton("Shoot") && !isShooting)
             StartCoroutine(shoot());
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
+
             playerVelocity.y = 0f;
             jumpCount = 0;
         }
@@ -75,7 +79,7 @@ public class playerController : MonoBehaviour, IDamage
                Input.GetAxis("Vertical") * transform.forward;
 
         controller.Move(move * Time.deltaTime * playerSpeed);
-
+      
 
 
         // Changes the height position of the player..
@@ -87,6 +91,7 @@ public class playerController : MonoBehaviour, IDamage
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+        anim.SetFloat("Speed", playerVelocity.normalized.magnitude);
     }
     IEnumerator shoot()
     {
