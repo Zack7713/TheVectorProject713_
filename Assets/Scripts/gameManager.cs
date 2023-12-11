@@ -24,15 +24,18 @@ public class gameManager : MonoBehaviour
     public playerController playerScript;
     public GameObject playerSpawnPos;
     public GameObject walkerSpawnPos1;
+    public GameObject runnerSpawnPos;
     public GameObject playerDamageScreen;
     [Header("------Enemy components-----")]
     [SerializeField] GameObject walkerZombie;
+    [SerializeField] GameObject runnerZombie;
     [SerializeField] GameObject creeperZombie;
     [SerializeField] GameObject bossZombie;
     [SerializeField] float playerDistanceWanted;
     float playerDistance;
     public bool isPaused;
-    bool needsToSpawn;
+    bool needsToSpawnWalker;
+    bool needsToSpawnRunner;
     public float spawnRate;
 
     float timeScaleOriginal;
@@ -49,6 +52,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
         walkerSpawnPos1 = GameObject.FindWithTag("Walker Spawn 1");
+        runnerSpawnPos = GameObject.FindWithTag("Runner Spawn");
         timeScaleOriginal = Time.timeScale;
     }
 
@@ -56,12 +60,18 @@ public class gameManager : MonoBehaviour
     void Update()
     {
 
-        if (!needsToSpawn)
+        if (!needsToSpawnWalker)
         {
-            StartCoroutine(spawnEnemies());
+ 
+            StartCoroutine(spawnWalkerEnemies());
         }
 
 
+        if (!needsToSpawnRunner)
+        {
+            StartCoroutine(spawnRunnerEnemies());
+          
+        }
 
 
         if (Input.GetButtonDown("Cancel") && menuActive == null)
@@ -139,23 +149,43 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(true);
     }
 
-    IEnumerator spawnEnemies()
+    IEnumerator spawnRunnerEnemies()
+    {
+        playerDistance = Vector3.Distance(player.transform.position, runnerSpawnPos.transform.position);
+        //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
+        if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
+        {
+
+            needsToSpawnRunner = true;
+
+            Instantiate(runnerZombie, runnerSpawnPos.transform.position, transform.rotation);
+            yield return new WaitForSeconds(spawnRate);
+            needsToSpawnRunner = false;
+
+        }
+        else
+        {
+            needsToSpawnRunner = false;
+        }
+
+    }
+    IEnumerator spawnWalkerEnemies()
     {
         playerDistance = Vector3.Distance(player.transform.position, walkerSpawnPos1.transform.position);
         //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
         if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
         {
 
-            needsToSpawn = true;
+            needsToSpawnWalker = true;
 
             Instantiate(walkerZombie, walkerSpawnPos1.transform.position, transform.rotation);
             yield return new WaitForSeconds(spawnRate);
-            needsToSpawn = false;
+            needsToSpawnWalker = false;
 
         }
         else
         {
-            needsToSpawn = false;
+            needsToSpawnWalker = false;
         }
 
     }

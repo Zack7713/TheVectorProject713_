@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2298224600131339319}
   - component: {fileID: 1366425881381182552}
   m_Layer: 0
-  m_Name: Zombie Spawn Pos
+  m_Name: Runner Spawn Pos
   m_TagString: Walker Spawn 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

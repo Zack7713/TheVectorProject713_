@@ -165,6 +165,11 @@ public class spawnerAI : MonoBehaviour , IDamage
             gameManager.instance.updateKillCount(+1);
             gameManager.instance.updateGameGoal(-1);
             model.sharedMaterial.color = Color.white;
+            gameManager.instance.updatePointCount(+100);
+        }
+        else
+        {
+            gameManager.instance.updatePointCount(+10);
         }
     }
     IEnumerator flashRed()

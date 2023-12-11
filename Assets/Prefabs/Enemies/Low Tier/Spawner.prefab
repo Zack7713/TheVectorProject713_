@@ -425,7 +425,7 @@ Transform:
   - {fileID: 8834403759618704443}
   - {fileID: 7415152658277596588}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &3954365680395977836
 MonoBehaviour:
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ed16028166f7f41967dc173e50d689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
+  model: {fileID: 3966659211475395351}
   agent: {fileID: 4844830354797144528}
   headPos: {fileID: 51781423864671404}
   anim: {fileID: 6764271779134059935}
@@ -453,6 +453,7 @@ MonoBehaviour:
   roamPauseTime: 2
   animSpeedTrans: 8
   attackRate: 0.25
+  attackPos: {fileID: 7173307802145320284}
 --- !u!95 &6764271779134059935
 Animator:
   serializedVersion: 5
