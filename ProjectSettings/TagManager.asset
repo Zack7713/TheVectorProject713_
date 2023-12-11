@@ -10,6 +10,7 @@ TagManager:
   - Walker Spawn 1
   - Walker Spawn 2
   - Walker Spawn 3
+  - Runner Spawn
   layers:
   - Default
   - TransparentFX
