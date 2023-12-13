@@ -31,6 +31,8 @@ public class playerController : MonoBehaviour, IDamage
     private int jumpCount;
     private bool isShooting;
     int HPOrig;
+    int selectedGun;
+
 
     private void Start()
     {
@@ -42,7 +44,9 @@ public class playerController : MonoBehaviour, IDamage
 
     void Update()
     {
-   
+
+        selecteGun();
+
         movement();
         
     }
@@ -155,5 +159,16 @@ public class playerController : MonoBehaviour, IDamage
 
         gunModel.GetComponent<MeshFilter>().sharedMesh = gun.model.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.model.GetComponent<MeshRenderer>().sharedMaterial;
+    }
+    void selecteGun()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            selectedGun++;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            selectedGun--;
+        }
     }
 }
