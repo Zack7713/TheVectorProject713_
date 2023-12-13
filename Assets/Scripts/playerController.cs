@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour, IDamage
     [Range(1.5f, 3)][SerializeField] float sprintMod;
 
     [Header("----- Weapon -----")]
+    [SerializeField] List<gunStats> gunList = new List<gunStats>();
     [SerializeField] int shootDamage;
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
