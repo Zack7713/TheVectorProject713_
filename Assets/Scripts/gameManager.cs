@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using Unity.VisualScripting;
 
 public class gameManager : MonoBehaviour
 {
@@ -37,12 +38,12 @@ public class gameManager : MonoBehaviour
     bool needsToSpawnWalker;
     bool needsToSpawnRunner;
     public float spawnRate;
-
+    public AdvanceSpawner advanceSpawner;
     float timeScaleOriginal;
     int enemiesRemaining;
     int enemiesKilled;
     int pointAmount;
-    int waveNumber;
+    int waveNumber =1;
     int waveLimit = 5;
 
     void Awake()
@@ -60,18 +61,7 @@ public class gameManager : MonoBehaviour
     void Update()
     {
 
-        if (!needsToSpawnWalker)
-        {
- 
-            StartCoroutine(spawnWalkerEnemies());
-        }
 
-
-        if (!needsToSpawnRunner)
-        {
-            StartCoroutine(spawnRunnerEnemies());
-          
-        }
 
 
         if (Input.GetButtonDown("Cancel") && menuActive == null)
@@ -121,14 +111,15 @@ public class gameManager : MonoBehaviour
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
         
-        if(enemiesKilled > waveLimit)
+        if(enemiesKilled >= advanceSpawner.numToSpawn)
         {
+           
             updateWaveNumber(+1);
-            waveLimit = waveLimit += waveNumber+6;
+            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber+6;
             
-            if(waveLimit > 250)
+            if(advanceSpawner.numToSpawn > 250)
             {
-                waveLimit = 250;
+                advanceSpawner.numToSpawn = 250;
             }
         }
     }
@@ -149,45 +140,45 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(true);
     }
 
-    IEnumerator spawnRunnerEnemies()
-    {
-        playerDistance = Vector3.Distance(player.transform.position, runnerSpawnPos.transform.position);
-        //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
-        if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
-        {
+    //IEnumerator spawnRunnerEnemies()
+    //{
+    //    playerDistance = Vector3.Distance(player.transform.position, runnerSpawnPos.transform.position);
+    //    //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
+    //    if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
+    //    {
 
-            needsToSpawnRunner = true;
+    //        needsToSpawnRunner = true;
 
-            Instantiate(runnerZombie, runnerSpawnPos.transform.position, transform.rotation);
-            yield return new WaitForSeconds(spawnRate);
-            needsToSpawnRunner = false;
+    //        Instantiate(runnerZombie, runnerSpawnPos.transform.position, transform.rotation);
+    //        yield return new WaitForSeconds(spawnRate);
+    //        needsToSpawnRunner = false;
 
-        }
-        else
-        {
-            needsToSpawnRunner = false;
-        }
+    //    }
+    //    else
+    //    {
+    //        needsToSpawnRunner = false;
+    //    }
 
-    }
-    IEnumerator spawnWalkerEnemies()
-    {
-        playerDistance = Vector3.Distance(player.transform.position, walkerSpawnPos1.transform.position);
-        //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
-        if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
-        {
+    //}
+    //IEnumerator spawnWalkerEnemies()
+    //{
+    //    playerDistance = Vector3.Distance(player.transform.position, walkerSpawnPos1.transform.position);
+    //    //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
+    //    if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
+    //    {
 
-            needsToSpawnWalker = true;
+    //        needsToSpawnWalker = true;
 
-            Instantiate(walkerZombie, walkerSpawnPos1.transform.position, transform.rotation);
-            yield return new WaitForSeconds(spawnRate);
-            needsToSpawnWalker = false;
+    //        Instantiate(walkerZombie, walkerSpawnPos1.transform.position, transform.rotation);
+    //        yield return new WaitForSeconds(spawnRate);
+    //        needsToSpawnWalker = false;
 
-        }
-        else
-        {
-            needsToSpawnWalker = false;
-        }
+    //    }
+    //    else
+    //    {
+    //        needsToSpawnWalker = false;
+    //    }
 
-    }
+    //}
 }
 
