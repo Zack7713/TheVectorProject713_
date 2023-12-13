@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour, IDamage
     [Range(1.5f, 3)][SerializeField] float sprintMod;
 
     [Header("----- Weapon -----")]
+    [SerializeField] List<gunStats> gunList = new List<gunStats>();
     [SerializeField] int shootDamage;
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
@@ -30,6 +31,8 @@ public class playerController : MonoBehaviour, IDamage
     private int jumpCount;
     private bool isShooting;
     int HPOrig;
+    int selectedGun;
+
 
     private void Start()
     {
@@ -41,7 +44,9 @@ public class playerController : MonoBehaviour, IDamage
 
     void Update()
     {
-   
+
+        selecteGun();
+
         movement();
         
     }
@@ -146,11 +151,24 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void getGunStats(gunStats gun)
     {
+        gunList.Add(gun);
+
         shootDamage = gun.shootDamage;
         shootDist = gun.shootDist;
         shootRate = gun.shootRate;
 
         gunModel.GetComponent<MeshFilter>().sharedMesh = gun.model.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.model.GetComponent<MeshRenderer>().sharedMaterial;
+    }
+    void selecteGun()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            selectedGun++;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            selectedGun--;
+        }
     }
 }
