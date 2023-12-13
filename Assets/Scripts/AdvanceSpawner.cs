@@ -10,7 +10,7 @@ public class AdvanceSpawner : MonoBehaviour
     [SerializeField] int timeBetweenSpawns;
     [SerializeField] Transform[] spawnPos;
     [SerializeField] List<GameObject> spawnList = new List<GameObject>();
-    int spawnCount;
+    public int spawnCount;
     bool isSpawning;
     bool startSpawning;
     void Start()
@@ -22,10 +22,15 @@ public class AdvanceSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startSpawning && spawnCount < numToSpawn && !isSpawning)
+        if (startSpawning && spawnCount < numToSpawn && !isSpawning )
         {
-            //start spawning
-            StartCoroutine(spawn());
+      
+            
+
+
+                //start spawning
+                StartCoroutine(spawn());
+            
         }
     }
     IEnumerator spawn()

@@ -91,7 +91,7 @@ public class playerController : MonoBehaviour, IDamage
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
-        anim.SetFloat("Speed", playerVelocity.normalized.magnitude);
+       // anim.SetFloat("Speed", playerVelocity.normalized.magnitude);
     }
     IEnumerator shoot()
     {

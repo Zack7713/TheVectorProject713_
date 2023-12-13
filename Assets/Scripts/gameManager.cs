@@ -52,8 +52,6 @@ public class gameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
-        walkerSpawnPos1 = GameObject.FindWithTag("Walker Spawn 1");
-        runnerSpawnPos = GameObject.FindWithTag("Runner Spawn");
         timeScaleOriginal = Time.timeScale;
     }
 
@@ -107,6 +105,7 @@ public class gameManager : MonoBehaviour
     }
     public void updateKillCount(int amount)
     {
+
         enemiesKilled += amount;
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
