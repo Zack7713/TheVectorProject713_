@@ -147,6 +147,8 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void getGunStats(gunStats gun)
     {
+        gunList.Add(gun);
+
         shootDamage = gun.shootDamage;
         shootDist = gun.shootDist;
         shootRate = gun.shootRate;
