@@ -152,26 +152,58 @@ public class gameManager : MonoBehaviour
         enemiesRemaining += amount;
         enemyCountText.text = enemiesRemaining.ToString("0");
 
+        if (enemiesRemaining <= 0)
+        {
+            {
+                StartCoroutine(youWin());
+            }
+        }
+    }
+    IEnumerator youWin()
+    {
+        //you win
+        yield return new WaitForSeconds(3);
+        statePaused();
+        menuActive = menuWin;
+        menuActive.SetActive(true);
+    }
+    public void updateGameGoal(int amount)
+    {
+        enemiesRemaining += amount;
+        enemyCountText.text = enemiesRemaining.ToString("0");
 
-        //if (enemiesRemaining <= 0)//||zombies reach 30)
-        //{           
-        //    statePaused();
-        //    menuActive = menuWin;
-        //    menuActive.SetActive(true);
-        //}
+        if (enemiesRemaining <= 0)
+        {
+            {
+                StartCoroutine(youWin());
+            }
+        }
+    }
+    IEnumerator youWin()
+    {
+        //you win
+        yield return new WaitForSeconds(3);
+        statePaused();
+        menuActive = menuWin;
+        menuActive.SetActive(true);
     }
     public void updateKillCount(int amount)
     {
+
         enemiesKilled += amount;
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
-
-
-        if (enemiesRemaining <= 0)//||zombies reach 30)
+        
+        if(enemiesKilled >= advanceSpawner.numToSpawn)
         {
-            statePaused();
-            menuActive = menuWin;
-            menuActive.SetActive(true);
+           
+            updateWaveNumber(+1);
+            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber+6;
+            
+            if(advanceSpawner.numToSpawn > 250)
+            {
+                advanceSpawner.numToSpawn = 250;
+            }
         }
 
         //if(enemiesKilled >= advanceSpawner.numToSpawn)
@@ -185,6 +217,8 @@ public class gameManager : MonoBehaviour
         //        advanceSpawner.numToSpawn = 250;
         //    }
         //}
+    }
+    }
     }
     public void updatePointCount(int amount)
     {

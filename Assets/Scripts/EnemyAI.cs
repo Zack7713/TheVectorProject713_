@@ -114,7 +114,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         if (HP <= 0)
         {
             Destroy(gameObject);
-            gameManager.instance.updateKillCount(+1); 
+           // gameManager.instance.updateKillCount(+1); 
             gameManager.instance.updateGameGoal(-1);
             model.sharedMaterial.color = Color.white;
             gameManager.instance.updatePointCount( + 100);
