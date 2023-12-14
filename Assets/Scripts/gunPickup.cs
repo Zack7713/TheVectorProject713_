@@ -5,22 +5,19 @@ using UnityEngine;
 public class gunPickup : MonoBehaviour
 {
     [SerializeField] gunStats gun;
+    bool triggerSet;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gun.ammoCur = gun.ammoMax;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player") & !triggerSet)
         {
-            //give the stats to the player
+            triggerSet = true;
             gameManager.instance.playerScript.getGunStats(gun);
             Destroy(gameObject);
         }
