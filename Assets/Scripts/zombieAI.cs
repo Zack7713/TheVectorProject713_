@@ -38,6 +38,8 @@ public class zombieAI : MonoBehaviour, IDamage
     bool playerInRange;
     float angleToPlayer;
     float stoppingDistOrig;
+    float distanceToPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,21 +90,34 @@ public class zombieAI : MonoBehaviour, IDamage
         Debug.DrawRay(headPos.position, playerDir);
         Debug.Log(angleToPlayer);
         RaycastHit hit;
+
         if (Physics.Raycast(headPos.position, playerDir, out hit))
         {
             if (hit.collider.CompareTag("Player") && angleToPlayer <= viewCone)
             {
-                agent.SetDestination(gameManager.instance.player.transform.position);
-                if (!isAttacking)
+                distanceToPlayer = Vector3.Distance(transform.position, gameManager.instance.player.transform.position);
+
+                if (distanceToPlayer <= 3f)
                 {
                     StartCoroutine(attack());
                 }
-                if (agent.remainingDistance < agent.stoppingDistance)
+                else
                 {
-                    faceTarget();
+                    agent.SetDestination(gameManager.instance.player.transform.position);
+                    if (!isAttacking)
+                    {
+                        StartCoroutine(attack());
+                        
+                    }
+
+                    if (agent.remainingDistance < agent.stoppingDistance)
+                    {
+                        faceTarget();
+                    }
+
+                    agent.stoppingDistance = stoppingDistOrig;
                 }
 
-                agent.stoppingDistance = stoppingDistOrig;
                 return true;
             }
         }
@@ -163,6 +178,7 @@ public class zombieAI : MonoBehaviour, IDamage
         {
             gameManager.instance.updatePointCount(+10);
         }
+
     }
     IEnumerator flashRed()
     {

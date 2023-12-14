@@ -59,7 +59,7 @@ public class playerController : MonoBehaviour, IDamage
 
                 selectGun();
             }
-            if(Input.GetButton("Interact"))
+           // if(Input.GetButton("Interact"))
             movement();
         }
     }

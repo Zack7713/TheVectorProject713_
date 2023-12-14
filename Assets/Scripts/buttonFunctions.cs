@@ -29,10 +29,11 @@ public class buttonFunctions : MonoBehaviour
 
     public void spawnBarricade()
     {
-
-
         gameManager.instance.createBarricade();
+    }
 
-
+    public void closeUtilityMenu()
+    {
+        gameManager.instance.closeUtilityMenu();
     }
 }

@@ -12,7 +12,7 @@ public class barricadeUnit : MonoBehaviour, IDamage
     public void takeDamage(int amount)
     {
         HP -= amount;
-        flashRed();
+        StartCoroutine(flashRed());
         if (HP <= 0)
         {
             Destroy(gameObject);
