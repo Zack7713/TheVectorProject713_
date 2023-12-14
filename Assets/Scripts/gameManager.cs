@@ -123,7 +123,7 @@ public class gameManager : MonoBehaviour
             {
 
                 Vector3 spawnPosition = ray.origin + ray.direction * 5f;
-                spawnPosition.y += 5f; 
+                spawnPosition.y += 5f;
                 Instantiate(barricade, spawnPosition, transform.rotation);
             }
         }
@@ -167,40 +167,20 @@ public class gameManager : MonoBehaviour
         menuActive = menuWin;
         menuActive.SetActive(true);
     }
-    public void updateGameGoal(int amount)
-    {
-        enemiesRemaining += amount;
-        enemyCountText.text = enemiesRemaining.ToString("0");
-
-        if (enemiesRemaining <= 0)
-        {
-            {
-                StartCoroutine(youWin());
-            }
-        }
-    }
-    IEnumerator youWin()
-    {
-        //you win
-        yield return new WaitForSeconds(3);
-        statePaused();
-        menuActive = menuWin;
-        menuActive.SetActive(true);
-    }
     public void updateKillCount(int amount)
     {
 
         enemiesKilled += amount;
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
-        
-        if(enemiesKilled >= advanceSpawner.numToSpawn)
+
+        if (enemiesKilled >= advanceSpawner.numToSpawn)
         {
-           
+
             updateWaveNumber(+1);
-            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber+6;
-            
-            if(advanceSpawner.numToSpawn > 250)
+            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
+
+            if (advanceSpawner.numToSpawn > 250)
             {
                 advanceSpawner.numToSpawn = 250;
             }
@@ -218,8 +198,8 @@ public class gameManager : MonoBehaviour
         //    }
         //}
     }
-    }
-    }
+
+
     public void updatePointCount(int amount)
     {
         pointAmount += amount;
