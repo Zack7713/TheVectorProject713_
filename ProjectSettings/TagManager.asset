@@ -11,6 +11,9 @@ TagManager:
   - Walker Spawn 2
   - Walker Spawn 3
   - Runner Spawn
+  - DoorButton
+  - barricade
+  - Barricade
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Interact
   - 
   - 
   - 

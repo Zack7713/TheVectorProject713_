@@ -26,4 +26,13 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.playerScript.respawnPlayer();
         gameManager.instance.stateUnpaused();
     }
+
+    public void spawnBarricade()
+    {
+
+
+        gameManager.instance.createBarricade();
+
+
+    }
 }

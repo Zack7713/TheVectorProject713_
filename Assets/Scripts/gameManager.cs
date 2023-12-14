@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
+    [SerializeField] GameObject menuUtil;
 
     public Image playerHPBar;
 
@@ -27,6 +28,7 @@ public class gameManager : MonoBehaviour
     public GameObject walkerSpawnPos1;
     public GameObject runnerSpawnPos;
     public GameObject playerDamageScreen;
+    public barricadeUnit barricade;
     [Header("------Enemy components-----")]
     [SerializeField] GameObject walkerZombie;
     [SerializeField] GameObject runnerZombie;
@@ -35,6 +37,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] float playerDistanceWanted;
     float playerDistance;
     public bool isPaused;
+    public bool inMenu;
     bool needsToSpawnWalker;
     bool needsToSpawnRunner;
     public float spawnRate;
@@ -43,15 +46,19 @@ public class gameManager : MonoBehaviour
     int enemiesRemaining;
     int enemiesKilled;
     int pointAmount;
-    int waveNumber =1;
+    int waveNumber = 1;
     int waveLimit = 5;
+
 
     void Awake()
     {
+        updatePointCount(+500);
         instance = this;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
+        walkerSpawnPos1 = GameObject.FindWithTag("Walker Spawn 1");
+        runnerSpawnPos = GameObject.FindWithTag("Runner Spawn");
         timeScaleOriginal = Time.timeScale;
     }
 
@@ -61,15 +68,65 @@ public class gameManager : MonoBehaviour
 
 
 
+        if (Input.GetButtonDown("Interact") && menuActive == null)
+        {
+            utilityMenu();
+            menuActive = menuUtil;
+            menuActive.SetActive(menuUtil);
+
+        }
 
         if (Input.GetButtonDown("Cancel") && menuActive == null)
         {
             statePaused();
             menuActive = menuPause;
-            menuActive.SetActive(isPaused);
+            menuActive.SetActive(true);
         }
 
 
+    }
+
+    public void utilityMenu()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void createBarricade()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        menuActive.SetActive(false);
+        menuActive = null;
+
+        // Raycast from the center of the screen to determine the position and rotation
+        Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
+        RaycastHit hit;
+        if (pointAmount >= 500)
+        {
+            updatePointCount(-500);
+            if (Physics.Raycast(ray, out hit))
+            {
+
+                Bounds barricadeBounds = barricade.GetComponent<Renderer>().bounds;
+
+
+                Quaternion rotation = Quaternion.LookRotation(transform.forward, hit.normal);
+
+
+                Vector3 spawnPosition = hit.point + hit.normal * (barricadeBounds.extents.y - 0.01f);
+
+
+                Instantiate(barricade, spawnPosition, rotation);
+            }
+            else
+            {
+
+                Vector3 spawnPosition = ray.origin + ray.direction * 5f;
+                spawnPosition.y += 5f; 
+                Instantiate(barricade, spawnPosition, transform.rotation);
+            }
+        }
     }
 
     public void statePaused()
@@ -105,22 +162,29 @@ public class gameManager : MonoBehaviour
     }
     public void updateKillCount(int amount)
     {
-
         enemiesKilled += amount;
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
-        
-        if(enemiesKilled >= advanceSpawner.numToSpawn)
+
+
+        if (enemiesRemaining <= 0)//||zombies reach 30)
         {
-           
-            updateWaveNumber(+1);
-            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber+6;
-            
-            if(advanceSpawner.numToSpawn > 250)
-            {
-                advanceSpawner.numToSpawn = 250;
-            }
+            statePaused();
+            menuActive = menuWin;
+            menuActive.SetActive(true);
         }
+
+        //if(enemiesKilled >= advanceSpawner.numToSpawn)
+        //{
+
+        //    updateWaveNumber(+1);
+        //    advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber+6;
+
+        //    if(advanceSpawner.numToSpawn > 250)
+        //    {
+        //        advanceSpawner.numToSpawn = 250;
+        //    }
+        //}
     }
     public void updatePointCount(int amount)
     {
