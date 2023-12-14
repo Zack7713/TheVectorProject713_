@@ -182,17 +182,17 @@ public class gameManager : MonoBehaviour
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
 
-        //if (enemiesKilled >= advanceSpawner.numToSpawn)
-        //{
+        if (enemiesKilled >= advanceSpawner.numToSpawn)
+        {
 
-        //    updateWaveNumber(+1);
-        //    advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
+            updateWaveNumber(+1);
+            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
 
-        //    if (advanceSpawner.numToSpawn > 250)
-        //    {
-        //        advanceSpawner.numToSpawn = 250;
-        //    }
-        //}
+            if (advanceSpawner.numToSpawn > 250)
+            {
+                advanceSpawner.numToSpawn = 250;
+            }
+        }
 
         //if(enemiesKilled >= advanceSpawner.numToSpawn)
         //{
