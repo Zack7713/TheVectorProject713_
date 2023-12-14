@@ -533,7 +533,7 @@ Transform:
   - {fileID: 949080488731207644}
   - {fileID: 1161702883118116583}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -89.999, z: 0}
 --- !u!114 &3116463176593962904
 MonoBehaviour:
@@ -553,7 +553,7 @@ MonoBehaviour:
   anim: {fileID: 7932560925523666523}
   weaponCol: {fileID: 1361065633659708898}
   damageCol: {fileID: 1227605236972632827}
-  HP: 5
+  HP: 15
   viewCone: 180
   targetFaceSpeed: 5
   roamDist: 15
