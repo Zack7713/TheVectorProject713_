@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.AI;
 
 public class gameManager : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class gameManager : MonoBehaviour
     int waveLimit = 5;
 
 
+
     void Awake()
     {
         updatePointCount(+500);
@@ -91,6 +93,13 @@ public class gameManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
     }
+    public void closeUtilityMenu()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        menuActive.SetActive(false);
+        menuActive = null;
+    }
 
     public void createBarricade()
     {
@@ -107,7 +116,6 @@ public class gameManager : MonoBehaviour
             updatePointCount(-500);
             if (Physics.Raycast(ray, out hit))
             {
-
                 Bounds barricadeBounds = barricade.GetComponent<Renderer>().bounds;
 
 
@@ -174,17 +182,17 @@ public class gameManager : MonoBehaviour
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
 
-        //if (enemiesKilled >= advanceSpawner.numToSpawn)
-        //{
+        if (enemiesKilled >= advanceSpawner.numToSpawn)
+        {
 
-        //    updateWaveNumber(+1);
-        //    advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
+            updateWaveNumber(+1);
+            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
 
-        //    if (advanceSpawner.numToSpawn > 250)
-        //    {
-        //        advanceSpawner.numToSpawn = 250;
-        //    }
-        //}
+            if (advanceSpawner.numToSpawn > 250)
+            {
+                advanceSpawner.numToSpawn = 250;
+            }
+        }
 
         //if(enemiesKilled >= advanceSpawner.numToSpawn)
         //{

@@ -59,7 +59,7 @@ public class playerController : MonoBehaviour, IDamage
 
                 selectGun();
             }
-            //if(Input.GetButton("Interact"))
+            // if(Input.GetButton("Interact"))
             movement();
         }
     }
@@ -98,7 +98,7 @@ public class playerController : MonoBehaviour, IDamage
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && move.normalized.magnitude > 0.3f && !isPlayingSteps)
         {
-            //StartCoroutine(playSteps());
+            StartCoroutine(playSteps());
         }
         {
 
@@ -135,7 +135,7 @@ public class playerController : MonoBehaviour, IDamage
 
 
             gunList[selectedGun].ammoCur--;
-            //aud.PlayOneShot(gunList[selectedGun].shootSound, gunList[selectedGun].shootSoundVol);
+            aud.PlayOneShot(gunList[selectedGun].shootSound, gunList[selectedGun].shootSoundVolume);
             isShooting = true;
 
             RaycastHit hit;
@@ -171,7 +171,7 @@ public class playerController : MonoBehaviour, IDamage
     public void takeDamage(int amount)
     {
         HP -= amount;
-       // aud.PlayOneShot(soundHurt[Random.Range(0, soundHurt.Length - 1)], soundHurtVol);
+        aud.PlayOneShot(soundHurt[Random.Range(0, soundHurt.Length - 1)], soundHurtVol);
         updatePlayerUI();
         StartCoroutine(playerFlashDamage());
 
