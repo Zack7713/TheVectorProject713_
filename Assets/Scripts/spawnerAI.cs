@@ -38,6 +38,8 @@ public class spawnerAI : MonoBehaviour , IDamage
     bool playerInRange;
     float angleToPlayer;
     float stoppingDistOrig;
+    public AdvanceSpawner mySpawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -161,11 +163,14 @@ public class spawnerAI : MonoBehaviour , IDamage
 
         if (HP <= 0)
         {
+            
             Destroy(gameObject);
+            mySpawner.heyIDied();
             gameManager.instance.updateKillCount(+1);
             gameManager.instance.updateGameGoal(-1);
             model.sharedMaterial.color = Color.white;
             gameManager.instance.updatePointCount(+100);
+           
         }
         else
         {
