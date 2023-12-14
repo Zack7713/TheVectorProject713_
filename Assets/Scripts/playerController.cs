@@ -36,7 +36,7 @@ public class playerController : MonoBehaviour, IDamage
     int selectedGun;
     bool isPlayingSteps;
     bool isSprinting;
-
+    bool isInteracting;
 
     private void Start()
     {
@@ -59,7 +59,7 @@ public class playerController : MonoBehaviour, IDamage
 
                 selectGun();
             }
-
+            if(Input.GetButton("Interact"))
             movement();
         }
     }
@@ -154,6 +154,7 @@ public class playerController : MonoBehaviour, IDamage
             isShooting = false;
         }
     }
+
     void sprint()
     {
         if (Input.GetButtonDown("Sprint"))
@@ -185,6 +186,12 @@ public class playerController : MonoBehaviour, IDamage
         gameManager.instance.playerDamageScreen.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamageScreen.SetActive(false);
+    }
+    IEnumerator interact()
+    {
+        isInteracting = true;
+        yield return new WaitForSeconds(0.5f);
+        isInteracting = false;
     }
     public void updatePlayerUI()
     {
