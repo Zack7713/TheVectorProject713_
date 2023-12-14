@@ -219,6 +219,7 @@ public class playerController : MonoBehaviour, IDamage
         shootDamage = gunList[selectedGun].shootDamage;
         shootDist = gunList[selectedGun].shootDist;
         shootRate = gunList[selectedGun].shootRate;
+
         gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
         isShooting = false;
