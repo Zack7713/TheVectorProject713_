@@ -95,13 +95,20 @@ public class gameManager : MonoBehaviour
         enemiesRemaining += amount;
         enemyCountText.text = enemiesRemaining.ToString("0");
 
-
-        //if (enemiesRemaining <= 0)//||zombies reach 30)
-        //{           
-        //    statePaused();
-        //    menuActive = menuWin;
-        //    menuActive.SetActive(true);
-        //}
+        if (enemiesRemaining <= 0)
+        {
+            {
+                StartCoroutine(youWin());
+            }
+        }
+    }
+    IEnumerator youWin()
+    {
+        //you win
+        yield return new WaitForSeconds(3);
+        statePaused();
+        menuActive = menuWin;
+        menuActive.SetActive(true);
     }
     public void updateKillCount(int amount)
     {
