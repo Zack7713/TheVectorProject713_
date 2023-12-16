@@ -1,11 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using System;
-using Unity.VisualScripting;
-using UnityEngine.AI;
 
 public class gameManager : MonoBehaviour
 {
@@ -39,8 +35,6 @@ public class gameManager : MonoBehaviour
     float playerDistance;
     public bool isPaused;
     public bool inMenu;
-    bool needsToSpawnWalker;
-    bool needsToSpawnRunner;
     public float spawnRate;
     public AdvanceSpawner advanceSpawner;
     float timeScaleOriginal;
@@ -163,7 +157,14 @@ public class gameManager : MonoBehaviour
         if (enemiesRemaining <= 0)
         {
             {
-                StartCoroutine(youWin());
+                updateWaveNumber(+1);
+                advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
+                updateGameGoal(advanceSpawner.numToSpawn);
+                if (advanceSpawner.numToSpawn > 250)
+                {
+                    advanceSpawner.numToSpawn = 250;
+                }
+                //  StartCoroutine(youWin());
             }
         }
     }
@@ -182,29 +183,9 @@ public class gameManager : MonoBehaviour
         killCountText.text = enemiesKilled.ToString("0");
         //round increase 
 
-        if (enemiesKilled >= advanceSpawner.numToSpawn)
-        {
 
-            updateWaveNumber(+1);
-            advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
 
-            if (advanceSpawner.numToSpawn > 250)
-            {
-                advanceSpawner.numToSpawn = 250;
-            }
-        }
 
-        //if(enemiesKilled >= advanceSpawner.numToSpawn)
-        //{
-
-        //    updateWaveNumber(+1);
-        //    advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber+6;
-
-        //    if(advanceSpawner.numToSpawn > 250)
-        //    {
-        //        advanceSpawner.numToSpawn = 250;
-        //    }
-        //}
     }
 
 

@@ -10,7 +10,7 @@ public class AdvanceSpawner : MonoBehaviour
     [SerializeField] int timeBetweenSpawns;
     [SerializeField] Transform[] spawnPos;
     [SerializeField] List<GameObject> spawnList = new List<GameObject>();
-    public int spawnCount;
+     int spawnCount;
     bool isSpawning;
     bool startSpawning;
     void Start()
