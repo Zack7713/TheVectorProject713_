@@ -228,6 +228,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1994663115}
     - target: {fileID: 9163904402688198838, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
+      propertyPath: advanceSpawner
+      value: 
+      objectReference: {fileID: 7050777840242499151, guid: 0e86c591402c9d449816321162f1c2a6, type: 3}
+    - target: {fileID: 9163904402688198838, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
       propertyPath: playerSpawnPos
       value: 
       objectReference: {fileID: 1618860581}
@@ -3413,7 +3417,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 15
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1507722225
 Transform:
@@ -3423,7 +3427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507722222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.5, y: 0, z: 4.25}
+  m_LocalPosition: {x: 25.5, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
