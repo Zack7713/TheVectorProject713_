@@ -26,12 +26,8 @@ public class gameManager : MonoBehaviour
     public GameObject runnerSpawnPos;
     public GameObject playerDamageScreen;
     public barricadeUnit barricade;
-    [Header("------Enemy components-----")]
-    [SerializeField] GameObject walkerZombie;
-    [SerializeField] GameObject runnerZombie;
-    [SerializeField] GameObject creeperZombie;
-    [SerializeField] GameObject bossZombie;
-    [SerializeField] float playerDistanceWanted;
+
+
     float playerDistance;
     public bool isPaused;
     public bool inMenu;

@@ -8,6 +8,7 @@ public class playerController : MonoBehaviour, IDamage
     [Header("----- Components-----")]
     [SerializeField] private CharacterController controller;
     [SerializeField] AudioSource aud;
+    [SerializeField] Animator animPlayer;
     [Header("----- Stats -----")]
     [Range(1, 10)][SerializeField] int HP;
     [Range(1, 8)][SerializeField] private float playerSpeed;
@@ -15,7 +16,7 @@ public class playerController : MonoBehaviour, IDamage
     [Range(-10, -40)][SerializeField] private float gravityValue;
     [Range(1, 3)][SerializeField] int jumpMax;
     [Range(1.5f, 3)][SerializeField] float sprintMod;
-
+  
     [Header("----- Weapon -----")]
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
     [SerializeField] int shootDamage;
@@ -37,17 +38,57 @@ public class playerController : MonoBehaviour, IDamage
     bool isPlayingSteps;
     bool isSprinting;
     bool isInteracting;
-
+    float animSpeed;
     private void Start()
     {
 
         HPOrig = HP;
         respawnPlayer();
-
+        animPlayer = GetComponent<Animator>();
     }
 
     void Update()
     {
+        
+        //using UnityEngine;
+
+//public class YourCharacterController : MonoBehaviour
+//    {
+//        private Animator animator;
+//        public float moveSpeed = 5f; // Set your desired movement speed
+
+//        private void Start()
+//        {
+//            // Get the Animator component attached to the same GameObject
+//            animator = GetComponent<Animator>();
+//        }
+
+//        private void Update()
+//        {
+//            // Assuming you're using some input to move your character
+//            float horizontalInput = Input.GetAxis("Horizontal");
+//            float verticalInput = Input.GetAxis("Vertical");
+
+//            // Calculate the movement direction
+//            Vector3 movement = new Vector3(horizontalInput, 0, verticalInput).normalized;
+
+//            // Check if there's any movement
+//            if (movement.magnitude >= 0.1f)
+//            {
+//                // Set the Animator parameter "Speed" based on your movement speed
+//                animator.SetFloat("Speed", moveSpeed);
+//            }
+//            else
+//            {
+//                // If there's no movement, set the "Speed" parameter to 0
+//                animator.SetFloat("Speed", 0f);
+//            }
+
+//            // Move your character based on the input and speed
+//            // ... (your movement code here)
+//        }
+//    }
+
         if (!gameManager.instance.isPaused)
         {
 
@@ -116,7 +157,16 @@ public class playerController : MonoBehaviour, IDamage
 
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-
+        if (move.magnitude >= 0.1f)
+        {
+            // Set the Animator parameter "Speed" based on your movement speed
+            animPlayer.SetFloat("Speed", playerSpeed);
+        }
+        else
+        {
+            // If there's no movement, set the "Speed" parameter to 0
+            animPlayer.SetFloat("Speed", 0f);
+        }
 
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && jumpCount < jumpMax)
