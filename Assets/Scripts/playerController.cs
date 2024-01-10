@@ -23,6 +23,7 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
     [SerializeField] GameObject gunModel;
+    [SerializeField] float knifeColSpeed;
     [Header("----- Audio -----")]
     [SerializeField] AudioClip[] soundHurt;
     [Range(0, 1)][SerializeField] float soundHurtVol;
@@ -38,7 +39,9 @@ public class playerController : MonoBehaviour, IDamage
     bool isPlayingSteps;
     bool isSprinting;
     bool isInteracting;
+    bool isKnife;
     float animSpeed;
+    
     private void Start()
     {
 
@@ -50,44 +53,7 @@ public class playerController : MonoBehaviour, IDamage
     void Update()
     {
         
-        //using UnityEngine;
 
-//public class YourCharacterController : MonoBehaviour
-//    {
-//        private Animator animator;
-//        public float moveSpeed = 5f; // Set your desired movement speed
-
-//        private void Start()
-//        {
-//            // Get the Animator component attached to the same GameObject
-//            animator = GetComponent<Animator>();
-//        }
-
-//        private void Update()
-//        {
-//            // Assuming you're using some input to move your character
-//            float horizontalInput = Input.GetAxis("Horizontal");
-//            float verticalInput = Input.GetAxis("Vertical");
-
-//            // Calculate the movement direction
-//            Vector3 movement = new Vector3(horizontalInput, 0, verticalInput).normalized;
-
-//            // Check if there's any movement
-//            if (movement.magnitude >= 0.1f)
-//            {
-//                // Set the Animator parameter "Speed" based on your movement speed
-//                animator.SetFloat("Speed", moveSpeed);
-//            }
-//            else
-//            {
-//                // If there's no movement, set the "Speed" parameter to 0
-//                animator.SetFloat("Speed", 0f);
-//            }
-
-//            // Move your character based on the input and speed
-//            // ... (your movement code here)
-//        }
-//    }
 
         if (!gameManager.instance.isPaused)
         {
@@ -204,7 +170,12 @@ public class playerController : MonoBehaviour, IDamage
             isShooting = false;
         }
     }
-
+    IEnumerator pAttack() 
+    {
+        isKnife = true;
+        yield return new WaitForSeconds(knifeColSpeed); 
+        isKnife = false;
+    }
     void sprint()
     {
         if (Input.GetButtonDown("Sprint"))

@@ -108,8 +108,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 60
+    agentClimb: 1
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 882323be357f95e4499726530bc78770, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 341b35936a839fe408182d04d68511cc, type: 2}
 --- !u!1001 &22856761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234634451601193549, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.75
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 234634451601193549, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1936,7 +1936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5051754495608373935, guid: 6f394d9c6d3a93e498cfa4c4b2c3278f, type: 3}
       propertyPath: m_NavMeshLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051754495608373935, guid: 6f394d9c6d3a93e498cfa4c4b2c3278f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3689,7 +3689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234634451601193549, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.75
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 234634451601193549, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3723,58 +3723,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 320255312578870594, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 1007009473093114184, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 1681060277144452486, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
     - target: {fileID: 2014329474584834410, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
       propertyPath: m_Name
       value: 10 tall staircase (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2418300491309190714, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 3419881190149701128, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 4887306020235398317, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 4920180263171476189, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 6040442929491659562, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 6394879033582463680, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 6617151848447162629, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 6799516520976864748, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
-    - target: {fileID: 7493725388000632534, guid: 4475a6186f6948848b4fc2640d05d214, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d63b3d433375695478e497e2933eac09, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
