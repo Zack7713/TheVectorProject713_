@@ -101,28 +101,28 @@ public class gameManager : MonoBehaviour
         // Raycast from the center of the screen to determine the position and rotation
         Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
         RaycastHit hit;
+
         if (pointAmount >= 500)
         {
             updatePointCount(-500);
+
             if (Physics.Raycast(ray, out hit))
             {
-                Bounds barricadeBounds = barricade.GetComponent<Renderer>().bounds;
+                // Use the player's forward direction to determine the rotation
+                Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
 
-
-                Quaternion rotation = Quaternion.LookRotation(transform.forward, hit.normal);
-
-
-                Vector3 spawnPosition = hit.point + hit.normal * (barricadeBounds.extents.y - 0.01f);
-
+                // Calculate spawn position based on hit point and normal
+                Vector3 spawnPosition = hit.point + hit.normal * barricade.GetComponent<Renderer>().bounds.extents.y;
 
                 Instantiate(barricade, spawnPosition, rotation);
             }
             else
             {
-
+                // If no hit, spawn the barrier in a default direction (e.g., forward)
                 Vector3 spawnPosition = ray.origin + ray.direction * 5f;
                 spawnPosition.y += 5f;
-                Instantiate(barricade, spawnPosition, transform.rotation);
+
+                Instantiate(barricade, spawnPosition, player.transform.rotation);
             }
         }
     }
