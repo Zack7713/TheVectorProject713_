@@ -165,6 +165,7 @@ public class zombieAI : MonoBehaviour, IDamage
     {
         HP -= amount;
         StartCoroutine(flashRed());
+        agent.SetDestination(gameManager.instance.player.transform.position);
 
         if (HP <= 0)
         {
