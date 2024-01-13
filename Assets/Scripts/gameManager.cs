@@ -12,7 +12,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
     [SerializeField] GameObject menuUtil;
-
+    [SerializeField] GameObject menuInteract; 
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
@@ -49,8 +49,6 @@ public class gameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
-        walkerSpawnPos1 = GameObject.FindWithTag("Walker Spawn 1");
-        runnerSpawnPos = GameObject.FindWithTag("Runner Spawn");
         timeScaleOriginal = Time.timeScale;
     }
 
@@ -60,7 +58,7 @@ public class gameManager : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Interact") && menuActive == null)
+        if (Input.GetButtonDown("Utility") && menuActive == null)
         {
             utilityMenu();
             menuActive = menuUtil;
@@ -90,7 +88,13 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(false);
         menuActive = null;
     }
+    public void Interact()
+    {
+        if (menuActive == menuInteract && Input.GetButtonDown("Interact"))
+        {
 
+        }
+    }
     public void createBarricade()
     {
         Cursor.visible = false;
@@ -118,7 +122,7 @@ public class gameManager : MonoBehaviour
             }
             else
             {
-                // If no hit, spawn the barrier in a default direction (e.g., forward)
+                // If no hit, spawn the barrier in a default direction 
                 Vector3 spawnPosition = ray.origin + ray.direction * 5f;
                 spawnPosition.y += 5f;
 
