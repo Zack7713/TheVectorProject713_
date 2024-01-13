@@ -12,7 +12,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
     [SerializeField] GameObject menuUtil;
-
+    [SerializeField] GameObject menuInteract; 
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
@@ -49,8 +49,6 @@ public class gameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
-        walkerSpawnPos1 = GameObject.FindWithTag("Walker Spawn 1");
-        runnerSpawnPos = GameObject.FindWithTag("Runner Spawn");
         timeScaleOriginal = Time.timeScale;
     }
 
@@ -90,7 +88,13 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(false);
         menuActive = null;
     }
+    public void Interact()
+    {
+        if (menuActive == menuInteract && Input.GetButtonDown("Interact"))
+        {
 
+        }
+    }
     public void createBarricade()
     {
         Cursor.visible = false;

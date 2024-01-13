@@ -5,7 +5,7 @@ public class PlayerInteraction : MonoBehaviour
     public float raycastDistance = 5f;
 
     public cameraControls camController;
-
+    [SerializeField] GameObject menuInteract;
     void Start()
     {
         camController = Camera.main.GetComponentInParent<cameraControls>();
