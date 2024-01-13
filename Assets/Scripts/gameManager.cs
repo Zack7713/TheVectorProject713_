@@ -60,7 +60,7 @@ public class gameManager : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Interact") && menuActive == null)
+        if (Input.GetButtonDown("Utility") && menuActive == null)
         {
             utilityMenu();
             menuActive = menuUtil;
@@ -118,7 +118,7 @@ public class gameManager : MonoBehaviour
             }
             else
             {
-                // If no hit, spawn the barrier in a default direction (e.g., forward)
+                // If no hit, spawn the barrier in a default direction 
                 Vector3 spawnPosition = ray.origin + ray.direction * 5f;
                 spawnPosition.y += 5f;
 
