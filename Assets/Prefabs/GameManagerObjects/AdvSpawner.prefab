@@ -337,9 +337,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 1
-  objectTOSpawn: {fileID: 2190132148094149061, guid: f45be8eec1cb1b54dba9e2290c5c67e6, type: 3}
+  objectTOSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   numToSpawn: 6
-  timeBetweenSpawns: 1
+  timeBetweenSpawns: 3
   spawnPos:
   - {fileID: 270514354348073059}
   - {fileID: 1500940947404731658}
