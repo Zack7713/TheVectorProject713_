@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu.unity
     guid: 44270c67793d8314f96119a320c80581
   - enabled: 1
+    path: Assets/Scenes/0-1 Hub - Lobby.unity
+    guid: 9b9c482ca0a07c140bbe41053b7acc84
+  - enabled: 0
+    path: Assets/Scenes/1-1 City.unity
+    guid: bf6d33d34c5a1704b8ad70c200d3e2fc
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: 4710ffbd1050b724e86a3e767e10c434
   - enabled: 0
