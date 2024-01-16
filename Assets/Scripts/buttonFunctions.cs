@@ -46,4 +46,10 @@ public class buttonFunctions : MonoBehaviour
     {
         gameManager.instance.closeUtilityMenu();
     }
+
+    public void LoadSceneTwo()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
+
