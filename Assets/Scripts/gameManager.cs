@@ -75,7 +75,16 @@ public class gameManager : MonoBehaviour
 
 
     }
-
+    public void interactionMenu()
+    {
+        menuActive = menuInteract;
+        menuActive.SetActive(true);
+    }
+    public void closeInteractionMenu()
+    {
+        menuActive.SetActive(false);
+        menuActive = null;
+    }
     public void utilityMenu()
     {
         Cursor.visible = true;
