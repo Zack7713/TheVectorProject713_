@@ -12,7 +12,8 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
     [SerializeField] GameObject menuUtil;
-    [SerializeField] GameObject menuInteract; 
+    [SerializeField] GameObject menuInteract;
+    [SerializeField] GameObject menuLevels;
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
@@ -71,6 +72,12 @@ public class gameManager : MonoBehaviour
             statePaused();
             menuActive = menuPause;
             menuActive.SetActive(true);
+        }
+        if (Input.GetButtonDown("Levels") && menuActive == null)
+        {
+            statePaused();
+            menuActive = menuLevels;
+            menuActive.SetActive(menuLevels);
         }
 
 
