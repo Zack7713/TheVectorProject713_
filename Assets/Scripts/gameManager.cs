@@ -15,6 +15,8 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuInteract;
     [SerializeField] GameObject menuLevels;
     [SerializeField] GameObject menuShopKeep;
+    [SerializeField] GameObject menuPlayerInventory;
+    [SerializeField] GameObject menuBuy;
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
@@ -110,6 +112,12 @@ public class gameManager : MonoBehaviour
         menuInteract.SetActive(false);
         menuActive = menuShopKeep;
         menuActive.SetActive(true);
+    }
+    public void openBuyMenu()
+    {
+        menuShopKeep.SetActive(false);
+        menuActive = menuBuy;
+        menuActive.SetActive(true); 
     }
     public void closeMenu()
     {

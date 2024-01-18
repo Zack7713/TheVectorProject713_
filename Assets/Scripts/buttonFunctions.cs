@@ -49,6 +49,9 @@ public class buttonFunctions : MonoBehaviour
     {
         gameManager.instance.closeUtilityMenu();
     }
-
+    public void openBuyMenu()
+    { 
+        gameManager.instance.openBuyMenu();
+    }
 }
 
