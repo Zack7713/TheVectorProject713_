@@ -44785,6 +44785,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5712901462020745592, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2070470977, guid: c1293e9da8c54c048a6412a177483416, type: 3}
+    - target: {fileID: 5712901462020745592, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712901462020745592, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712901462020745592, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712901462020745592, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5921517137141999674, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_Name
       value: UI
@@ -44872,6 +44892,10 @@ PrefabInstance:
     - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068989090277010866, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
