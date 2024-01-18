@@ -1981,82 +1981,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &3472743755614442158
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6411945261757352928}
-  - component: {fileID: 7140267888796185278}
-  - component: {fileID: 7989257804475746644}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6411945261757352928
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3472743755614442158}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7844428337804794573}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7140267888796185278
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3472743755614442158}
-  m_CullTransparentMesh: 1
---- !u!114 &7989257804475746644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3472743755614442158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 1360405021, guid: de3be9e54b4fee240910241039e019c8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3494989032013633570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,9 +2171,6 @@ MonoBehaviour:
   menuWin: {fileID: 4683636211200073101}
   menuLose: {fileID: 6689457862460066821}
   menuUtil: {fileID: 7034303007357701674}
-  menuInteract: {fileID: 0}
-  menuLevels: {fileID: 0}
-  menuShopKeep: {fileID: 0}
   playerHPBar: {fileID: 18895456655290484}
   enemyCountText: {fileID: 7856726530839359426}
   killCountText: {fileID: 199370794025810717}
@@ -2262,6 +2183,11 @@ MonoBehaviour:
   runnerSpawnPos: {fileID: 0}
   playerDamageScreen: {fileID: 8022042044966405841}
   barricade: {fileID: 5976923833152098247, guid: 9f6b7da21d8c3f746b88cbab3cd82619, type: 3}
+  walkerZombie: {fileID: 1602569486832925070, guid: cf5399ade9f5ed24f995a96682bf5cf8, type: 3}
+  runnerZombie: {fileID: 2190132148094149061, guid: f45be8eec1cb1b54dba9e2290c5c67e6, type: 3}
+  creeperZombie: {fileID: 1922781059231212056, guid: a98ddb0cac945fe49b4bbfd97ad61855, type: 3}
+  bossZombie: {fileID: 1922781059231212056, guid: 130a0a5389bae1b49a90993fc2b3da4a, type: 3}
+  playerDistanceWanted: 30
   isPaused: 0
   inMenu: 0
   spawnRate: 1
@@ -4460,9 +4386,8 @@ RectTransform:
   - {fileID: 7023552989818755128}
   - {fileID: 7443893807245392372}
   - {fileID: 8427227420777030698}
-  - {fileID: 6411945261757352928}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
