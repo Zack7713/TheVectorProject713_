@@ -30,7 +30,10 @@ public class buttonFunctions : MonoBehaviour
         Application.Quit(); // original code to quit Unity player
 #endif
     }
-
+    public void closeMenu()
+    {
+        gameManager.instance.closeMenu();
+    }
     public void respawnPlayer()
     {
         gameManager.instance.playerScript.respawnPlayer();
@@ -46,6 +49,9 @@ public class buttonFunctions : MonoBehaviour
     {
         gameManager.instance.closeUtilityMenu();
     }
-
+    public void openBuyMenu()
+    { 
+        gameManager.instance.openBuyMenu();
+    }
 }
 
