@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuUtil;
     [SerializeField] GameObject menuInteract;
     [SerializeField] GameObject menuLevels;
+    [SerializeField] GameObject menuShopKeep;
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
@@ -79,18 +80,29 @@ public class gameManager : MonoBehaviour
             menuActive = menuLevels;
             menuActive.SetActive(menuLevels);
         }
-
+        if (Input.GetButtonDown("Interact") && menuActive == menuInteract)
+        {
+            menuActive = null;
+            openShopMenu();
+        }
 
     }
     public void interactionMenu()
     {
         menuActive = menuInteract;
         menuActive.SetActive(true);
+
     }
     public void closeInteractionMenu()
     {
         menuActive.SetActive(false);
         menuActive = null;
+    }
+    public void openShopMenu()
+    {
+        menuInteract.SetActive(false);
+        menuActive = menuShopKeep;
+        menuActive.SetActive(true);
     }
     public void utilityMenu()
     {
@@ -104,13 +116,7 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(false);
         menuActive = null;
     }
-    public void Interact()
-    {
-        if (menuActive == menuInteract && Input.GetButtonDown("Interact"))
-        {
 
-        }
-    }
     public void createBarricade()
     {
         Cursor.visible = false;
