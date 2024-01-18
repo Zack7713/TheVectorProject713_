@@ -104,13 +104,7 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(false);
         menuActive = null;
     }
-    public void Interact()
-    {
-        if (menuActive == menuInteract && Input.GetButtonDown("Interact"))
-        {
 
-        }
-    }
     public void createBarricade()
     {
         Cursor.visible = false;
