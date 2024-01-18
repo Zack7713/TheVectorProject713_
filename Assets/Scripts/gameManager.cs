@@ -95,14 +95,29 @@ public class gameManager : MonoBehaviour
     }
     public void closeInteractionMenu()
     {
-        menuActive.SetActive(false);
-        menuActive = null;
+        if(menuActive != null) 
+        {
+          menuActive.SetActive(false);
+          menuActive = null;
+        }
+       
     }
     public void openShopMenu()
     {
+        statePaused();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         menuInteract.SetActive(false);
         menuActive = menuShopKeep;
         menuActive.SetActive(true);
+    }
+    public void closeMenu()
+    {
+        stateUnpaused();
+        menuActive = null;
+       
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void utilityMenu()
     {
