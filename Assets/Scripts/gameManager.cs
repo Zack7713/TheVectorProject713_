@@ -40,7 +40,9 @@ public class gameManager : MonoBehaviour
     public bool isPaused;
     public bool inMenu;
     public float spawnRate;
+    //changed advance spawner to spawner door for testing purposes
     public AdvanceSpawner advanceSpawner;
+    //public spawnDoor advanceSpawner;
     float timeScaleOriginal;
     int enemiesRemaining;
     int enemiesKilled;
