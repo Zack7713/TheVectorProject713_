@@ -1,5 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Assets/Scenes/Alpha Scenes/0-1 Team Logo.unity.meta
 guid: 3a11379bf5bc68c428f53e6f528b543e
+========
+guid: 6c38280bb9daac74f9437f22cdb26630
+>>>>>>>> Stashed changes:Assets/Scenes/Jesse Adams/Scenes/1-1 Tunnel (Alpha 1.01).unity.meta
+=======
+<<<<<<<< HEAD:Assets/Prefabs/Turret_Laser.meta
+guid: d11a08464acb1254aa6e63932d158cfa
+folderAsset: yes
+========
+guid: 3a11379bf5bc68c428f53e6f528b543e
+>>>>>>>> 3083ef551383aafe93d40742f6588df49607e8d4:Assets/Scenes/Alpha Scenes/0-1 Team Logo.unity.meta
+>>>>>>> Stashed changes
 DefaultImporter:
   externalObjects: {}
   userData: 
