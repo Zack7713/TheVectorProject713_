@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +15,14 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuUtil;
     [SerializeField] GameObject menuInteract;
     [SerializeField] GameObject menuLevels;
+    [SerializeField] GameObject menuShopKeep;
+    [SerializeField] GameObject menuPlayerInventory;
+    [SerializeField] GameObject menuBuy;
     public Image playerHPBar;
 
+    [SerializeField] List<gunStats> gunList = new List<gunStats>();
+    [SerializeField] gunStats pistol;
+    [SerializeField] gunStats rifle;
     [SerializeField] TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
@@ -45,7 +52,7 @@ public class gameManager : MonoBehaviour
 
     void Awake()
     {
-        updatePointCount(+500);
+        updatePointCount(+5000);
         instance = this;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
@@ -79,10 +86,125 @@ public class gameManager : MonoBehaviour
             menuActive = menuLevels;
             menuActive.SetActive(menuLevels);
         }
-
+        if (Input.GetButtonDown("Interact") && menuActive == menuInteract)
+        {
+            menuActive = null;
+            openShopMenu();
+        }
+        playerScript.getGunList(gunList);
+    }
+    public void interactionMenu()
+    {
+        menuActive = menuInteract;
+        menuActive.SetActive(true);
 
     }
+    public void closeInteractionMenu()
+    {
+        if(menuActive != null) 
+        {
+          menuActive.SetActive(false);
+          menuActive = null;
+        }
+       
+    }
 
+    public void openShopMenu()
+    {
+        statePaused();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        menuInteract.SetActive(false);
+        menuActive = menuShopKeep;
+        menuActive.SetActive(true);
+    }
+    public void openSellMenu()
+    {
+        menuShopKeep.SetActive(false);
+        menuActive = menuPlayerInventory;
+        menuActive.SetActive(true);
+    }
+    public void sellGunOne()
+    {
+        if(gunList.Count >=1)
+        {
+            gunList.RemoveAt(0);
+            updatePointCount(+250);
+        }
+        if(gunList.Count == 0)
+        {
+           playerScript.showBoughtGun();
+        }
+        closeMenu();
+    }
+    public void sellGunTwo()
+    {
+        if (gunList.Count >= 2)
+        {
+            gunList.RemoveAt(1);
+            updatePointCount(+250);
+        }
+        playerScript.sellSecondGun();
+        closeMenu();
+    }
+    public void sellGunThree()
+    {
+        if (gunList.Count >= 3)
+        {
+            gunList.RemoveAt(2);
+            updatePointCount(+250);
+        }
+        playerScript.sellThirdGun();
+        closeMenu();
+    }
+    public void openBuyMenu()
+    {
+        menuShopKeep.SetActive(false);
+        menuActive = menuBuy;
+        menuActive.SetActive(true); 
+    }
+    public void buyPistol()
+    {
+        if (pointAmount >= 500)
+        {
+            if(gunList.Count <= 2)
+            {
+                gunList.Add(pistol);
+                playerScript.showBoughtGun();
+                updatePointCount(-500);
+            }
+         
+         
+            closeMenu();
+
+      
+        }
+    }
+    public void buyRifle()
+    {
+        if (pointAmount >= 500)
+        {
+            if (gunList.Count <= 2)
+            {
+                gunList.Add(rifle);
+                playerScript.showBoughtGun();
+                updatePointCount(-500);
+            }
+
+
+            closeMenu();
+
+
+        }
+    }
+    public void closeMenu()
+    {
+        stateUnpaused();
+        menuActive = null;
+       
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     public void utilityMenu()
     {
         Cursor.visible = true;
@@ -95,13 +217,7 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(false);
         menuActive = null;
     }
-    public void Interact()
-    {
-        if (menuActive == menuInteract && Input.GetButtonDown("Interact"))
-        {
 
-        }
-    }
     public void createBarricade()
     {
         Cursor.visible = false;
