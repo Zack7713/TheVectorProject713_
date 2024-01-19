@@ -137,6 +137,26 @@ public class gameManager : MonoBehaviour
         }
         closeMenu();
     }
+    public void sellGunTwo()
+    {
+        if (gunList.Count >= 2)
+        {
+            gunList.RemoveAt(1);
+            updatePointCount(+250);
+        }
+        playerScript.sellSecondGun();
+        closeMenu();
+    }
+    public void sellGunThree()
+    {
+        if (gunList.Count >= 3)
+        {
+            gunList.RemoveAt(2);
+            updatePointCount(+250);
+        }
+        playerScript.sellThirdGun();
+        closeMenu();
+    }
     public void openBuyMenu()
     {
         menuShopKeep.SetActive(false);

@@ -255,7 +255,33 @@ public class playerController : MonoBehaviour, IDamage
             changeGun();
         }
     }
-    void changeGun()
+    public void sellSecondGun()
+    {
+        if(gunList.Count >=1)
+        {
+            shootDamage = gunList[0].shootDamage;
+            shootDist = gunList[0].shootDist;
+            shootRate = gunList[0].shootRate;
+
+            gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[0].model.GetComponent<MeshFilter>().sharedMesh;
+            gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[0].model.GetComponent<MeshRenderer>().sharedMaterial;
+            isShooting = false;
+        }
+    }
+    public void sellThirdGun()
+    {
+        if (gunList.Count >= 2)
+        {
+            shootDamage = gunList[1].shootDamage;
+            shootDist = gunList[1].shootDist;
+            shootRate = gunList[1].shootRate;
+
+            gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[1].model.GetComponent<MeshFilter>().sharedMesh;
+            gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[1].model.GetComponent<MeshRenderer>().sharedMaterial;
+            isShooting = false;
+        }
+    }
+    public void changeGun()
     {
         if(gunList.Count == 0)
         {
@@ -267,12 +293,17 @@ public class playerController : MonoBehaviour, IDamage
             isShooting = false;
             return;
         }
-        shootDamage = gunList[selectedGun].shootDamage;
-        shootDist = gunList[selectedGun].shootDist;
-        shootRate = gunList[selectedGun].shootRate;
 
-        gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
-        gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
-        isShooting = false;
+        else
+        {
+
+            shootDamage = gunList[selectedGun].shootDamage;
+            shootDist = gunList[selectedGun].shootDist;
+            shootRate = gunList[selectedGun].shootRate;
+
+            gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
+            gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
+            isShooting = false;
+        }
     }
 }
