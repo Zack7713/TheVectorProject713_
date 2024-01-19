@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class TurretRotation : MonoBehaviour
 {
-    [Header("-----General-----")]
+    [Header("-----Attributes-----")]
     [SerializeField] float range;
-    //private Enemy targetEnemy;
-
-    [Header("-----Rotation-----")]
-    [SerializeField] float turnSpeed;
-    [SerializeField] Transform pivot;
-
-    [Header("-----Use Bullets (default)-----")]
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform firePoint;
     [SerializeField] float fireRate;
     private float fireCountDown = 0;
 
-    [Header("-----Use Laser-----")]
-    public bool useLaser = false; // If checked to true in inspector, bullet prebab should be left empty
-
-    [SerializeField] float damageOverTime;
-    [SerializeField] float slowAmount;
-
-
-    [SerializeField] LineRenderer lineRenderer;
-    // Need particle system
-    // Need Light
-    
     [Header("-----Enemy-----")]
     [SerializeField] Transform target;
-    [SerializeField] string enemyTag = "Enemy"; // Turrets only respond to this tag as of now
+    [SerializeField] string enemyTag = "Enemy";
+
+    [Header("-----Bullet-----")]
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform firePoint;
+
+    [Header("-----Rotation-----")]
+    [SerializeField] Transform pivot;
+    [SerializeField] float turnSpeed;
+    
 
     void Start()
     {
@@ -42,42 +31,23 @@ public class TurretRotation : MonoBehaviour
     {
         if (target == null) 
         {
-            if (useLaser)
-            {
-                if (lineRenderer.enabled)
-                {
-                    lineRenderer.enabled = false;
-                }
-            }
             return;
         }
 
-        LockOnTarget();
-
-        if (useLaser)
-        {
-            Laser();
-        }
-        else
-        {
-            if (fireCountDown <= 0)
-            {
-                Shoot();
-                fireCountDown = 1 / fireRate;
-            }
-
-            fireCountDown -= Time.deltaTime;
-        }
-    }
-    void LockOnTarget()
-    {
-        // This gets the distance and direction of the target to face
+        // Target lock on
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(pivot.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         pivot.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-    }
 
+        if(fireCountDown <= 0)
+        {
+            Shoot();
+            fireCountDown = 1 / fireRate;
+        }
+
+        fireCountDown -= Time.deltaTime;
+    }
     void UpdateTarget()
     {
         // Puts all enemies with the same tag into array
@@ -101,25 +71,9 @@ public class TurretRotation : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-            // targetEnemy = nearestEnemy.GetComponent<Enemy>
         }
         else 
             target = null;
-    }
-    void Laser()
-    {
-        // Replace Enemy with the name of script that holds enemy health
-        //targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
-        //targetEnemy.Slow(slowAmount);
-
-        if(!lineRenderer.enabled)
-        {
-            lineRenderer.enabled = true;
-        }
-
-        // Setting the start and end points of the lineRenderer
-        lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.SetPosition(1, target.position);
     }
 
     void Shoot()
@@ -135,9 +89,9 @@ public class TurretRotation : MonoBehaviour
         }
     }
 
-    // Visually show max range in scene view 
     private void OnDrawGizmosSelected()
     {
+        // Visually show max range in scene view
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(pivot.position, range);
     }

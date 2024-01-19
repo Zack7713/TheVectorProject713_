@@ -15,7 +15,7 @@ public class TurretBullet : MonoBehaviour
         target = _target;
     }
 
-    // When a turret Instantiates a bullet, it will never miss (the bullets track the target)
+    // Update is called once per frame
     void Update()
     {
         if (target == null) 

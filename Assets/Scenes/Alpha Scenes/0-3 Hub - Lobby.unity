@@ -367,7 +367,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7324992563694428052, guid: c5d897ccd0eb06e4ba0c16fc85ecbc28, type: 3}
   m_PrefabInstance: {fileID: 793365874}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!1001 &20977510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469,8 +468,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-=======
->>>>>>> Stashed changes
 --- !u!4 &29789923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5365023638844081668, guid: 19afb4d12a876a341be5c47422999703, type: 3}
@@ -482,15 +479,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85640
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25172
-========
-  m_Name: pb_Mesh85640
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1012,15 +1001,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86108
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25624
-========
-  m_Name: pb_Mesh86108
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2008,15 +1989,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85440
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh24980
-========
-  m_Name: pb_Mesh85440
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2367,15 +2340,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86008
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25532
-========
-  m_Name: pb_Mesh86008
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2894,15 +2859,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85818
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25350
-========
-  m_Name: pb_Mesh85818
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4810,15 +4767,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85314
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh24854
-========
-  m_Name: pb_Mesh85314
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5111,18 +5060,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1656820912}
-<<<<<<< Updated upstream
   - {fileID: 7844428337575146661}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-========
-  - {fileID: 7844428337575146661}
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484580796
 GameObject:
@@ -5340,15 +5280,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86378
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25894
-========
-  m_Name: pb_Mesh86378
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -7755,15 +7687,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85626
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25158
-========
-  m_Name: pb_Mesh85626
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -7980,11 +7904,7 @@ PrefabInstance:
       objectReference: {fileID: 2190132148094149061, guid: f45be8eec1cb1b54dba9e2290c5c67e6, type: 3}
     - target: {fileID: 7426466636069814591, guid: 0e86c591402c9d449816321162f1c2a6, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
       value: 1
-=======
-      value: 2
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7426466636069814591, guid: 0e86c591402c9d449816321162f1c2a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8101,15 +8021,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85692
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25224
-========
-  m_Name: pb_Mesh85692
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -8667,15 +8579,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85574
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25106
-========
-  m_Name: pb_Mesh85574
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -8840,15 +8744,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85880
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25404
-========
-  m_Name: pb_Mesh85880
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -9256,15 +9152,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86038
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25562
-========
-  m_Name: pb_Mesh86038
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -9466,14 +9354,11 @@ Transform:
   m_Father: {fileID: 830125287}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-<<<<<<< Updated upstream
 --- !u!1 &908639358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 988413350656552844, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
   m_PrefabInstance: {fileID: 577343914}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &909993227
 GameObject:
   m_ObjectHideFlags: 0
@@ -9579,11 +9464,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 5
-=======
-  m_RootOrder: 7
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &915670940 stripped
 Transform:
@@ -9675,15 +9556,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86150
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25666
-========
-  m_Name: pb_Mesh86150
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -10522,15 +10395,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85342
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh24882
-========
-  m_Name: pb_Mesh85342
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -10800,15 +10665,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85946
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25470
-========
-  m_Name: pb_Mesh85946
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -11156,15 +11013,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86452
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25968
-========
-  m_Name: pb_Mesh86452
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -11784,15 +11633,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85906
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25430
-========
-  m_Name: pb_Mesh85906
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -12031,15 +11872,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86164
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25680
-========
-  m_Name: pb_Mesh86164
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -13921,15 +13754,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85546
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25078
-========
-  m_Name: pb_Mesh85546
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -14535,15 +14360,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85796
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25328
-========
-  m_Name: pb_Mesh85796
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -15028,15 +14845,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86226
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25742
-========
-  m_Name: pb_Mesh86226
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -16103,15 +15912,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85866
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25390
-========
-  m_Name: pb_Mesh85866
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -16520,117 +16321,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
---- !u!1001 &1479386697
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5921517137141999674, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_Name
-      value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
-========
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
 --- !u!1 &1481650895
 GameObject:
   m_ObjectHideFlags: 0
@@ -17005,15 +16697,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85924
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25448
-========
-  m_Name: pb_Mesh85924
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -17284,15 +16968,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85960
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25484
-========
-  m_Name: pb_Mesh85960
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -18589,11 +18265,7 @@ Transform:
   - {fileID: 14459287}
   - {fileID: 1565853304}
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 2
-=======
-  m_RootOrder: 3
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1656820910
 GameObject:
@@ -18962,15 +18634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86090
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25606
-========
-  m_Name: pb_Mesh86090
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -19792,15 +19456,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85506
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25046
-========
-  m_Name: pb_Mesh85506
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -19965,15 +19621,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85658
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25190
-========
-  m_Name: pb_Mesh85658
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -20188,17 +19836,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
-    - target: {fileID: 7173880425891511651, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.8048139
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173880425891511651, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.231152
-      objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: 9219844609002159002, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: jumpMax
       value: 2
@@ -20822,110 +20459,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893999114}
   m_Mesh: {fileID: 505221389}
-<<<<<<< Updated upstream
-=======
---- !u!1001 &1909440291
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5921517137141999674, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_Name
-      value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &1938996348
 GameObject:
   m_ObjectHideFlags: 0
@@ -21037,15 +20570,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86276
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25792
-========
-  m_Name: pb_Mesh86276
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -21271,15 +20796,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85390
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh24930
-========
-  m_Name: pb_Mesh85390
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -21444,15 +20961,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85560
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25092
-========
-  m_Name: pb_Mesh85560
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -21655,15 +21164,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh85404
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh24944
-========
-  m_Name: pb_Mesh85404
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -22095,15 +21596,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86192
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25708
-========
-  m_Name: pb_Mesh86192
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -22430,15 +21923,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_Name: pb_Mesh86416
-=======
-<<<<<<<< Updated upstream:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-  m_Name: pb_Mesh25932
-========
-  m_Name: pb_Mesh86416
->>>>>>>> Stashed changes:Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby.unity
->>>>>>> Stashed changes
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -28241,10 +27726,7 @@ MonoBehaviour:
   menuUtil: {fileID: 7034303007155347522}
   menuInteract: {fileID: 0}
   menuLevels: {fileID: 0}
-<<<<<<< Updated upstream
   menuShopKeep: {fileID: 0}
-=======
->>>>>>> Stashed changes
   playerHPBar: {fileID: 18895456394206748}
   enemyCountText: {fileID: 7856726530634891690}
   killCountText: {fileID: 199370794345600373}
