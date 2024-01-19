@@ -225,8 +225,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &19432140
 GameObject:
@@ -330,8 +335,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 69
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &55667710
 PrefabInstance:
@@ -347,7 +357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9184752621911493038, guid: afb5639cb56125b41ba8349013a23327, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
       value: -1
+=======
+      value: 32
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
       objectReference: {fileID: 0}
     - target: {fileID: 9184752621911493038, guid: afb5639cb56125b41ba8349013a23327, type: 3}
       propertyPath: m_LocalPosition.x
@@ -496,8 +510,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &112581109
 GameObject:
@@ -601,8 +620,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113096973
 GameObject:
@@ -706,8 +730,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 88
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &128879951
 GameObject:
@@ -811,8 +840,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &154710374
 GameObject:
@@ -916,8 +950,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 51
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &167486447
 GameObject:
@@ -1021,8 +1060,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 71
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &188676534
 GameObject:
@@ -1126,8 +1170,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 83
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218055108
 GameObject:
@@ -1231,8 +1280,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 54
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &273345556
 GameObject:
@@ -1336,8 +1390,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 67
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &296912838
 GameObject:
@@ -1441,8 +1500,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 56
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301302663
 GameObject:
@@ -1546,8 +1610,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &322561905
 GameObject:
@@ -1651,8 +1720,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &334236682 stripped
 MonoBehaviour:
@@ -1767,8 +1841,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 49
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &425609214
 GameObject:
@@ -1872,8 +1951,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 53
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &461547512
 GameObject:
@@ -1977,8 +2061,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 59
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471977456
 GameObject:
@@ -2082,8 +2171,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &483884964
 GameObject:
@@ -2187,8 +2281,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 52
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504169754
 GameObject:
@@ -2292,8 +2391,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 70
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &515670796
 GameObject:
@@ -2397,8 +2501,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 77
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &528568175
 GameObject:
@@ -2502,8 +2611,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 55
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534340257
 GameObject:
@@ -2715,8 +2829,17 @@ Transform:
   - {fileID: 113096977}
   - {fileID: 1906198377}
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_RootOrder: 8
+=======
+  m_RootOrder: 75
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &537375846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2006477778036557258, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+  m_PrefabInstance: {fileID: 1882575170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &602070575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,8 +2942,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 65
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &609536401
 GameObject:
@@ -2924,8 +3052,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!224 &641907845 stripped
 RectTransform:
@@ -3034,9 +3167,158 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &664374860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664374864}
+  - component: {fileID: 664374863}
+  - component: {fileID: 664374862}
+  - component: {fileID: 664374861}
+  - component: {fileID: 664374865}
+  - component: {fileID: 664374866}
+  m_Layer: 0
+  m_Name: shopkeep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &664374861
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664374860}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &664374862
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664374860}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &664374863
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664374860}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &664374864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664374860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.5, y: 1, z: -5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 90
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664374865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664374860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64051f15e8e24864a906e655181b8725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1336100897}
+--- !u!135 &664374866
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664374860}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
 --- !u!1001 &750989904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3047,7 +3329,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4048483391006404328, guid: 957b1af329051ee44a487671a46ed2cf, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
       value: -1
+=======
+      value: 30
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
       objectReference: {fileID: 0}
     - target: {fileID: 4048483391006404328, guid: 957b1af329051ee44a487671a46ed2cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3200,8 +3486,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &765689108
 GameObject:
@@ -3305,8 +3596,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &822281767
 GameObject:
@@ -3410,8 +3706,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &827838159
 GameObject:
@@ -3515,8 +3816,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 64
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &859348519
 GameObject:
@@ -3620,8 +3926,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 48
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &897823665
 GameObject:
@@ -3725,8 +4036,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 44
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918780934
 GameObject:
@@ -3830,8 +4146,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 85
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955162016
 GameObject:
@@ -3935,8 +4256,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &978695836
 GameObject:
@@ -4040,8 +4366,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 74
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012881329
 GameObject:
@@ -4145,8 +4476,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 80
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1079044805
 GameObject:
@@ -4250,8 +4586,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 79
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1082910265
 GameObject:
@@ -4355,8 +4696,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 73
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1111344247
 GameObject:
@@ -4460,8 +4806,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 45
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123183280
 GameObject:
@@ -4565,8 +4916,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1151062210
 GameObject:
@@ -4670,8 +5026,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1157290943
 GameObject:
@@ -4775,8 +5136,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 68
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1182148791
 GameObject:
@@ -4880,8 +5246,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1189894167
 GameObject:
@@ -4985,8 +5356,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 82
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330169537
 GameObject:
@@ -5090,9 +5466,25 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1336100897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4885495323835072984, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+  m_PrefabInstance: {fileID: 1882575170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e34e5c9e51d3e4b93981628dea37eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1353096330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5289,8 +5681,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &1432531183 stripped
 Transform:
@@ -5399,8 +5796,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1469062978
 GameObject:
@@ -5504,8 +5906,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 84
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1471268338 stripped
 Transform:
@@ -5614,8 +6021,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 62
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1486400949
 GameObject:
@@ -5719,8 +6131,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 76
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520200775
 GameObject:
@@ -5824,8 +6241,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534124196
 GameObject:
@@ -5929,8 +6351,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1555024527
 PrefabInstance:
@@ -6142,8 +6569,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 72
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1651733858
 GameObject:
@@ -6247,8 +6679,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 60
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1685931569
 GameObject:
@@ -6352,8 +6789,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1691893304
 GameObject:
@@ -6457,8 +6899,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 78
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721310930
 GameObject:
@@ -6562,8 +7009,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 66
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1755007679
 GameObject:
@@ -6667,8 +7119,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1798019804
 GameObject:
@@ -6773,8 +7230,13 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809985408
 GameObject:
@@ -6878,8 +7340,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 81
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843265440
 GameObject:
@@ -6983,8 +7450,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 61
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1858076901
 GameObject:
@@ -7088,9 +7560,119 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &1882575170
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4885495323835072984, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: menuShopKeep
+      value: 
+      objectReference: {fileID: 537375846}
+    - target: {fileID: 5921517137141999674, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852517672822421020, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab9e7847f224066418305b3f38a047ea, type: 3}
 --- !u!1 &1906198373
 GameObject:
   m_ObjectHideFlags: 0
@@ -7194,8 +7776,13 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 89
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917238418
 GameObject:
@@ -7375,8 +7962,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 57
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983557309
 GameObject:
@@ -7480,8 +8072,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 63
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1991030843
 GameObject:
@@ -7585,8 +8182,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 58
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001974564
 GameObject:
@@ -7690,8 +8292,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 43
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2038009259
 GameObject:
@@ -7795,8 +8402,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 46
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063289705
 GameObject:
@@ -7900,8 +8512,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &2084746898
 PrefabInstance:
@@ -8066,8 +8683,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 38
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2121692421
 GameObject:
@@ -8171,8 +8793,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134843620
 GameObject:
@@ -8276,8 +8903,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 50
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135407271
 GameObject:
@@ -8381,8 +9013,13 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 47
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2141506156
 PrefabInstance:
@@ -8547,9 +9184,76 @@ Transform:
   m_LocalScale: {x: 9, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
   m_Father: {fileID: 574500932}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 87
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &3070886783510363376
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_RootOrder
+      value: 86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5974641
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015508399027168755, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687097216816678847, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+      propertyPath: m_Name
+      value: larger plank
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed5eb4372df050f429fae45bfd295b98, type: 3}
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
 --- !u!1001 &3127776901777728044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8656,7 +9360,11 @@ PrefabInstance:
       objectReference: {fileID: 2190132148094149061, guid: f45be8eec1cb1b54dba9e2290c5c67e6, type: 3}
     - target: {fileID: 7426466636069814591, guid: 0e86c591402c9d449816321162f1c2a6, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream:Assets/Scenes/joe.unity
       value: 6
+=======
+      value: 12
+>>>>>>> Stashed changes:Assets/Scenes/Joe sinclair.unity
       objectReference: {fileID: 0}
     - target: {fileID: 7426466636069814591, guid: 0e86c591402c9d449816321162f1c2a6, type: 3}
       propertyPath: m_LocalPosition.x

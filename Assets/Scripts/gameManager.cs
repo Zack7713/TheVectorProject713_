@@ -15,8 +15,11 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuInteract;
     [SerializeField] GameObject menuLevels;
     [SerializeField] GameObject menuShopKeep;
+<<<<<<< Updated upstream
     [SerializeField] GameObject menuPlayerInventory;
     [SerializeField] GameObject menuBuy;
+=======
+>>>>>>> Stashed changes
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
@@ -97,6 +100,7 @@ public class gameManager : MonoBehaviour
     }
     public void closeInteractionMenu()
     {
+<<<<<<< Updated upstream
         if(menuActive != null) 
         {
           menuActive.SetActive(false);
@@ -109,10 +113,18 @@ public class gameManager : MonoBehaviour
         statePaused();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+=======
+        menuActive.SetActive(false);
+        menuActive = null;
+    }
+    public void openShopMenu()
+    {
+>>>>>>> Stashed changes
         menuInteract.SetActive(false);
         menuActive = menuShopKeep;
         menuActive.SetActive(true);
     }
+<<<<<<< Updated upstream
     public void openBuyMenu()
     {
         menuShopKeep.SetActive(false);
@@ -127,6 +139,8 @@ public class gameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+=======
+>>>>>>> Stashed changes
     public void utilityMenu()
     {
         Cursor.visible = true;

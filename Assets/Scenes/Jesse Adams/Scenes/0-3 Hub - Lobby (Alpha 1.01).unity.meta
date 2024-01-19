@@ -1,7 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: de19dc44c41663848970afce8fe1dd5d
 DefaultImporter:
   externalObjects: {}
+=======
+<<<<<<<< HEAD:Assets/Prefabs/Turret_Laser/Laser.mat.meta
+guid: 8783b2c41ac17f045a744aa4f15f7e43
+NativeFormatImporter:
+========
+guid: de19dc44c41663848970afce8fe1dd5d
+DefaultImporter:
+>>>>>>>> 3083ef551383aafe93d40742f6588df49607e8d4:Assets/Scenes/Jesse Adams/Scenes/0-3 Hub - Lobby (Alpha 1.01).unity.meta
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 

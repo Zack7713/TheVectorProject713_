@@ -29,10 +29,13 @@ public class buttonFunctions : MonoBehaviour
 #else
         Application.Quit(); // original code to quit Unity player
 #endif
+<<<<<<< Updated upstream
     }
     public void closeMenu()
     {
         gameManager.instance.closeMenu();
+=======
+>>>>>>> Stashed changes
     }
     public void respawnPlayer()
     {
@@ -49,9 +52,13 @@ public class buttonFunctions : MonoBehaviour
     {
         gameManager.instance.closeUtilityMenu();
     }
+<<<<<<< Updated upstream
     public void openBuyMenu()
     { 
         gameManager.instance.openBuyMenu();
     }
+=======
+
+>>>>>>> Stashed changes
 }
 
