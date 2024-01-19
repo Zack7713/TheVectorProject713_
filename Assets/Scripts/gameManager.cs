@@ -12,7 +12,11 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
     [SerializeField] GameObject menuUtil;
-    [SerializeField] GameObject menuInteract; 
+    [SerializeField] GameObject menuInteract;
+    [SerializeField] GameObject menuLevels;
+    [SerializeField] GameObject menuShopKeep;
+    [SerializeField] GameObject menuPlayerInventory;
+    [SerializeField] GameObject menuBuy;
     public Image playerHPBar;
 
     [SerializeField] TMP_Text enemyCountText;
@@ -72,10 +76,57 @@ public class gameManager : MonoBehaviour
             menuActive = menuPause;
             menuActive.SetActive(true);
         }
-
+        if (Input.GetButtonDown("Levels") && menuActive == null)
+        {
+            statePaused();
+            menuActive = menuLevels;
+            menuActive.SetActive(menuLevels);
+        }
+        if (Input.GetButtonDown("Interact") && menuActive == menuInteract)
+        {
+            menuActive = null;
+            openShopMenu();
+        }
 
     }
+    public void interactionMenu()
+    {
+        menuActive = menuInteract;
+        menuActive.SetActive(true);
 
+    }
+    public void closeInteractionMenu()
+    {
+        if(menuActive != null) 
+        {
+          menuActive.SetActive(false);
+          menuActive = null;
+        }
+       
+    }
+    public void openShopMenu()
+    {
+        statePaused();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        menuInteract.SetActive(false);
+        menuActive = menuShopKeep;
+        menuActive.SetActive(true);
+    }
+    public void openBuyMenu()
+    {
+        menuShopKeep.SetActive(false);
+        menuActive = menuBuy;
+        menuActive.SetActive(true); 
+    }
+    public void closeMenu()
+    {
+        stateUnpaused();
+        menuActive = null;
+       
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     public void utilityMenu()
     {
         Cursor.visible = true;
@@ -88,13 +139,7 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(false);
         menuActive = null;
     }
-    public void Interact()
-    {
-        if (menuActive == menuInteract && Input.GetButtonDown("Interact"))
-        {
 
-        }
-    }
     public void createBarricade()
     {
         Cursor.visible = false;
