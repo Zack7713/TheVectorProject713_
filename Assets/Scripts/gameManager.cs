@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuBuy;
     public Image playerHPBar;
 
+    [SerializeField] List<gunStats> gunList = new List<gunStats>();
+    [SerializeField] gunStats pistol;
     [SerializeField] TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
@@ -48,7 +51,7 @@ public class gameManager : MonoBehaviour
 
     void Awake()
     {
-        updatePointCount(+500);
+        updatePointCount(+5000);
         instance = this;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
@@ -87,7 +90,7 @@ public class gameManager : MonoBehaviour
             menuActive = null;
             openShopMenu();
         }
-
+        playerScript.getGunList(gunList);
     }
     public void interactionMenu()
     {
@@ -104,6 +107,7 @@ public class gameManager : MonoBehaviour
         }
        
     }
+
     public void openShopMenu()
     {
         statePaused();
@@ -118,6 +122,20 @@ public class gameManager : MonoBehaviour
         menuShopKeep.SetActive(false);
         menuActive = menuBuy;
         menuActive.SetActive(true); 
+    }
+    public void buyPistol()
+    {
+        if (pointAmount >= 500)
+        {
+            if(gunList.Count < 3)
+            {
+                gunList.Add(pistol);
+            }
+            updatePointCount(-500);
+           closeMenu();
+
+      
+        }
     }
     public void closeMenu()
     {

@@ -229,6 +229,10 @@ public class playerController : MonoBehaviour, IDamage
 
         selectedGun = gunList.Count - 1;
     }
+    public void getGunList(List<gunStats> guns)
+    {
+        gunList= guns;
+    }
     void selectGun()
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedGun < gunList.Count - 1)
