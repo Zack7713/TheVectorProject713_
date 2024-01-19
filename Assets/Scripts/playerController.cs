@@ -257,6 +257,16 @@ public class playerController : MonoBehaviour, IDamage
     }
     void changeGun()
     {
+        if(gunList.Count == 0)
+        {
+            shootDamage = 0;
+            shootDist = 0;
+            shootRate = 0;
+            gunModel.GetComponent<MeshFilter>().sharedMesh = null;
+            gunModel.GetComponent<MeshRenderer>().sharedMaterial = null;
+            isShooting = false;
+            return;
+        }
         shootDamage = gunList[selectedGun].shootDamage;
         shootDist = gunList[selectedGun].shootDist;
         shootRate = gunList[selectedGun].shootRate;

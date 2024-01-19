@@ -55,7 +55,11 @@ public class buttonFunctions : MonoBehaviour
     }
     public void openSellMenu()
     {
-
+        gameManager.instance.openSellMenu();
+    }
+    public void sellFirstGun()
+    {
+        gameManager.instance.sellGunOne();
     }
     public void buyPistolInShop()
     {

@@ -118,6 +118,25 @@ public class gameManager : MonoBehaviour
         menuActive = menuShopKeep;
         menuActive.SetActive(true);
     }
+    public void openSellMenu()
+    {
+        menuShopKeep.SetActive(false);
+        menuActive = menuPlayerInventory;
+        menuActive.SetActive(true);
+    }
+    public void sellGunOne()
+    {
+        if(gunList.Count >=1)
+        {
+            gunList.RemoveAt(0);
+            updatePointCount(+250);
+        }
+        if(gunList.Count == 0)
+        {
+           playerScript.showBoughtGun();
+        }
+        closeMenu();
+    }
     public void openBuyMenu()
     {
         menuShopKeep.SetActive(false);
