@@ -8335,6 +8335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2800437197849536727, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.50000346
+      objectReference: {fileID: 0}
     - target: {fileID: 5468805070071980301, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: Loop
       value: 1
