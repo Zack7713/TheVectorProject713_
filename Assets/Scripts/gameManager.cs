@@ -132,7 +132,7 @@ public class gameManager : MonoBehaviour
                 gunList.Add(pistol);
             }
             updatePointCount(-500);
-           closeMenu();
+            closeMenu();
 
       
         }
