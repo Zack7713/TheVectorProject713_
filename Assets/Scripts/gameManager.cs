@@ -22,6 +22,7 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
     [SerializeField] gunStats pistol;
+    [SerializeField] gunStats rifle;
     [SerializeField] TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
@@ -127,14 +128,34 @@ public class gameManager : MonoBehaviour
     {
         if (pointAmount >= 500)
         {
-            if(gunList.Count < 3)
+            if(gunList.Count <= 2)
             {
                 gunList.Add(pistol);
+                playerScript.showBoughtGun();
+                updatePointCount(-500);
             }
-            updatePointCount(-500);
+         
+         
             closeMenu();
 
       
+        }
+    }
+    public void buyRifle()
+    {
+        if (pointAmount >= 500)
+        {
+            if (gunList.Count <= 2)
+            {
+                gunList.Add(rifle);
+                playerScript.showBoughtGun();
+                updatePointCount(-500);
+            }
+
+
+            closeMenu();
+
+
         }
     }
     public void closeMenu()
