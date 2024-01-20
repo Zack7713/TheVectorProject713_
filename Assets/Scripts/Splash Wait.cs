@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SplashWait : MonoBehaviour
 {
-    public int splashWait = 3;
+    public int splashWait;
     // Start is called before the first frame update
     void Start()
     {

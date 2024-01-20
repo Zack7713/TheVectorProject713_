@@ -40,7 +40,9 @@ public class gameManager : MonoBehaviour
     public bool isPaused;
     public bool inMenu;
     public float spawnRate;
+    //changed advance spawner to spawner door for testing purposes
     public AdvanceSpawner advanceSpawner;
+    //public spawnDoor advanceSpawner;
     float timeScaleOriginal;
     int enemiesRemaining;
     int enemiesKilled;
@@ -135,6 +137,26 @@ public class gameManager : MonoBehaviour
         {
            playerScript.showBoughtGun();
         }
+        closeMenu();
+    }
+    public void sellGunTwo()
+    {
+        if (gunList.Count >= 2)
+        {
+            gunList.RemoveAt(1);
+            updatePointCount(+250);
+        }
+        playerScript.sellSecondGun();
+        closeMenu();
+    }
+    public void sellGunThree()
+    {
+        if (gunList.Count >= 3)
+        {
+            gunList.RemoveAt(2);
+            updatePointCount(+250);
+        }
+        playerScript.sellThirdGun();
         closeMenu();
     }
     public void openBuyMenu()

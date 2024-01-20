@@ -61,6 +61,14 @@ public class buttonFunctions : MonoBehaviour
     {
         gameManager.instance.sellGunOne();
     }
+    public void sellSecondGun()
+    {
+        gameManager.instance.sellGunTwo();
+    }
+    public void sellThirdGun()
+    {
+        gameManager.instance.sellGunThree();
+    }
     public void buyPistolInShop()
     {
         gameManager.instance.buyPistol();
