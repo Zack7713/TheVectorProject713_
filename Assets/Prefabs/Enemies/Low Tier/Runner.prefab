@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 8266651145351843276}
   m_Layer: 0
   m_Name: Runner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1241,6 +1241,8 @@ MonoBehaviour:
   animSpeedTrans: 8
   attackRate: 0.25
   attackPos: {fileID: 6023736676385252773}
+  mySpawner: {fileID: 0}
+  myRunner: {fileID: 0}
 --- !u!95 &7825349806154407011
 Animator:
   serializedVersion: 5
