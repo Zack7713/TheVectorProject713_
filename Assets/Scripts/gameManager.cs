@@ -284,6 +284,8 @@ public class gameManager : MonoBehaviour
     {
         menuActive = null;
         menuUtil.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         barricadePreview = Instantiate(barricadePreviewPrefab);
     }
 
