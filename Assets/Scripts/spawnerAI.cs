@@ -39,6 +39,7 @@ public class spawnerAI : MonoBehaviour , IDamage
     float angleToPlayer;
     float stoppingDistOrig;
     public AdvanceSpawner mySpawner;
+    public spawnDoor myRunner;//test code to use the updated spawner door
 
     // Start is called before the first frame update
     void Start()
