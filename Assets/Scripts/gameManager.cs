@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuLose;
     [SerializeField] GameObject menuUtil;
     [SerializeField] GameObject menuInteract;
+    [SerializeField] GameObject menuHubInteract;
     [SerializeField] GameObject menuLevels;
     [SerializeField] GameObject menuShopKeep;
     [SerializeField] GameObject menuPlayerInventory;
@@ -82,22 +83,27 @@ public class gameManager : MonoBehaviour
             menuActive = menuPause;
             menuActive.SetActive(true);
         }
-        if (Input.GetButtonDown("Levels") && menuActive == null)
-        {
-            statePaused();
-            menuActive = menuLevels;
-            menuActive.SetActive(menuLevels);
-        }
         if (Input.GetButtonDown("Interact") && menuActive == menuInteract)
         {
             menuActive = null;
             openShopMenu();
+        }
+        if (Input.GetButtonDown("Interact") && menuActive == menuHubInteract)
+        {
+            menuActive = null;
+            openLevelMenu();
         }
         playerScript.getGunList(gunList);
     }
     public void interactionMenu()
     {
         menuActive = menuInteract;
+        menuActive.SetActive(true);
+
+    }
+    public void interactionHubMenu()
+    {
+        menuActive = menuHubInteract;
         menuActive.SetActive(true);
 
     }
@@ -110,14 +116,33 @@ public class gameManager : MonoBehaviour
         }
        
     }
+    public void closeInteractionHubMenu()
+    {
+        if (menuActive != null)
+        {
+            menuActive.SetActive(false);
+            menuActive = null;
+        }
 
+    }
     public void openShopMenu()
     {
+      
         statePaused();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         menuInteract.SetActive(false);
         menuActive = menuShopKeep;
+        menuActive.SetActive(true);
+    }
+    public void openLevelMenu()
+    {
+   
+        statePaused();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        menuHubInteract.SetActive(false);
+        menuActive = menuLevels;
         menuActive.SetActive(true);
     }
     public void openSellMenu()
@@ -201,11 +226,18 @@ public class gameManager : MonoBehaviour
     }
     public void closeMenu()
     {
-        stateUnpaused();
-        menuActive = null;
-       
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        if(isPaused == true)
+        {
+            stateUnpaused();
+        }
+        else
+        {
+            menuActive = null;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
     }
     public void utilityMenu()
     {
