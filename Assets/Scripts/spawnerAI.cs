@@ -167,9 +167,7 @@ public class spawnerAI : MonoBehaviour , IDamage
         {
             
             Destroy(gameObject);
-            //comment out mySpawner and add myRunner for test purposes
-            //mySpawner.heyIDied();
-            myRunner.zombiesKilled();
+            mySpawner.heyIDied();
             gameManager.instance.updateKillCount(+1);
             gameManager.instance.updateGameGoal(-1);
             model.sharedMaterial.color = Color.white;
