@@ -16,7 +16,7 @@ public class playerController : MonoBehaviour, IDamage
     [Range(-10, -40)][SerializeField] private float gravityValue;
     [Range(1, 3)][SerializeField] int jumpMax;
     [Range(1.5f, 3)][SerializeField] float sprintMod;
-  
+    [SerializeField] List<inventoryItems> inventoryList = new List<inventoryItems>();
     [Header("----- Weapon -----")]
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
     [SerializeField] int shootDamage;
@@ -39,7 +39,7 @@ public class playerController : MonoBehaviour, IDamage
     bool isPlayingSteps;
     bool isSprinting;
     bool isInteracting;
-    bool isKnife;
+    bool isKnifing;
     float animSpeed;
     
     private void Start()
@@ -52,8 +52,14 @@ public class playerController : MonoBehaviour, IDamage
 
     void Update()
     {
-        
 
+
+         
+           if (Input.GetButtonDown("MeleeAttack"))
+           {
+               StartCoroutine( pAttack());
+           }
+        
 
         if (!gameManager.instance.isPaused)
         {
@@ -66,7 +72,7 @@ public class playerController : MonoBehaviour, IDamage
 
                 selectGun();
             }
-            // if(Input.GetButton("Interact"))
+    
             movement();
         }
     }
@@ -172,9 +178,10 @@ public class playerController : MonoBehaviour, IDamage
     }
     IEnumerator pAttack() 
     {
-        isKnife = true;
+        isKnifing = true;
+        animPlayer.SetTrigger("MeleeAttack");
         yield return new WaitForSeconds(knifeColSpeed); 
-        isKnife = false;
+        isKnifing = false;
     }
     void sprint()
     {
@@ -188,6 +195,7 @@ public class playerController : MonoBehaviour, IDamage
             playerSpeed /= sprintMod;
             isSprinting = false;
         }
+
     }
     public void takeDamage(int amount)
     {
@@ -228,6 +236,11 @@ public class playerController : MonoBehaviour, IDamage
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.model.GetComponent<MeshRenderer>().sharedMaterial;
 
         selectedGun = gunList.Count - 1;
+    }
+    public void getInventoryItem(inventoryItems item)
+    {
+        inventoryList.Add(item);
+
     }
     public void showBoughtGun()
     {
