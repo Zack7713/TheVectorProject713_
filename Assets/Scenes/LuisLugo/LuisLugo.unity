@@ -596,7 +596,7 @@ PrefabInstance:
     - target: {fileID: 9163904402688198838, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
       propertyPath: walkerSpawnPos1
       value: 
-      objectReference: {fileID: 988413350656552844, guid: 392cee079b3237b46b565116d78ccb00, type: 3}
+      objectReference: {fileID: 1632997431}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
