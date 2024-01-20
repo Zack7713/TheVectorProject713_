@@ -14,6 +14,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuLose;
     [SerializeField] GameObject menuUtil;
     [SerializeField] GameObject menuInteract;
+    [SerializeField] GameObject menuHubInteract;
     [SerializeField] GameObject menuLevels;
     [SerializeField] GameObject menuShopKeep;
     [SerializeField] GameObject menuPlayerInventory;
@@ -84,20 +85,39 @@ public class gameManager : MonoBehaviour
         }
         if (Input.GetButtonDown("Levels") && menuActive == null)
         {
-            statePaused();
-            menuActive = menuLevels;
-            menuActive.SetActive(menuLevels);
+
         }
         if (Input.GetButtonDown("Interact") && menuActive == menuInteract)
         {
             menuActive = null;
             openShopMenu();
         }
+        if (Input.GetButtonDown("Interact") && menuActive == menuHubInteract)
+        {
+            menuActive = null;
+            openLevelMenu();
+        }
         playerScript.getGunList(gunList);
+    }
+
+    public void openLevelMenu()
+    {
+        statePaused();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        menuInteract.SetActive(false);
+        menuActive = menuLevels;
+        menuActive.SetActive(true);
     }
     public void interactionMenu()
     {
         menuActive = menuInteract;
+        menuActive.SetActive(true);
+
+    }
+    public void interactionHubMenu()
+    {
+        menuActive = menuHubInteract;
         menuActive.SetActive(true);
 
     }
@@ -110,7 +130,15 @@ public class gameManager : MonoBehaviour
         }
        
     }
+    public void closeInteractionHubMenu()
+    {
+        if (menuActive != null)
+        {
+            menuActive.SetActive(false);
+            menuActive = null;
+        }
 
+    }
     public void openShopMenu()
     {
         statePaused();
