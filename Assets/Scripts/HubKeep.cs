@@ -1,39 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
-using UnityEditor;
-using UnityEditor.ProBuilder;
 using UnityEngine;
 
-public class Shopkeep : MonoBehaviour
+public class HubKeep : MonoBehaviour
 {
     public gameManager manager;
     // Start is called before the first frame update
     void Start()
     {
-     
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") )
+        if (other.CompareTag("Player"))
         {
-            manager.interactionMenu();
+            manager.interactionHubMenu();
           
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-          manager.closeInteractionMenu();
-  
+            manager.closeInteractionHubMenu();
+           
         }
-        
+
     }
 }
+
