@@ -42,12 +42,15 @@ public class buttonFunctions : MonoBehaviour
 
     public void spawnBarricade()
     {
-        gameManager.instance.createBarricade();
+     
+        gameManager.instance.CreateBarricadePreview();
+      
     }
 
     public void closeUtilityMenu()
     {
         gameManager.instance.closeUtilityMenu();
+        gameManager.instance.DestroyBarricadePreview();
     }
     public void openBuyMenu()
     { 
