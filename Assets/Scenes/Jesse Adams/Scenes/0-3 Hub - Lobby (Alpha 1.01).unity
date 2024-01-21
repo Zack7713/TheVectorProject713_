@@ -8115,7 +8115,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 493542475}
         m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
-        m_MethodName: spawnBarricade
+        m_MethodName: spawnturret
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22607,7 +22607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2340448748860101355, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -13.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2340448748860101355, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -22711,7 +22711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6060435710911308497, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6261797234574490583, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: m_text
@@ -22728,6 +22728,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5976923833152098247, guid: 9f6b7da21d8c3f746b88cbab3cd82619, type: 3}
     - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: turretPrefab
+      value: 
+      objectReference: {fileID: 8198608584501087526, guid: e0274484ebfbaa4439a932b6cfa72595, type: 3}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: barricadePrefab
       value: 
       objectReference: {fileID: 6682885703480177346, guid: 9f6b7da21d8c3f746b88cbab3cd82619, type: 3}
@@ -22735,6 +22739,10 @@ PrefabInstance:
       propertyPath: barricadePreview
       value: 
       objectReference: {fileID: 6771682932368983323, guid: 3282cbbd45334844aa0454905454cebe, type: 3}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: turretPreviewPrefab
+      value: 
+      objectReference: {fileID: 952189148117819441, guid: a9538c6c4535ba449bf4339b4b710ba2, type: 3}
     - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: barricadePreviewHeight
       value: 1

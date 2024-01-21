@@ -46,8 +46,8 @@ public class gameManager : MonoBehaviour
     public float turretPreviewHeight = 1f; // Height offset for the preview
     private GameObject turretPreview; // Instance of the preview
 
-    private bool inBarricadePlacementMode = false;
-    private bool inTurretPlacementMode = false;
+    public bool inBarricadePlacementMode = false;
+    public bool inTurretPlacementMode = false;
 
     float playerDistance;
     public bool isPaused;
@@ -289,6 +289,7 @@ public class gameManager : MonoBehaviour
         {
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
+            inTurretPlacementMode = false;
         }
         // Other closeUtilityMenu logic...
         menuActive.SetActive(false);
@@ -391,11 +392,25 @@ public class gameManager : MonoBehaviour
             inBarricadePlacementMode = false;
         }
     }
-
+    private void ConfirmTurretPlacement()
+    {
+        if (turretPreview != null)
+        {
+            // Perform the actual instantiation of the barricade
+            Instantiate(turretPrefab, turretPreview.transform.position, turretPreview.transform.rotation);
+            DestroyTurretPreview();
+            inTurretPlacementMode = false;
+        }
+    }
     private void CancelBarricadePlacement()
     {
         DestroyBarricadePreview();
         inBarricadePlacementMode = false;
+    }
+    private void CancelTurretPlacement()
+    {
+        DestroyTurretPreview();
+        inTurretPlacementMode = false;
     }
     public void createBarricade()
     {
