@@ -15,10 +15,10 @@ public class TurretBullet : MonoBehaviour
         target = _target;
     }
 
-    // Update is called once per frame
+    // When a turret Instantiates a bullet, it will never miss (the bullets track the target)
     void Update()
     {
-        if (target == null) 
+        if (target == null)
         {
             Destroy(gameObject);
             return;
@@ -60,7 +60,7 @@ public class TurretBullet : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {
-            if(collider.tag == "Enemy")
+            if (collider.tag == "Enemy")
             {
                 // Apply Damage to (collider.transform)
             }
