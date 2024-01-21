@@ -24,6 +24,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
     [SerializeField] gunStats pistol;
     [SerializeField] gunStats rifle;
+    [SerializeField] gunStats shotgun;
     [SerializeField] TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
@@ -193,14 +194,14 @@ public class gameManager : MonoBehaviour
     }
     public void sellGunOne()
     {
-        if(gunList.Count >=1)
+        if (gunList.Count >= 1)
         {
             gunList.RemoveAt(0);
             updatePointCount(+250);
         }
-        if(gunList.Count == 0)
+        if (gunList.Count == 0)
         {
-           playerScript.showBoughtGun();
+            playerScript.showBoughtGun();
         }
         closeMenu();
     }
@@ -234,7 +235,7 @@ public class gameManager : MonoBehaviour
     {
         if (pointAmount >= 500)
         {
-            if(gunList.Count <= 2)
+            if(gunList.Count < 3)
             {
                 gunList.Add(pistol);
                 playerScript.showBoughtGun();
@@ -251,9 +252,26 @@ public class gameManager : MonoBehaviour
     {
         if (pointAmount >= 500)
         {
-            if (gunList.Count <= 2)
+            if (gunList.Count < 3)
             {
                 gunList.Add(rifle);
+                playerScript.showBoughtGun();
+                updatePointCount(-500);
+            }
+
+
+            closeMenu();
+
+
+        }
+    }
+    public void buyShotgun()
+    {
+        if (pointAmount >= 500)
+        {
+            if (gunList.Count < 3)
+            {
+                gunList.Add(shotgun);
                 playerScript.showBoughtGun();
                 updatePointCount(-500);
             }
@@ -481,7 +499,11 @@ public class gameManager : MonoBehaviour
                 {
                     advanceSpawner.numToSpawn = 250;
                 }
-                //StartCoroutine(youWin());
+               if(waveNumber == 15)
+               {
+                    StartCoroutine(youWin());
+               }
+              
             }
         }
     }

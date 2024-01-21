@@ -1234,6 +1234,12 @@ MonoBehaviour:
   - {fileID: 1081249112676795007}
   - {fileID: 4210408454950712445}
   damageCol: {fileID: 9061813967351105471}
+  dropItemsData:
+  - {fileID: 5721485697192135617, guid: b4daf67236d50174c9aad7cb8c7ab80f, type: 3}
+  - {fileID: 8202608675275409955, guid: 81a845f5f59030b4d99f2a22d25120eb, type: 3}
+  - {fileID: 288038361874021607, guid: b2425a50c184a734c87ec97a97bba58e, type: 3}
+  - {fileID: 1257659182048366157, guid: e7381bc56b1bd2e4890f4e7e08bc45ff, type: 3}
+  - {fileID: 6022628530674058994, guid: 9dbd6ed4138b78148b9f053f4cbca3b4, type: 3}
   HP: 5
   viewCone: 360
   targetFaceSpeed: 5
@@ -1242,6 +1248,9 @@ MonoBehaviour:
   zombiePointValue: 100
   animSpeedTrans: 8
   isRunner: 1
+  isJumper: 0
+  isWalker: 0
+  isBloater: 0
   attackRate: 0.25
   attackPos: {fileID: 0}
   mySpawner: {fileID: 0}

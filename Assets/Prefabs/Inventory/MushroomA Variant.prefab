@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455190, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 455190, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
       propertyPath: m_LocalScale.x
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455190, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.554017
+      value: 121.442444
       objectReference: {fileID: 0}
     - target: {fileID: 455190, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455190, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8822718
+      value: -122.95934
       objectReference: {fileID: 0}
     - target: {fileID: 455190, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -78,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 107900, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6820684526743879350}
+    - targetCorrespondingSourceObject: {fileID: 107900, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8202608675275409955}
   m_SourcePrefab: {fileID: 100100000, guid: 5aac7946de8bd854da36e8533a7662d6, type: 3}
 --- !u!1 &6148201078904746604 stripped
 GameObject:
@@ -118,3 +121,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.25
   m_Center: {x: -0.029965876, y: 1.95202, z: 0.032177564}
+--- !u!114 &8202608675275409955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6148201078904746604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf9b21268d70f14ca00d53a8ad124ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 4408c424f1c95f541b224e2a045b2cdb, type: 2}
+  dropChance: 1
+  remainingCount: 1
