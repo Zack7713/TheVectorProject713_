@@ -44825,6 +44825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5921517137141999674, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6174261479433211860, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_Sprite
       value: 
