@@ -39,6 +39,7 @@ public class spawnerAI : MonoBehaviour , IDamage
     float angleToPlayer;
     float stoppingDistOrig;
     public AdvanceSpawner mySpawner;
+    public spawnDoor myRunner;//test code to use the updated spawner door
 
     // Start is called before the first frame update
     void Start()
@@ -166,7 +167,9 @@ public class spawnerAI : MonoBehaviour , IDamage
         {
             
             Destroy(gameObject);
-            mySpawner.heyIDied();
+            //comment out mySpawner and add myRunner for test purposes
+            //mySpawner.heyIDied();
+            myRunner.zombiesKilled();
             gameManager.instance.updateKillCount(+1);
             gameManager.instance.updateGameGoal(-1);
             model.sharedMaterial.color = Color.white;

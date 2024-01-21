@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Gun - Pistol
   m_EditorClassIdentifier: 
   shootDamage: 2
-  shootRate: 0.2
+  shootRate: 0.1
   shootDist: 150
-  ammoCur: 297
+  ammoCur: 267
   ammoMax: 300
   model: {fileID: 5571641588984482722, guid: c303a18f1cbdd4156b139b9e5b35d6a9, type: 3}
   hitEffect: {fileID: 9086467017834978298, guid: a2080b313eea36241a6dc2e431f0fdad, type: 3}

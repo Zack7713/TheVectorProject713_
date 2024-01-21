@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 32
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.099
+  m_ReflectionIntensity: 0.258
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 981337227}
-  m_IndirectSpecularColor: {r: 0.019695235, g: 0.011821009, b: 0.018379383, a: 0.099}
+  m_IndirectSpecularColor: {r: 0.050407223, g: 0.030806268, b: 0.047413632, a: 0.258}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8334,6 +8334,10 @@ PrefabInstance:
     - target: {fileID: 662555071919248933, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800437197849536727, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.50000346
       objectReference: {fileID: 0}
     - target: {fileID: 5468805070071980301, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: Loop
@@ -38864,6 +38868,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 474226591}
     m_Modifications:
+    - target: {fileID: 336712758308120595, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
+      propertyPath: m_Name
+      value: Close Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 7844428337804794573, guid: cc910f8c45eab874d813ffed5b42186a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -44781,10 +44789,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 687404985801095683, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1823475408, guid: c1293e9da8c54c048a6412a177483416, type: 3}
     - target: {fileID: 2303270765821779984, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5249313706829320941, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1823475408, guid: c1293e9da8c54c048a6412a177483416, type: 3}
     - target: {fileID: 5712901462020745592, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -44803,12 +44819,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5712901462020745592, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_PreserveAspect
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5921517137141999674, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5921517137141999674, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174261479433211860, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1883592254, guid: c1293e9da8c54c048a6412a177483416, type: 3}
+    - target: {fileID: 6552669062580462959, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624735915974980269, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1823475408, guid: c1293e9da8c54c048a6412a177483416, type: 3}
+    - target: {fileID: 8223155498371889968, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1823475408, guid: c1293e9da8c54c048a6412a177483416, type: 3}
     - target: {fileID: 8852517672822421020, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -44895,7 +44931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9068989090277010866, guid: 0e9a9043a0f198d45b8e437faf797c0f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
