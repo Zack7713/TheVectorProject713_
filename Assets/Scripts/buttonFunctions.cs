@@ -85,5 +85,10 @@ public class buttonFunctions : MonoBehaviour
     {
         gameManager.instance.buyRifle();
     }
+    public void buyShotgunInShop()
+    {
+        gameManager.instance.buyShotgun();
+        
+    }
 }
 

@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434300, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 434300, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
       propertyPath: m_LocalScale.x
@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434300, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.018872
+      value: 124.21547
       objectReference: {fileID: 0}
     - target: {fileID: 434300, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434300, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6542706
+      value: -116.237595
       objectReference: {fileID: 0}
     - target: {fileID: 434300, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -78,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 103396, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8927162808296352390}
+    - targetCorrespondingSourceObject: {fileID: 103396, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6022628530674058994}
   m_SourcePrefab: {fileID: 100100000, guid: 186084f4422114743a15d2bc87d14c0a, type: 3}
 --- !u!1 &3259412067085354024 stripped
 GameObject:
@@ -118,3 +121,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 8f52d00246c0fa24dadcf84fe75280a9, type: 2}
+--- !u!114 &6022628530674058994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259412067085354024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf9b21268d70f14ca00d53a8ad124ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 8f52d00246c0fa24dadcf84fe75280a9, type: 2}
+  dropChance: 1
+  remainingCount: 1

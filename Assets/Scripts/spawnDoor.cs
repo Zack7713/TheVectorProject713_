@@ -69,7 +69,7 @@ public class spawnDoor : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenSpawns);
         int arrayPos = Random.Range(0, spawnPos.Length);
         GameObject objectClone = Instantiate(objectTOSpawn[Random.Range(0, objectTOSpawn.Length)], spawnPos[arrayPos].transform.position, spawnPos[arrayPos].transform.rotation);
-        objectClone.GetComponent<spawnerAI>().myRunner = this;
+        objectClone.GetComponent<zombieAI>().myRunner = this;
         spawnList.Add(objectClone);
         spawnCount++;
         isSpawning = false;

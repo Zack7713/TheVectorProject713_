@@ -296,8 +296,9 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void changeGun()
     {
-        if(gunList.Count == 0)
+        if (gunList == null || gunList.Count == 0)
         {
+            // Handle the case where gunList is null or empty
             shootDamage = 0;
             shootDist = 0;
             shootRate = 0;
@@ -307,16 +308,24 @@ public class playerController : MonoBehaviour, IDamage
             return;
         }
 
-        else
+        // Check if selectedGun is within a valid range
+        if (selectedGun < 0 || selectedGun >= gunList.Count)
         {
-
-            shootDamage = gunList[selectedGun].shootDamage;
-            shootDist = gunList[selectedGun].shootDist;
-            shootRate = gunList[selectedGun].shootRate;
-
-            gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
-            gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
-            isShooting = false;
+            // Handle the case where selectedGun is out of range
+            return;
         }
+
+        // Update properties based on the selected gun
+        shootDamage = gunList[selectedGun].shootDamage;
+        shootDist = gunList[selectedGun].shootDist;
+        shootRate = gunList[selectedGun].shootRate;
+
+        // Update gun model
+        gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
+        gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
+
+        isShooting = false;
     }
 }
+    
+

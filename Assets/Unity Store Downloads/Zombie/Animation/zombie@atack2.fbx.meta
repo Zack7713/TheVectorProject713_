@@ -1114,28 +1114,28 @@ ModelImporter:
       curves: []
       events:
       - time: 0.1826087
-        functionName: rightColOn
+        functionName: clawsColOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.26086956
-        functionName: rightColOff
+        functionName: clawsColOff
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.5043478
-        functionName: leftColOn
+        functionName: clawsColOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.67391306
-        functionName: leftColOff
+        functionName: clawsColOff
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

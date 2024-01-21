@@ -533,7 +533,7 @@ Transform:
   - {fileID: 949080488731207644}
   - {fileID: 1161702883118116583}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -89.999, z: 0}
 --- !u!114 &3116463176593962904
 MonoBehaviour:
@@ -551,16 +551,21 @@ MonoBehaviour:
   agent: {fileID: 569793965643487358}
   headPos: {fileID: 8996668534857739244}
   anim: {fileID: 7932560925523666523}
-  weaponCol: {fileID: 1361065633659708898}
+  clawsCol:
+  - {fileID: 2186470183534440968}
   damageCol: {fileID: 1227605236972632827}
   HP: 15
   viewCone: 180
   targetFaceSpeed: 5
   roamDist: 15
   roamPauseTime: 3
+  zombiePointValue: 250
   animSpeedTrans: 8
+  isRunner: 0
   attackRate: 0.5
   attackPos: {fileID: 7642706385344572563}
+  mySpawner: {fileID: 0}
+  myRunner: {fileID: 0}
 --- !u!95 &7932560925523666523
 Animator:
   serializedVersion: 5
@@ -2859,7 +2864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7642706385344572563}
   - component: {fileID: 1988994972507167625}
-  - component: {fileID: 1361065633659708898}
+  - component: {fileID: 2186470183534440968}
   m_Layer: 0
   m_Name: Zombie_RightHandMiddle2
   m_TagString: Untagged
@@ -2896,8 +2901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 3
---- !u!136 &1361065633659708898
-CapsuleCollider:
+--- !u!135 &2186470183534440968
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2914,11 +2919,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 0.5
-  m_Direction: 1
-  m_Center: {x: -0.06, y: 0.03, z: 0}
+  serializedVersion: 3
+  m_Radius: 0.225
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5069145091294959171
 GameObject:
   m_ObjectHideFlags: 0
