@@ -4478,6 +4478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4566025485117682762, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
+      propertyPath: sensitivity
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5842467315041371753, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13633,7 +13637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7050777840242499151, guid: 0e86c591402c9d449816321162f1c2a6, type: 3}
       propertyPath: numToSpawn
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7050777840242499151, guid: 0e86c591402c9d449816321162f1c2a6, type: 3}
       propertyPath: timeBetweenSpawns
@@ -21273,9 +21277,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1188393579}
     - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: turretPrefab
+      value: 
+      objectReference: {fileID: 4511172865093806249, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: advanceSpawner
       value: 
       objectReference: {fileID: 1210732237}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: barricadePrefab
+      value: 
+      objectReference: {fileID: 3012926726066774091, guid: 362014a29f868d54780aed1076ba8a93, type: 3}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: turretPreviewHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: turretPreviewPrefab
+      value: 
+      objectReference: {fileID: 4511172865093806249, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: barricadePreviewHeight
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
+      propertyPath: barricadePreviewPrefab
+      value: 
+      objectReference: {fileID: 3012926726066774091, guid: 362014a29f868d54780aed1076ba8a93, type: 3}
     - target: {fileID: 7637592948974733122, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: m_Name
       value: Hub
@@ -23504,19 +23532,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2892868423496038100, guid: 5e370161c60bf3b47a0a35a2ac5a19cf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.00000035762784
       objectReference: {fileID: 0}
     - target: {fileID: 2892868423496038100, guid: 5e370161c60bf3b47a0a35a2ac5a19cf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2892868423496038100, guid: 5e370161c60bf3b47a0a35a2ac5a19cf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2892868423496038100, guid: 5e370161c60bf3b47a0a35a2ac5a19cf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2892868423496038100, guid: 5e370161c60bf3b47a0a35a2ac5a19cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -23524,7 +23552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2892868423496038100, guid: 5e370161c60bf3b47a0a35a2ac5a19cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2892868423496038100, guid: 5e370161c60bf3b47a0a35a2ac5a19cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

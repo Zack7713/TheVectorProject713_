@@ -6,7 +6,9 @@ public class TurretBullet : MonoBehaviour
 
     [SerializeField] float speed;
 
-    [SerializeField] float explosionRadius;
+     [SerializeField] int bulletDamage = 1;
+
+    [SerializeField] float explosionRadius = 0;
 
     [SerializeField] GameObject impactEffect;
 
@@ -49,7 +51,12 @@ public class TurretBullet : MonoBehaviour
         }
         else
         {
-            //Damage the enemy here
+            IDamage dmg = target.GetComponent<IDamage>();
+
+            if (target.transform != transform && dmg != null)
+            {
+                dmg.takeDamage(bulletDamage);
+            } //Damage the enemy here
         }
 
         Destroy(gameObject); // Destroying the bullet prefab
@@ -62,7 +69,12 @@ public class TurretBullet : MonoBehaviour
         {
             if (collider.tag == "Enemy")
             {
-                // Apply Damage to (collider.transform)
+                IDamage dmg = target.GetComponent<IDamage>();
+
+                if (target.transform != transform && dmg != null)
+                {
+                    dmg.takeDamage(bulletDamage);
+                }   // Apply Damage to (collider.transform)
             }
         }
     }

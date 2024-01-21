@@ -39,12 +39,12 @@ public class gameManager : MonoBehaviour
 
     public GameObject barricadePrefab; // Prefab of the barricade
     public GameObject barricadePreviewPrefab; // Prefab for the preview
-    public float barricadePreviewHeight = 1f; // Height offset for the preview
+    public float barricadePreviewHeight = 0f; // Height offset for the preview
     private GameObject barricadePreview; // Instance of the preview
 
     public GameObject turretPrefab; // Prefab of the barricade
     public GameObject turretPreviewPrefab; // Prefab for the preview
-    public float turretPreviewHeight = 1f; // Height offset for the preview
+    public float turretPreviewHeight = 0f; // Height offset for the preview
     private GameObject turretPreview; // Instance of the preview
 
     public bool inBarricadePlacementMode = false;
@@ -84,9 +84,13 @@ public class gameManager : MonoBehaviour
 
         if (Input.GetButtonDown("Utility") && menuActive == null)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
             utilityMenu();
             menuActive = menuUtil;
             menuActive.SetActive(menuUtil);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
 
         }
 
@@ -359,7 +363,7 @@ public class gameManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Vector3 spawnPosition = hit.point + hit.normal * barricadePreviewHeight;
+                Vector3 spawnPosition = hit.point + hit.normal ;
                 barricadePreview.transform.position = spawnPosition;
 
                 Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
@@ -430,41 +434,7 @@ public class gameManager : MonoBehaviour
         DestroyTurretPreview();
         inTurretPlacementMode = false;
     }
-    public void createBarricade()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        menuActive.SetActive(false);
-        menuActive = null;
-        
-        // Raycast from the center of the screen to determine the position and rotation
-        Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
-        RaycastHit hit;
 
-        if (pointAmount >= 500)
-        {
-            updatePointCount(-500);
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                // Use the player's forward direction to determine the rotation
-                Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
-
-                // Calculate spawn position based on hit point and normal
-                Vector3 spawnPosition = hit.point + hit.normal * barricade.GetComponent<Renderer>().bounds.extents.y;
-
-                Instantiate(barricade, spawnPosition, rotation);
-            }
-            else
-            {
-                // If no hit, spawn the barrier in a default direction 
-                Vector3 spawnPosition = ray.origin + ray.direction * 5f;
-                spawnPosition.y += 5f;
-
-                Instantiate(barricade, spawnPosition, player.transform.rotation);
-            }
-        }
-    }
 
     public void statePaused()
     {
@@ -499,7 +469,7 @@ public class gameManager : MonoBehaviour
                 {
                     advanceSpawner.numToSpawn = 250;
                 }
-               if(waveNumber == 15)
+               if(waveNumber == 10)
                {
                     StartCoroutine(youWin());
                }
