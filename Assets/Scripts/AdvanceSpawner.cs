@@ -44,7 +44,7 @@ public class AdvanceSpawner : MonoBehaviour
         int arrayPos = Random.Range(0, spawnPos.Length);
         GameObject objectClone = Instantiate(objectTOSpawn[Random.Range(0,objectTOSpawn.Length)], spawnPos[arrayPos].transform.position, spawnPos[arrayPos].transform.rotation);
 
-        objectClone.GetComponent<spawnerAI>().mySpawner = this;
+        objectClone.GetComponent<zombieAI>().mySpawner = this;//change the component from spawnerAI to zombieAI because the zombie AI will be use for most enemy types
         spawnList.Add(objectClone);
         spawnCount++;
 

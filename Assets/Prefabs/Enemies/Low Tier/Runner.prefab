@@ -1184,7 +1184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2514043324383046909}
-  - component: {fileID: 2496051034736696887}
+  - component: {fileID: 8209976383117579828}
   - component: {fileID: 7825349806154407011}
   - component: {fileID: 6194110056610492809}
   - component: {fileID: 9061813967351105471}
@@ -1212,9 +1212,9 @@ Transform:
   - {fileID: 1364205990205171768}
   - {fileID: 1178199508298802159}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -89.999, z: 0}
---- !u!114 &2496051034736696887
+--- !u!114 &8209976383117579828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1223,24 +1223,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2190132148094149061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ed16028166f7f41967dc173e50d689, type: 3}
+  m_Script: {fileID: 11500000, guid: dc0b58dfac93b464db25a9e7cfd7dfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 1211599908597251772}
   agent: {fileID: 6194110056610492809}
   headPos: {fileID: 189499789531443281}
   anim: {fileID: 7825349806154407011}
-  leftClawCol: {fileID: 6400523786961734898}
-  rightClawCol: {fileID: 1249441556799996035}
+  clawsCol:
+  - {fileID: 1081249112676795007}
+  - {fileID: 4210408454950712445}
   damageCol: {fileID: 9061813967351105471}
   HP: 5
   viewCone: 360
   targetFaceSpeed: 5
   roamDist: 10
   roamPauseTime: 3
+  zombiePointValue: 100
   animSpeedTrans: 8
+  isRunner: 1
   attackRate: 0.25
-  attackPos: {fileID: 6023736676385252773}
+  attackPos: {fileID: 0}
   mySpawner: {fileID: 0}
   myRunner: {fileID: 0}
 --- !u!95 &7825349806154407011
@@ -1328,7 +1331,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2251368727810220451
 GameObject:
@@ -1435,7 +1438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6023736676385252773}
   - component: {fileID: 3336694013725361545}
-  - component: {fileID: 6400523786961734898}
+  - component: {fileID: 1081249112676795007}
   m_Layer: 0
   m_Name: Zombie_LeftHandMiddle2
   m_TagString: Untagged
@@ -1472,8 +1475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
---- !u!136 &6400523786961734898
-CapsuleCollider:
+--- !u!135 &1081249112676795007
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1490,11 +1493,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 0.5
-  m_Direction: 1
-  m_Center: {x: 0.06, y: -0.05, z: 0}
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: 0.05, y: -0.05, z: 0}
 --- !u!1 &2641809331283008715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,7 +3078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3719829126899373853}
   - component: {fileID: 7522533481713239391}
-  - component: {fileID: 1249441556799996035}
+  - component: {fileID: 4210408454950712445}
   m_Layer: 0
   m_Name: Zombie_RightHandMiddle2
   m_TagString: Untagged
@@ -3114,8 +3115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
---- !u!136 &1249441556799996035
-CapsuleCollider:
+--- !u!135 &4210408454950712445
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3132,11 +3133,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 0.5
-  m_Direction: 1
-  m_Center: {x: -0.06, y: -0.05, z: 0}
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: -0.05, y: -0.05, z: 0}
 --- !u!1 &5304216390839351776
 GameObject:
   m_ObjectHideFlags: 0

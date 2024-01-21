@@ -11,7 +11,7 @@ public class zombieAI : MonoBehaviour, IDamage
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Transform headPos;
     [SerializeField] Animator anim;
-    [SerializeField] Collider weaponCol;
+    [SerializeField] Collider[] clawsCol;
     [SerializeField] Collider damageCol;
 
     [Header("----- Enemy Stats-----")]
@@ -20,8 +20,11 @@ public class zombieAI : MonoBehaviour, IDamage
     [SerializeField] int targetFaceSpeed;
     [SerializeField] int roamDist;
     [SerializeField] int roamPauseTime;
+    [SerializeField] int zombiePointValue;
     [SerializeField] float animSpeedTrans;
-
+    [SerializeField] bool isRunner;
+    [SerializeField] bool isJumper;
+    [SerializeField] bool isWalker;
 
     [Header("----- Attacks -----")]
     [SerializeField] float attackRate;
@@ -39,11 +42,13 @@ public class zombieAI : MonoBehaviour, IDamage
     float angleToPlayer;
     float stoppingDistOrig;
     float distanceToPlayer;
+    public AdvanceSpawner mySpawner;
+    public spawnDoor myRunner;//test code to use the updated spawner door
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.instance.updateGameGoal(1);
+        //gameManager.instance.updateGameGoal(1); //our game objctive is been updated in the game manager with the advance spawnerds
         startingPos = transform.position;
         stoppingDistOrig = agent.stoppingDistance;
     }
@@ -55,6 +60,11 @@ public class zombieAI : MonoBehaviour, IDamage
         {
             float animSpeed = agent.velocity.normalized.magnitude;
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), animSpeed, Time.deltaTime * animSpeedTrans));
+            //adding the bool check for other types of zombies
+            if(isRunner)
+            {
+                agent.SetDestination(gameManager.instance.player.transform.position);
+            }
             if (playerInRange && !canSeePlayer())
             {
                 StartCoroutine(roam());
@@ -88,15 +98,28 @@ public class zombieAI : MonoBehaviour, IDamage
         playerDir = gameManager.instance.player.transform.position - headPos.position;
         angleToPlayer = Vector3.Angle(playerDir, transform.forward);
         Debug.DrawRay(headPos.position, playerDir);
-        Debug.Log(angleToPlayer);
+        //Debug.Log(angleToPlayer);
         RaycastHit hit;
-
         if (Physics.Raycast(headPos.position, playerDir, out hit))
         {
             if (hit.collider.CompareTag("Player") && angleToPlayer <= viewCone)
             {
                 distanceToPlayer = Vector3.Distance(transform.position, gameManager.instance.player.transform.position);
-
+                //adding another check in the can see player for the different zombie types, since the following code affects the destination and movement of the zombie when getting the player enters their sphere collider
+                if(isRunner)
+                {
+                    agent.SetDestination(gameManager.instance.player.transform.position);
+                    if (!isAttacking)
+                    {
+                        StartCoroutine(attack());
+                    }
+                    if (agent.remainingDistance < agent.stoppingDistance)
+                    {
+                        faceTarget();
+                    }
+                    agent.stoppingDistance = stoppingDistOrig;
+                    return true;
+                }
                 if (distanceToPlayer <= 3f)
                 {
                     StartCoroutine(attack());
@@ -153,13 +176,25 @@ public class zombieAI : MonoBehaviour, IDamage
         yield return new WaitForSeconds(attackRate);
         isAttacking = false;
     }
-    public void weaponColOn()
+    public void clawsColOn()
     {
-        weaponCol.enabled = true;
+        for(int i = 0; i < clawsCol.Length; i++)
+        {
+            if (clawsCol[i] != null)
+            {
+                clawsCol[i].enabled = true;
+            }
+        }
     }
-    public void weaponColOff()
+    public void clawsColOff()
     {
-        weaponCol.enabled = false;
+        for (int i = 0; i < clawsCol.Length; i++)
+        {
+            if (clawsCol[i] != null)
+            {
+                clawsCol[i].enabled = false;
+            }
+        }
     }
     public void takeDamage(int amount)
     {
@@ -170,10 +205,13 @@ public class zombieAI : MonoBehaviour, IDamage
         if (HP <= 0)
         {
             Destroy(gameObject);
+            //comment out mySpawner and add myRunner for test purposes
+            mySpawner.heyIDied();
+            //myRunner.zombiesKilled();
             gameManager.instance.updateKillCount(+1);
             gameManager.instance.updateGameGoal(-1);
             model.sharedMaterial.color = Color.white;
-            gameManager.instance.updatePointCount(+100);
+            gameManager.instance.updatePointCount(+zombiePointValue);
         }
         else
         {
