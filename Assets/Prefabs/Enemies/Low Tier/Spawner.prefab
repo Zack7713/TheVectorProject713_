@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 4844830354797144528}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,6 +454,8 @@ MonoBehaviour:
   animSpeedTrans: 8
   attackRate: 0.25
   attackPos: {fileID: 7173307802145320284}
+  mySpawner: {fileID: 0}
+  myRunner: {fileID: 0}
 --- !u!95 &6764271779134059935
 Animator:
   serializedVersion: 5
