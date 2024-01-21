@@ -25,6 +25,7 @@ public class zombieAI : MonoBehaviour, IDamage
     [SerializeField] bool isRunner;
     [SerializeField] bool isJumper;
     [SerializeField] bool isWalker;
+    [SerializeField] bool isBloater;
 
     [Header("----- Attacks -----")]
     [SerializeField] float attackRate;
