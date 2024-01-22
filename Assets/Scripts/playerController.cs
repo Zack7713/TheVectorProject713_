@@ -16,6 +16,8 @@ public class playerController : MonoBehaviour, IDamage
     [Range(-10, -40)][SerializeField] private float gravityValue;
     [Range(1, 3)][SerializeField] int jumpMax;
     [Range(1.5f, 3)][SerializeField] float sprintMod;
+    [Range(.5f, 1)][SerializeField] float crouchMod;
+    [Range(.25f, .75f)][SerializeField] float proneMod;
     [SerializeField] List<inventoryItems> inventoryList = new List<inventoryItems>();
     [Header("----- Weapon -----")]
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
@@ -41,10 +43,13 @@ public class playerController : MonoBehaviour, IDamage
     bool isInteracting;
     bool isKnifing;
     float animSpeed;
-    
+    private bool isCrouching;
+    private float originalPlayerSpeed;
+    private bool isProne;
+
     private void Start()
     {
-
+        originalPlayerSpeed = playerSpeed;
         HPOrig = HP;
         respawnPlayer();
         animPlayer = GetComponent<Animator>();
@@ -105,8 +110,11 @@ public class playerController : MonoBehaviour, IDamage
     void movement()
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.red);
-
+        //prone();
+        crouch();
         sprint();
+
+       
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && move.normalized.magnitude > 0.3f && !isPlayingSteps)
@@ -154,21 +162,37 @@ public class playerController : MonoBehaviour, IDamage
     {
         if (gunList[selectedGun].ammoCur > 0)
         {
-
-
-            gunList[selectedGun].ammoCur--;
+            gunList[selectedGun].ammoCur--; // Subtract pellets from ammo count
             aud.PlayOneShot(gunList[selectedGun].shootSound, gunList[selectedGun].shootSoundVolume);
             isShooting = true;
 
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
-            {
-                Instantiate(gunList[selectedGun].hitEffect, hit.point, transform.rotation);
-                IDamage dmg = hit.collider.GetComponent<IDamage>();
+            // Retrieve shootSpread from gunStats class
+            float currentSpread = gunList[selectedGun].shootSpread;
 
-                if (hit.transform != transform && dmg != null)
+            for (int pellet = 0; pellet < gunList[selectedGun].gunPellets; pellet++)
+            {
+                // Calculate random spread within the specified radius with a fixed angle
+                float spreadAngle = Random.Range(0f, 360f);
+
+                // Convert spread angle to radians
+                float spreadRadians = spreadAngle * Mathf.PI / 180f;
+
+                Vector2 randomSpread = new Vector2(Mathf.Cos(spreadRadians), Mathf.Sin(spreadRadians)) * currentSpread;
+
+                // Modify raycast origin with random spread
+                Vector3 viewportPoint = new Vector2(0.5f + randomSpread.x, 0.5f + randomSpread.y);
+                Ray ray = Camera.main.ViewportPointToRay(viewportPoint);
+
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, shootDist))
                 {
-                    dmg.takeDamage(shootDamage);
+                    Instantiate(gunList[selectedGun].hitEffect, hit.point, transform.rotation);
+                    IDamage dmg = hit.collider.GetComponent<IDamage>();
+
+                    if (hit.transform != transform && dmg != null)
+                    {
+                        dmg.takeDamage(shootDamage);
+                    }
                 }
             }
 
@@ -183,16 +207,55 @@ public class playerController : MonoBehaviour, IDamage
         yield return new WaitForSeconds(knifeColSpeed); 
         isKnifing = false;
     }
+    void crouch()
+    {
+
+        if (Input.GetButtonDown("Crouch") && !isSprinting)
+        {
+            // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - .5f, Camera.main.transform.position.z);
+
+            controller.height = 1.5f;
+            playerSpeed *= crouchMod;
+            isCrouching = true;
+
+        }
+        else if (Input.GetButtonUp("Crouch") && !isSprinting)
+        {
+            // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + .5f, Camera.main.transform.position.z);
+            controller.height = 2;
+            playerSpeed = originalPlayerSpeed;
+            isCrouching = false;
+        }
+    }
+    //void prone()
+    //{
+
+    //    if (Input.GetButtonDown("Prone") && !isSprinting && !isProne)
+    //    {
+    //        // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - .1f, Camera.main.transform.position.z);
+    //        controller.height = 1f;
+    //        playerSpeed *= proneMod;
+    //        isProne = true;
+    //    }
+    //    else if (Input.GetButtonUp("Prone") && !isSprinting && !isProne)
+    //    {
+    //        // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + .1f, Camera.main.transform.position.z);
+    //        controller.height = 3;
+    //        playerSpeed = originalPlayerSpeed;
+    //        isProne = false;
+    //    }
+    //}
     void sprint()
     {
-        if (Input.GetButtonDown("Sprint"))
+
+        if (Input.GetButtonDown("Sprint") && !isCrouching && !isProne)
         {
             playerSpeed *= sprintMod;
             isSprinting = true;
         }
-        else if (Input.GetButtonUp("Sprint"))
+        else if (Input.GetButtonUp("Sprint") && !isCrouching && !isProne)
         {
-            playerSpeed /= sprintMod;
+            playerSpeed = originalPlayerSpeed;
             isSprinting = false;
         }
 
