@@ -398,8 +398,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6998058205575383572}
-  - component: {fileID: 3954365680395977836}
   - component: {fileID: 6764271779134059935}
+  - component: {fileID: 1988666683716281254}
   - component: {fileID: 3053521008654996851}
   - component: {fileID: 1518007346193274923}
   - component: {fileID: 4844830354797144528}
@@ -425,37 +425,8 @@ Transform:
   - {fileID: 8834403759618704443}
   - {fileID: 7415152658277596588}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &3954365680395977836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602569486832925070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ed16028166f7f41967dc173e50d689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 3966659211475395351}
-  agent: {fileID: 4844830354797144528}
-  headPos: {fileID: 51781423864671404}
-  anim: {fileID: 6764271779134059935}
-  leftClawCol: {fileID: 664714612577107413}
-  rightClawCol: {fileID: 2586279789502609953}
-  damageCol: {fileID: 3053521008654996851}
-  HP: 10
-  viewCone: 180
-  targetFaceSpeed: 5
-  roamDist: 10
-  roamPauseTime: 2
-  animSpeedTrans: 8
-  attackRate: 0.25
-  attackPos: {fileID: 7173307802145320284}
-  mySpawner: {fileID: 0}
-  myRunner: {fileID: 0}
 --- !u!95 &6764271779134059935
 Animator:
   serializedVersion: 5
@@ -477,6 +448,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1988666683716281254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602569486832925070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0b58dfac93b464db25a9e7cfd7dfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 3966659211475395351}
+  agent: {fileID: 4844830354797144528}
+  headPos: {fileID: 51781423864671404}
+  anim: {fileID: 6764271779134059935}
+  clawsCol: []
+  damageCol: {fileID: 3053521008654996851}
+  HP: 5
+  viewCone: 90
+  targetFaceSpeed: 5
+  roamDist: 15
+  roamPauseTime: 3
+  zombiePointValue: 75
+  animSpeedTrans: 8
+  isRunner: 0
+  isJumper: 0
+  isWalker: 0
+  isBloater: 0
+  attackRate: 1
+  attackPos: {fileID: 0}
+  mySpawner: {fileID: 0}
+  myRunner: {fileID: 0}
 --- !u!136 &3053521008654996851
 CapsuleCollider:
   m_ObjectHideFlags: 0
