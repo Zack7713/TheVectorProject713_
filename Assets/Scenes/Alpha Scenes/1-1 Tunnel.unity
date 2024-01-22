@@ -21176,10 +21176,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1388513927094086883, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2418676596036280284, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -21277,37 +21273,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1188393579}
     - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: turretPrefab
-      value: 
-      objectReference: {fileID: 4511172865093806249, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
-    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
       propertyPath: advanceSpawner
       value: 
       objectReference: {fileID: 1210732237}
-    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: barricadePrefab
-      value: 
-      objectReference: {fileID: 3012926726066774091, guid: 362014a29f868d54780aed1076ba8a93, type: 3}
-    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: turretPreviewHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: turretPreviewPrefab
-      value: 
-      objectReference: {fileID: 4511172865093806249, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
-    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: barricadePreviewHeight
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7195530307889781838, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: barricadePreviewPrefab
-      value: 
-      objectReference: {fileID: 3012926726066774091, guid: 362014a29f868d54780aed1076ba8a93, type: 3}
-    - target: {fileID: 7637592948974733122, guid: 0c4442c344d587d439879c5bc74ceddf, type: 3}
-      propertyPath: m_Name
-      value: Hub
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
