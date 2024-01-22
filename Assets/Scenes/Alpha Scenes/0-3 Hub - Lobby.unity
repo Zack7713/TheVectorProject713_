@@ -19691,6 +19691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3712169019552215491, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5842467315041371753, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -19738,6 +19742,14 @@ PrefabInstance:
     - target: {fileID: 9219844609002159002, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
       propertyPath: jumpMax
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219844609002159002, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
+      propertyPath: proneMod
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219844609002159002, guid: d625da9891b20f24a8de33dc782aa6c7, type: 3}
+      propertyPath: crouchMod
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27734,6 +27746,7 @@ MonoBehaviour:
   gunList: []
   pistol: {fileID: 0}
   rifle: {fileID: 0}
+  shotgun: {fileID: 0}
   enemyCountText: {fileID: 7856726530634891690}
   killCountText: {fileID: 199370794345600373}
   pointAmountText: {fileID: 760472047778978433}
@@ -27745,6 +27758,14 @@ MonoBehaviour:
   runnerSpawnPos: {fileID: 0}
   playerDamageScreen: {fileID: 8022042044648712377}
   barricade: {fileID: 5976923833152098247, guid: 9f6b7da21d8c3f746b88cbab3cd82619, type: 3}
+  barricadePrefab: {fileID: 0}
+  barricadePreviewPrefab: {fileID: 0}
+  barricadePreviewHeight: 0
+  turretPrefab: {fileID: 0}
+  turretPreviewPrefab: {fileID: 0}
+  turretPreviewHeight: 0
+  inBarricadePlacementMode: 0
+  inTurretPlacementMode: 0
   isPaused: 0
   inMenu: 0
   spawnRate: 1

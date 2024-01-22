@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a85b6266a43a249986fed00b8915bb, type: 3}
   m_Name: Gun - Shotgun
   m_EditorClassIdentifier: 
-  shootDamage: 8
+  shootDamage: 2
   shootRate: 1
+  shootSpread: 0.03
   shootDist: 45
-  ammoCur: 99999
-  ammoMax: 64
+  gunPellets: 8
+  ammoCur: 9999
+  ammoMax: 9999
   model: {fileID: 5494625650325380441, guid: 944f765b84e4c4012876d61f4dfc7b5a, type: 3}
   hitEffect: {fileID: 9086467017834978298, guid: a2080b313eea36241a6dc2e431f0fdad, type: 3}
   shootSound: {fileID: 8300000, guid: 26bdab847b1e2794cb61ab718e1bac76, type: 3}
