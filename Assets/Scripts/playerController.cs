@@ -47,12 +47,18 @@ public class playerController : MonoBehaviour, IDamage
     private float originalPlayerSpeed;
     private bool isProne;
 
+
+    private gameManager gameManagerInstance;
+
     private void Start()
     {
         originalPlayerSpeed = playerSpeed;
         HPOrig = HP;
         respawnPlayer();
         animPlayer = GetComponent<Animator>();
+
+
+        gameManagerInstance = gameManager.instance;
     }
 
     void Update()
