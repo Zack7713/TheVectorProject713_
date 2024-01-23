@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -311,6 +312,11 @@ public class gameManager : MonoBehaviour
         {
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
+         
+        }
+        else if(inTurretPlacementMode)
+        {
+            DestroyTurretPreview();
             inTurretPlacementMode = false;
         }
         // Other closeUtilityMenu logic...
@@ -322,6 +328,7 @@ public class gameManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         inBarricadePlacementMode = true;
+
        
     }
     public void CreateBarricadePreview()
@@ -363,9 +370,11 @@ public class gameManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Vector3 spawnPosition = hit.point + hit.normal ;
-                barricadePreview.transform.position = spawnPosition;
+         
+                Vector3 spawnPosition = hit.point + hit.normal * barricadePreviewHeight;
 
+                barricadePreview.transform.position = spawnPosition;
+               
                 Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
                 barricadePreview.transform.rotation = rotation;
             }
@@ -379,6 +388,7 @@ public class gameManager : MonoBehaviour
             }
         }
     }
+    
     private void UpdateTurretPreview()
     {
         if (turretPreview != null)
@@ -388,8 +398,10 @@ public class gameManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Vector3 spawnPosition = hit.point + hit.normal * barricadePreviewHeight;
+                Vector3 spawnPosition = hit.point + hit.normal * turretPreviewHeight;
+
                 turretPreview.transform.position = spawnPosition;
+          
 
                 Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
                 turretPreview.transform.rotation = rotation;
@@ -397,7 +409,7 @@ public class gameManager : MonoBehaviour
             else
             {
                 Vector3 spawnPosition = ray.origin + ray.direction * 5f;
-                spawnPosition.y += barricadePreviewHeight;
+                spawnPosition.y += turretPreviewHeight;
                 turretPreview.transform.position = spawnPosition;
 
                 turretPreview.transform.rotation = player.transform.rotation;
@@ -409,6 +421,7 @@ public class gameManager : MonoBehaviour
         if (barricadePreview != null)
         {
             // Perform the actual instantiation of the barricade
+          
             Instantiate(barricadePrefab, barricadePreview.transform.position, barricadePreview.transform.rotation);
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
@@ -514,7 +527,7 @@ public class gameManager : MonoBehaviour
         menuActive = menuLose;
         menuActive.SetActive(true);
     }
-
+}
     //IEnumerator spawnRunnerEnemies()
     //{
     //    playerDistance = Vector3.Distance(player.transform.position, runnerSpawnPos.transform.position);
@@ -555,5 +568,5 @@ public class gameManager : MonoBehaviour
     //    }
 
     //}
-}
+
 
