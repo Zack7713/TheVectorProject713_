@@ -47,10 +47,15 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.CreateBarricadePreview();
       
     }
-    public void spawnturret()
+    public void spawnTurret()
     {
         gameManager.instance.inTurretPlacementMode = true;
         gameManager.instance.CreateTurretPreview();
+    }
+    public void spawnStandardTurret()
+    {
+        gameManager.instance.inTurretStandardPlacementMode = true;
+        gameManager.instance.CreateStandardTurretPreview();
     }
     public void closeUtilityMenu()
     {

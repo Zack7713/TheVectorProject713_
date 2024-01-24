@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,8 +48,14 @@ public class gameManager : MonoBehaviour
     public float turretPreviewHeight = 0f; // Height offset for the preview
     private GameObject turretPreview; // Instance of the preview
 
+    public GameObject turretStandardPrefab; // Prefab of the barricade
+    public GameObject turretStandardPreviewPrefab; // Prefab for the preview
+    public float turretStandardPreviewHeight = 0f; // Height offset for the preview
+    private GameObject turretStandardPreview; // Instance of the preview
+
     public bool inBarricadePlacementMode = false;
     public bool inTurretPlacementMode = false;
+    public bool inTurretStandardPlacementMode = false;
 
     float playerDistance;
     public bool isPaused;
@@ -86,11 +93,11 @@ public class gameManager : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
+            statePaused();
             utilityMenu();
             menuActive = menuUtil;
             menuActive.SetActive(menuUtil);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+
 
         }
 
@@ -136,6 +143,20 @@ public class gameManager : MonoBehaviour
             else if (Input.GetMouseButtonDown(1)) // Right mouse button for cancellation
             {
                 CancelTurretPlacement();
+            }
+        }
+        if (inTurretStandardPlacementMode)
+        {
+            UpdateStandardTurretPreview();
+
+            // Check for confirmation or cancel input (e.g., buttons or keys)
+            if (Input.GetMouseButtonDown(0)) // Left mouse button for confirmation
+            {
+                ConfirmStandardTurretPlacement();
+            }
+            else if (Input.GetMouseButtonDown(1)) // Right mouse button for cancellation
+            {
+                CancelStandardTurretPlacement();
             }
         }
         playerScript.getGunList(gunList);
@@ -311,17 +332,32 @@ public class gameManager : MonoBehaviour
         {
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
+         
+        }
+        else if(inTurretPlacementMode)
+        {
+            DestroyTurretPreview();
             inTurretPlacementMode = false;
         }
-        // Other closeUtilityMenu logic...
-        menuActive.SetActive(false);
-        menuActive = null;
+        else if (inTurretStandardPlacementMode)
+        {
+            DestroyTurretPreview();
+            inTurretStandardPlacementMode = false;
+        }
+        stateUnpaused();
+        if(menuActive == true)
+        {
+            menuActive.SetActive(false);
+            menuActive = null;
+        }
+
     }
     public void utilityMenu()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         inBarricadePlacementMode = true;
+
        
     }
     public void CreateBarricadePreview()
@@ -331,6 +367,7 @@ public class gameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         barricadePreview = Instantiate(barricadePreviewPrefab);
+        stateUnpaused();
     }
     public void CreateTurretPreview()
     {
@@ -339,6 +376,16 @@ public class gameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         turretPreview = Instantiate(turretPreviewPrefab);
+        stateUnpaused();
+    }
+    public void CreateStandardTurretPreview()
+    {
+        menuActive = null;
+        menuUtil.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        turretStandardPreview = Instantiate(turretStandardPreviewPrefab);
+        stateUnpaused();
     }
     public void DestroyBarricadePreview()
     {
@@ -354,6 +401,13 @@ public class gameManager : MonoBehaviour
             Destroy(turretPreview);
         }
     }
+    public void DestroyStandardTurretPreview()
+    {
+        if (turretStandardPreview != null)
+        {
+            Destroy(turretStandardPreview);
+        }
+    }
     private void UpdateBarricadePreview()
     {
         if (barricadePreview != null)
@@ -363,9 +417,11 @@ public class gameManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Vector3 spawnPosition = hit.point + hit.normal ;
-                barricadePreview.transform.position = spawnPosition;
+         
+                Vector3 spawnPosition = hit.point + hit.normal * barricadePreviewHeight;
 
+                barricadePreview.transform.position = spawnPosition;
+               
                 Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
                 barricadePreview.transform.rotation = rotation;
             }
@@ -379,6 +435,7 @@ public class gameManager : MonoBehaviour
             }
         }
     }
+    
     private void UpdateTurretPreview()
     {
         if (turretPreview != null)
@@ -388,8 +445,10 @@ public class gameManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Vector3 spawnPosition = hit.point + hit.normal * barricadePreviewHeight;
+                Vector3 spawnPosition = hit.point + hit.normal * turretPreviewHeight;
+
                 turretPreview.transform.position = spawnPosition;
+          
 
                 Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
                 turretPreview.transform.rotation = rotation;
@@ -397,10 +456,37 @@ public class gameManager : MonoBehaviour
             else
             {
                 Vector3 spawnPosition = ray.origin + ray.direction * 5f;
-                spawnPosition.y += barricadePreviewHeight;
+                spawnPosition.y += turretPreviewHeight;
                 turretPreview.transform.position = spawnPosition;
 
                 turretPreview.transform.rotation = player.transform.rotation;
+            }
+        }
+    }
+    private void UpdateStandardTurretPreview()
+    {
+        if (turretStandardPreview != null)
+        {
+            Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 spawnPosition = hit.point + hit.normal * turretStandardPreviewHeight;
+
+                turretStandardPreview.transform.position = spawnPosition;
+
+
+                Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
+                turretStandardPreview.transform.rotation = rotation;
+            }
+            else
+            {
+                Vector3 spawnPosition = ray.origin + ray.direction * 5f;
+                spawnPosition.y += turretStandardPreviewHeight;
+                turretStandardPreview.transform.position = spawnPosition;
+
+                turretStandardPreview.transform.rotation = player.transform.rotation;
             }
         }
     }
@@ -409,6 +495,7 @@ public class gameManager : MonoBehaviour
         if (barricadePreview != null)
         {
             // Perform the actual instantiation of the barricade
+          
             Instantiate(barricadePrefab, barricadePreview.transform.position, barricadePreview.transform.rotation);
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
@@ -424,6 +511,16 @@ public class gameManager : MonoBehaviour
             inTurretPlacementMode = false;
         }
     }
+    private void ConfirmStandardTurretPlacement()
+    {
+        if (turretStandardPreview != null)
+        {
+            // Perform the actual instantiation of the barricade
+            Instantiate(turretStandardPrefab, turretStandardPreview.transform.position, turretStandardPreview.transform.rotation);
+            DestroyTurretPreview();
+            inTurretStandardPlacementMode = false;
+        }
+    }
     private void CancelBarricadePlacement()
     {
         DestroyBarricadePreview();
@@ -435,7 +532,11 @@ public class gameManager : MonoBehaviour
         inTurretPlacementMode = false;
     }
 
-
+    private void CancelStandardTurretPlacement()
+    {
+        DestroyTurretPreview();
+        inTurretStandardPlacementMode = false;
+    }
     public void statePaused()
     {
         isPaused = !isPaused;
@@ -450,8 +551,12 @@ public class gameManager : MonoBehaviour
         Time.timeScale = timeScaleOriginal;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        menuActive.SetActive(false);
-        menuActive = null;
+        if(menuActive == true)
+        {
+            menuActive.SetActive(false);
+            menuActive = null;
+        }
+ 
     }
 
     public void updateGameGoal(int amount)
@@ -514,7 +619,7 @@ public class gameManager : MonoBehaviour
         menuActive = menuLose;
         menuActive.SetActive(true);
     }
-
+}
     //IEnumerator spawnRunnerEnemies()
     //{
     //    playerDistance = Vector3.Distance(player.transform.position, runnerSpawnPos.transform.position);
@@ -555,5 +660,5 @@ public class gameManager : MonoBehaviour
     //    }
 
     //}
-}
+
 
