@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha Scenes/2-1 City.unity
     guid: bf6d33d34c5a1704b8ad70c200d3e2fc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jesse Adams/Scenes/3-1 Studio (Pre-Prototype).unity
     guid: cc483489a198a624892cd5381b5e00fb
   m_configObjects: {}
