@@ -3,11 +3,23 @@ using UnityEngine;
 
 public class PlayerLoader : MonoBehaviour
 {
-    public List<gunStats> gunList = new List<gunStats>();
-    public int pointAmount;
+    public static PlayerLoader instance;
+
+    // Variables to store persistent data
+    public int points;
+    public List<string> acquiredGuns; // Store gun names or IDs
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            acquiredGuns = new List<string>(acquiredGuns);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -305,6 +305,17 @@ public class playerController : MonoBehaviour, IDamage
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.model.GetComponent<MeshRenderer>().sharedMaterial;
 
         selectedGun = gunList.Count - 1;
+
+        // Assuming PlayerLoader is static
+        if (PlayerLoader.instance != null)
+        {
+            PlayerLoader.instance.acquiredGuns.Add(gun.gunName);
+        }
+        else
+        {
+            Debug.LogError("PlayerLoader instance not found!");
+        }
+
     }
     public void getInventoryItem(inventoryItems item)
     {
