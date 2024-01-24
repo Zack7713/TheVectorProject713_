@@ -309,7 +309,9 @@ public class playerController : MonoBehaviour, IDamage
         // Assuming PlayerLoader is static
         if (PlayerLoader.instance != null)
         {
+            //call the player loader instance to add the gunstat?
             PlayerLoader.instance.acquiredGuns.Add(gun.gunName);
+            //PlayerLoader.instance.acquiredGuns.Add(gun);
         }
         else
         {

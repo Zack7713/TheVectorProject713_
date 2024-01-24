@@ -7,7 +7,9 @@ public class PlayerLoader : MonoBehaviour
 
     // Variables to store persistent data
     public int points;
+    //what if instead of storing gun names we store the gunstats?
     public List<string> acquiredGuns; // Store gun names or IDs
+    //public List<gunStats> acquiredGuns = new List<gunStats>();
 
     private void Awake()
     {
