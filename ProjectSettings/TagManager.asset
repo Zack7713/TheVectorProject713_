@@ -15,6 +15,7 @@ TagManager:
   - barricade
   - Barricade
   - Enemy
+  - Zombie
   layers:
   - Default
   - TransparentFX

@@ -23,12 +23,15 @@ public class zombieAI : MonoBehaviour, IDamage
     [SerializeField] int zombiePointValue;
     [SerializeField] float animSpeedTrans;
     [SerializeField] bool isRunner;
+    [SerializeField] bool isStalker;
     [SerializeField] bool isJumper;
     [SerializeField] bool isWalker;
     [SerializeField] bool isBloater;
 
     [Header("----- Attacks -----")]
     [SerializeField] float attackRate;
+    [SerializeField] float attackDur;
+    [SerializeField] GameObject infectedMissile;
     [SerializeField] Transform attackPos;
 
 
@@ -107,6 +110,19 @@ public class zombieAI : MonoBehaviour, IDamage
             {
                 distanceToPlayer = Vector3.Distance(transform.position, gameManager.instance.player.transform.position);
                 //adding another check in the can see player for the different zombie types, since the following code affects the destination and movement of the zombie when getting the player enters their sphere collider
+                if (isStalker)
+                {
+                    if (!isAttacking)
+                    {
+                        StartCoroutine(shootMissiles(attackDur, attackRate));
+                    }
+                    if (agent.remainingDistance < agent.stoppingDistance)
+                    {
+                        faceTarget();
+                    }
+                    agent.stoppingDistance = stoppingDistOrig;
+                    return true;
+                }
                 if(isRunner)
                 {
                     agent.SetDestination(gameManager.instance.player.transform.position);
@@ -177,6 +193,23 @@ public class zombieAI : MonoBehaviour, IDamage
         yield return new WaitForSeconds(attackRate);
         isAttacking = false;
     }
+    IEnumerator shootMissiles(float duration, float rate)
+    {
+        isAttacking = true;
+        anim.SetTrigger("Shoot");
+        float remainingTime = 0;
+        while (remainingTime < duration)
+        {
+            createMissile();
+            remainingTime += rate;
+            yield return new WaitForSeconds(rate);
+        }
+        isAttacking = false;
+    }
+    public void createMissile()
+    {
+        Instantiate(infectedMissile, attackPos.position, transform.rotation);
+    }
     public void clawsColOn()
     {
         for(int i = 0; i < clawsCol.Length; i++)
@@ -201,9 +234,11 @@ public class zombieAI : MonoBehaviour, IDamage
     {
         HP -= amount;
         StartCoroutine(flashRed());
-       
-        //agent.SetDestination(gameManager.instance.player.transform.position);
-
+        //checking if enemie is a certain type of zombie so it wont break its logic
+        if (!isRunner)
+        {
+            agent.SetDestination(gameManager.instance.player.transform.position);
+        }
         if (HP <= 0)
         {
             Destroy(gameObject);
