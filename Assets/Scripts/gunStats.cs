@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class gunStats : ScriptableObject
 {
+    public string gunName;
     public int shootDamage;
     public float shootRate;
     public float shootSpread;
