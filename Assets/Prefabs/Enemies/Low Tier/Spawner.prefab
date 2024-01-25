@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 4844830354797144528}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Enemy
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,10 +474,13 @@ MonoBehaviour:
   zombiePointValue: 75
   animSpeedTrans: 8
   isRunner: 0
+  isStalker: 0
   isJumper: 0
   isWalker: 0
   isBloater: 0
   attackRate: 1
+  attackDur: 0
+  infectedMissile: {fileID: 0}
   attackPos: {fileID: 0}
   mySpawner: {fileID: 0}
   myRunner: {fileID: 0}
