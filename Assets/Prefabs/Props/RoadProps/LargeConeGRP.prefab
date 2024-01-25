@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 476930}
   - component: {fileID: 3315228}
   - component: {fileID: 2354484}
+  - component: {fileID: 8182119539822503962}
   m_Layer: 0
   m_Name: largeCone_Lower
   m_TagString: Untagged
@@ -83,6 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &8182119539822503962
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.17
+  m_Height: 7.73
+  m_Direction: 1
+  m_Center: {x: 0.02126312, y: 2.8006907, z: 0}
 --- !u!1 &158282
 GameObject:
   m_ObjectHideFlags: 0
