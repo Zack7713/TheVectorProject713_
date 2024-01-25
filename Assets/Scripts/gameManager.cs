@@ -30,6 +30,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
     [SerializeField] TMP_Text WaveNumberText;
+    [SerializeField] TMP_Text BuildUnitText;
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;
@@ -65,6 +66,8 @@ public class gameManager : MonoBehaviour
     public AdvanceSpawner advanceSpawner;
     //public spawnDoor advanceSpawner;
     float timeScaleOriginal;
+    public int buildUnits;
+    [SerializeField] int buildUnitLimit = 35;
     int enemiesRemaining;
     int enemiesKilled;
     int pointAmount;
@@ -121,7 +124,8 @@ public class gameManager : MonoBehaviour
         {
             UpdateBarricadePreview();
 
-            // Check for confirmation or cancel input (e.g., buttons or keys)
+
+     
             if (Input.GetMouseButtonDown(0)) // Left mouse button for confirmation
             {
                 ConfirmBarricadePlacement();
@@ -135,7 +139,6 @@ public class gameManager : MonoBehaviour
         {
             UpdateTurretPreview();
 
-            // Check for confirmation or cancel input (e.g., buttons or keys)
             if (Input.GetMouseButtonDown(0)) // Left mouse button for confirmation
             {
                 ConfirmTurretPlacement();
@@ -149,7 +152,7 @@ public class gameManager : MonoBehaviour
         {
             UpdateStandardTurretPreview();
 
-            // Check for confirmation or cancel input (e.g., buttons or keys)
+
             if (Input.GetMouseButtonDown(0)) // Left mouse button for confirmation
             {
                 ConfirmStandardTurretPlacement();
@@ -410,6 +413,7 @@ public class gameManager : MonoBehaviour
     }
     private void UpdateBarricadePreview()
     {
+        
         if (barricadePreview != null)
         {
             Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
@@ -465,6 +469,7 @@ public class gameManager : MonoBehaviour
     }
     private void UpdateStandardTurretPreview()
     {
+
         if (turretStandardPreview != null)
         {
             Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
@@ -492,6 +497,11 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmBarricadePlacement()
     {
+        if (buildUnits + 1 > buildUnitLimit)
+        {
+            DestroyBarricadePreview();
+            return;
+        }
         if (barricadePreview != null)
         {
             // Perform the actual instantiation of the barricade
@@ -499,26 +509,43 @@ public class gameManager : MonoBehaviour
             Instantiate(barricadePrefab, barricadePreview.transform.position, barricadePreview.transform.rotation);
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
+            buildUnits += 1;
+            BuildUnitText.text = buildUnits.ToString("0");
         }
     }
     private void ConfirmTurretPlacement()
     {
+        if (buildUnits + 3 > buildUnitLimit)
+        {
+            DestroyTurretPreview();
+            return;
+        }
         if (turretPreview != null)
         {
             // Perform the actual instantiation of the barricade
             Instantiate(turretPrefab, turretPreview.transform.position, turretPreview.transform.rotation);
             DestroyTurretPreview();
             inTurretPlacementMode = false;
+            buildUnits = buildUnits + 3;
+            BuildUnitText.text = buildUnits.ToString("0");
         }
     }
     private void ConfirmStandardTurretPlacement()
     {
+        if (buildUnits + 2 > buildUnitLimit)
+        {
+            DestroyStandardTurretPreview();
+            return;
+        }
+
         if (turretStandardPreview != null)
         {
             // Perform the actual instantiation of the barricade
             Instantiate(turretStandardPrefab, turretStandardPreview.transform.position, turretStandardPreview.transform.rotation);
             DestroyTurretPreview();
             inTurretStandardPlacementMode = false;
+            buildUnits = buildUnits + 2;
+            BuildUnitText.text = buildUnits.ToString("0");
         }
     }
     private void CancelBarricadePlacement()
@@ -530,6 +557,7 @@ public class gameManager : MonoBehaviour
     {
         DestroyTurretPreview();
         inTurretPlacementMode = false;
+    
     }
 
     private void CancelStandardTurretPlacement()
