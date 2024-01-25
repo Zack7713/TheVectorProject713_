@@ -233,28 +233,39 @@ public class zombieAI : MonoBehaviour, IDamage
     public void takeDamage(int amount)
     {
         HP -= amount;
-        StartCoroutine(flashRed());
+
+        StopAllCoroutines();//used stop all coroutines
+
         //checking if enemie is a certain type of zombie so it wont break its logic
-        if (!isRunner)
-        {
-            agent.SetDestination(gameManager.instance.player.transform.position);
-        }
         if (HP <= 0)
         {
-            Destroy(gameObject);
             //comment out mySpawner and add myRunner for test purposes
+            anim.SetBool("Dead", true);
+            agent.enabled = false;
+            damageCol.enabled = false;
             mySpawner.heyIDied();
             //myRunner.zombiesKilled();
             gameManager.instance.updateKillCount(+1);
             gameManager.instance.updateGameGoal(-1);
-            model.sharedMaterial.color = Color.white;
+            //model.sharedMaterial.color = Color.white;
             gameManager.instance.updatePointCount(+zombiePointValue);
+            anim.SetBool("Dead", true);
+            agent.enabled = false;
+            damageCol.enabled = false;
+            //Destroy(gameObject);//take out the destroy object so we can play our dead animation
         }
         else
         {
             gameManager.instance.updatePointCount(+10);
+            isAttacking = false;
+            anim.SetTrigger("Damage");
+            destinationChosen = false;
+            //StartCoroutine(flashRed());
+            if (!isRunner)
+            {
+                agent.SetDestination(gameManager.instance.player.transform.position);
+            }
         }
-
     }
     IEnumerator flashRed()
     {
