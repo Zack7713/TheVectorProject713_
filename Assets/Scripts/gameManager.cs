@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuShopKeep;
     [SerializeField] GameObject menuPlayerInventory;
     [SerializeField] GameObject menuBuy;
+   
     public Image playerHPBar;
 
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
@@ -497,6 +499,7 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmBarricadePlacement()
     {
+
         if (buildUnits + 1 > buildUnitLimit)
         {
             DestroyBarricadePreview();
@@ -505,7 +508,11 @@ public class gameManager : MonoBehaviour
         if (barricadePreview != null)
         {
             // Perform the actual instantiation of the barricade
-          
+            if (!IsPositionOnNavMesh(barricadePreview.transform.position))
+            {
+                DestroyBarricadePreview();
+                return;
+            }
             Instantiate(barricadePrefab, barricadePreview.transform.position, barricadePreview.transform.rotation);
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
@@ -515,13 +522,19 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmTurretPlacement()
     {
-        if (buildUnits + 3 > buildUnitLimit)
+
+        if (buildUnits + 3 > buildUnitLimit )
         {
             DestroyTurretPreview();
             return;
         }
         if (turretPreview != null)
         {
+            if (!IsPositionOnNavMesh(turretPreview.transform.position))
+            {
+                DestroyTurretPreview();
+                return;
+            }
             // Perform the actual instantiation of the barricade
             Instantiate(turretPrefab, turretPreview.transform.position, turretPreview.transform.rotation);
             DestroyTurretPreview();
@@ -532,6 +545,7 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmStandardTurretPlacement()
     {
+
         if (buildUnits + 2 > buildUnitLimit)
         {
             DestroyStandardTurretPreview();
@@ -540,6 +554,11 @@ public class gameManager : MonoBehaviour
 
         if (turretStandardPreview != null)
         {
+            if (!IsPositionOnNavMesh(turretStandardPreview.transform.position))
+            {
+                DestroyStandardTurretPreview();
+                return;
+            }
             // Perform the actual instantiation of the barricade
             Instantiate(turretStandardPrefab, turretStandardPreview.transform.position, turretStandardPreview.transform.rotation);
             DestroyTurretPreview();
@@ -564,6 +583,11 @@ public class gameManager : MonoBehaviour
     {
         DestroyTurretPreview();
         inTurretStandardPlacementMode = false;
+    }
+    private bool IsPositionOnNavMesh(Vector3 position)
+    {
+        NavMeshHit hit;
+        return NavMesh.SamplePosition(position, out hit, 0.2f, NavMesh.AllAreas);
     }
     public void statePaused()
     {
