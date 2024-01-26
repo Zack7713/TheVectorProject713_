@@ -587,7 +587,7 @@ public class gameManager : MonoBehaviour
     private bool IsPositionOnNavMesh(Vector3 position)
     {
         NavMeshHit hit;
-        return NavMesh.SamplePosition(position, out hit, 0.2f, NavMesh.AllAreas);
+        return NavMesh.SamplePosition(position, out hit, 1f, NavMesh.AllAreas);
     }
     public void statePaused()
     {
