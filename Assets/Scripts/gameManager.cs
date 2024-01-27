@@ -415,7 +415,7 @@ public class gameManager : MonoBehaviour
     }
     private void UpdateBarricadePreview()
     {
-        
+
         if (barricadePreview != null)
         {
             Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
@@ -423,12 +423,11 @@ public class gameManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-         
+                // Use hit.normal for the upward direction
                 Vector3 spawnPosition = hit.point + hit.normal * barricadePreviewHeight;
-
                 barricadePreview.transform.position = spawnPosition;
-               
-                Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
+
+                Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, hit.normal), hit.normal);
                 barricadePreview.transform.rotation = rotation;
             }
             else
@@ -499,25 +498,28 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmBarricadePlacement()
     {
-
         if (buildUnits + 1 > buildUnitLimit)
         {
             DestroyBarricadePreview();
             return;
         }
+
         if (barricadePreview != null)
         {
-            // Perform the actual instantiation of the barricade
-            if (!IsPositionOnNavMesh(barricadePreview.transform.position))
+            Vector3 spawnPosition = barricadePreview.transform.position;
+            if (IsPositionOnNavMesh(spawnPosition))
+            {
+                Instantiate(barricadePrefab, spawnPosition, barricadePreview.transform.rotation);
+                DestroyBarricadePreview();
+                inBarricadePlacementMode = false;
+                buildUnits += 1;
+                BuildUnitText.text = buildUnits.ToString("0");
+            }
+            else
             {
                 DestroyBarricadePreview();
-                return;
+                // Optionally, provide feedback to the player that the placement is invalid.
             }
-            Instantiate(barricadePrefab, barricadePreview.transform.position, barricadePreview.transform.rotation);
-            DestroyBarricadePreview();
-            inBarricadePlacementMode = false;
-            buildUnits += 1;
-            BuildUnitText.text = buildUnits.ToString("0");
         }
     }
     private void ConfirmTurretPlacement()

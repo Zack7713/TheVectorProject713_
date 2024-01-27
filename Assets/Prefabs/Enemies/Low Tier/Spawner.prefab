@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 4844830354797144528}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Zombie
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,23 +11,24 @@ public class barricadeUnit : MonoBehaviour, IDamage
     zombieAI zombie;
     playerController controller;
     int attackRate = 3;
-    // Start is called before the first frame update
+    [SerializeField] string enemyTag = "Enemy";
+
+
     void Update()
     {
-        // Try to find the zombieAI script on an object with the "Zombie" tag
-        GameObject zombieObject = GameObject.FindWithTag("Zombie");
+        GameObject zombieObject = GameObject.FindWithTag(enemyTag);
         if (zombieObject != null)
         {
             zombie = zombieObject.GetComponent<zombieAI>();
         }
 
-        // Try to find the playerController script on an object with the "Player" tag
-        GameObject playerObject = GameObject.FindWithTag("Player");
-        if (playerObject != null)
-        {
-            controller = playerObject.GetComponent<playerController>();
-        }
+        //GameObject playerObject = GameObject.FindWithTag("Player");
+        //if (playerObject != null)
+        //{
+        //    controller = playerObject.GetComponent<playerController>();
+        //}
     }
+
     public void takeDamage(int amount)
     {
         HP -= amount;
@@ -40,7 +41,7 @@ public class barricadeUnit : MonoBehaviour, IDamage
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Zombie"))
+        if (other.CompareTag(enemyTag))
         {
             isAttacking = true;
 
@@ -50,19 +51,31 @@ public class barricadeUnit : MonoBehaviour, IDamage
                
             }
         }
+        //if (other.CompareTag("Player"))
+        //{
+        //    isAttacking = true;
+
+        //    if (controller != null)
+        //    {
+        //        StartCoroutine(attack());
+
+        //    }
+        //}
     }
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Zombie"))
+        if (other.CompareTag(enemyTag))
         {
 
             isAttacking = false;
             StopCoroutine(attack());
-       
-       
-        
-     
         }
+        //if (other.CompareTag("Player"))
+        //{
+
+        //    isAttacking = false;
+        //    StopCoroutine(attack());
+        //}
     }
     IEnumerator attack()
     {
@@ -70,6 +83,7 @@ public class barricadeUnit : MonoBehaviour, IDamage
             while (isAttacking)
             {
                 // Deal damage to the player every 3 seconds
+                //controller.takeDamage(1);
                 zombie.takeDamage(1);
                 yield return new WaitForSeconds(attackRate);
             }
