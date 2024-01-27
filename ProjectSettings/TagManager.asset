@@ -16,6 +16,7 @@ TagManager:
   - Barricade
   - Enemy
   - Zombie
+  - Survivor
   layers:
   - Default
   - TransparentFX

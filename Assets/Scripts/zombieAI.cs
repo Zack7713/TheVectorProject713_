@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 using UnityEngine.AI;
+
+//COMMENTED OUT TEST LOGIC FOR IS WALKER ENEMY!!!
+
 public class zombieAI : MonoBehaviour, IDamage
 {
     [Header("----- Components-----")]
@@ -37,17 +40,24 @@ public class zombieAI : MonoBehaviour, IDamage
 
     //roam variables
     Vector3 playerDir;
+    Vector3 survDir;
     Vector3 startingPos;
     bool destinationChosen;
     //attacking
     bool isAttacking;
     //player is in range
     bool playerInRange;
+    //survivor is in range
+    bool survivorInRange;
+    //bool isAlive;
     float angleToPlayer;
+    //float angleToSurv;
     float stoppingDistOrig;
     float distanceToPlayer;
+    //float distanceToSurv;
     public AdvanceSpawner mySpawner;
     public spawnDoor myRunner;//test code to use the updated spawner door
+    //private List<GameObject> survivorNPC;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +65,7 @@ public class zombieAI : MonoBehaviour, IDamage
         //gameManager.instance.updateGameGoal(1); //our game objctive is been updated in the game manager with the advance spawnerds
         startingPos = transform.position;
         stoppingDistOrig = agent.stoppingDistance;
+        //survivorNPC = new List<GameObject>(GameObject.FindGameObjectsWithTag("Survivor"));
     }
 
     // Update is called once per frame
@@ -65,17 +76,31 @@ public class zombieAI : MonoBehaviour, IDamage
             float animSpeed = agent.velocity.normalized.magnitude;
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), animSpeed, Time.deltaTime * animSpeedTrans));
             //adding the bool check for other types of zombies
-            if(isRunner)
+            if (isRunner)
             {
                 agent.SetDestination(gameManager.instance.player.transform.position);
             }
-            if (playerInRange && !canSeePlayer())
+            //if (isWalker)
+            //{
+            //    if (survivorInRange && !canSeePlayer())
+            //    {
+            //        StartCoroutine(roam());
+            //    }
+            //    else if (!survivorInRange)
+            //    {
+            //        StartCoroutine(roam());
+            //    }
+            //}
+            else
             {
-                StartCoroutine(roam());
-            }
-            else if (!playerInRange)
-            {
-                StartCoroutine(roam());
+                if (playerInRange && !canSeePlayer())
+                {
+                    StartCoroutine(roam());
+                }
+                else if (!playerInRange)
+                {
+                    StartCoroutine(roam());
+                }
             }
         }
     }
@@ -101,9 +126,46 @@ public class zombieAI : MonoBehaviour, IDamage
     {
         playerDir = gameManager.instance.player.transform.position - headPos.position;
         angleToPlayer = Vector3.Angle(playerDir, transform.forward);
+        //use the same logic for the survivor so enemies can see them and follow 
+        //for (int i = 0; i < survivorNPC.Count; i++)
+        //{
+        //    survDir = survivorNPC[i].transform.position - headPos.position;
+        //    angleToSurv = Vector3.Angle(survDir, transform.forward);
+        //}
         Debug.DrawRay(headPos.position, playerDir);
         //Debug.Log(angleToPlayer);
         RaycastHit hit;
+        //if (isWalker)
+        //{
+        //    if (Physics.Raycast(headPos.position, survDir, out hit))
+        //    {
+        //        if (hit.collider.CompareTag("Survivor") && angleToSurv <= viewCone)
+        //        {
+        //            for (int j = 0; j < survivorNPC.Count; j++)
+        //            {
+        //                distanceToSurv = Vector3.Distance(transform.position, survivorNPC[j].transform.position);
+        //                isAlive = survivorNPC[j].GetComponent<npcAI>().isActiveAndEnabled;
+        //                //by getting the component of the npcAI to check if the agent is active and enable and adding a while loop to check if the target is still active, we keep the enemy attacking only one target at a time when there are more survivors in the scene. 
+        //                while (isAlive)
+        //                {
+        //                    agent.SetDestination(survivorNPC[j].transform.position);
+        //                    if (agent.remainingDistance < agent.stoppingDistance)
+        //                    {
+        //                        faceTarget();
+        //                    }
+        //                    if (distanceToSurv <= agent.stoppingDistance && !isAttacking)
+        //                    {
+        //                        //still need to add more logic
+        //                        StartCoroutine(attack());
+        //                    }
+        //                }
+        //                survivorInRange = false;
+        //            }
+        //            agent.stoppingDistance = stoppingDistOrig;
+        //        }
+        //    }
+        //    return true;
+        //}
         if (Physics.Raycast(headPos.position, playerDir, out hit))
         {
             if (hit.collider.CompareTag("Player") && angleToPlayer <= viewCone)
@@ -123,7 +185,7 @@ public class zombieAI : MonoBehaviour, IDamage
                     agent.stoppingDistance = stoppingDistOrig;
                     return true;
                 }
-                if(isRunner)
+                if (isRunner)
                 {
                     agent.SetDestination(gameManager.instance.player.transform.position);
                     if (!isAttacking)
@@ -147,25 +209,19 @@ public class zombieAI : MonoBehaviour, IDamage
                     if (!isAttacking)
                     {
                         StartCoroutine(attack());
-                        
                     }
-
                     if (agent.remainingDistance < agent.stoppingDistance)
                     {
                         faceTarget();
                     }
-
                     agent.stoppingDistance = stoppingDistOrig;
                 }
-
                 return true;
             }
         }
-
         agent.stoppingDistance = 0;
         return false;
     }
-
     void faceTarget()
     {
         Quaternion rot = Quaternion.LookRotation(new Vector3(playerDir.x, transform.position.y, playerDir.z));
@@ -173,9 +229,19 @@ public class zombieAI : MonoBehaviour, IDamage
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (isWalker)
         {
-            playerInRange = true;
+            if (other.CompareTag("Survivor"))
+            {
+                survivorInRange = true;
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                playerInRange = true;
+            }
         }
     }
     public void OnTriggerExit(Collider other)
@@ -212,7 +278,7 @@ public class zombieAI : MonoBehaviour, IDamage
     }
     public void clawsColOn()
     {
-        for(int i = 0; i < clawsCol.Length; i++)
+        for (int i = 0; i < clawsCol.Length; i++)
         {
             if (clawsCol[i] != null)
             {
