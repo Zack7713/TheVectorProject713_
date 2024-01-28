@@ -6878,7 +6878,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1330
+  m_Name: pb_Mesh-19158
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -10284,7 +10284,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1300
+  m_Name: pb_Mesh-19218
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -18727,6 +18727,10 @@ PrefabInstance:
       propertyPath: sphereRange
       value: 
       objectReference: {fileID: 169788137}
+    - target: {fileID: 4395154736670527982, guid: e0274484ebfbaa4439a932b6cfa72595, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5671963398939654598, guid: e0274484ebfbaa4439a932b6cfa72595, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -18804,6 +18808,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1145114814027578452, guid: e1bdf2b5879dcd74f97cc1caef3c6217, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2293657770547740784, guid: e1bdf2b5879dcd74f97cc1caef3c6217, type: 3}
       propertyPath: m_Name
       value: Turret_Laser2.0
@@ -18928,6 +18936,10 @@ PrefabInstance:
     - target: {fileID: 6132238347341646433, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
       propertyPath: m_VersionIndex
       value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209603934957458541, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6439364459262977780, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
       propertyPath: m_Mesh

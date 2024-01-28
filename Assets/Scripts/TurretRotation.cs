@@ -6,7 +6,7 @@ public class TurretRotation : MonoBehaviour
 {
     [Header("-----General-----")]
     [SerializeField] float range;
-    [SerializeField] GameObject sphereRange;
+    //[SerializeField] GameObject sphereRange;
     //private Enemy targetEnemy;
 
     [Header("-----Rotation-----")]
@@ -105,12 +105,12 @@ public class TurretRotation : MonoBehaviour
         {
             target = nearestEnemy.transform;
             // targetEnemy = nearestEnemy.GetComponent<Enemy>
-            sphereRange.SetActive(true);
+            //sphereRange.SetActive(true);
         }
         else
         {
             target = null;
-            sphereRange.SetActive(false);
+            //sphereRange.SetActive(false);
         }
     }
     void Laser()
