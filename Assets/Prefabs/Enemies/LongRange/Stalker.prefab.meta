@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Prefabs/Enemies/LongRange/Stalker.prefab.meta
 guid: 2dcda8d85838e744e95a0b17c2ce7213
+========
+guid: 087d89a0c253e524d95928fc078341cb
+>>>>>>>> Stashed changes:Assets/Prefabs/Buildables/Turrets/Turret_Laser.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
