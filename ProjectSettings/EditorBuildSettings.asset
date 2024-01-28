@@ -24,12 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Jesse Adams/Scenes/3-1 Studio (Pre-Prototype).unity
     guid: cc483489a198a624892cd5381b5e00fb
   - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/0-3 Hub - Lobby Environment.unity
-    guid: 59706532f7f3df64d9f23b94c43b4a75
+    path: Assets/Scenes/Jesse Adams/Scene Persistence/0-2 Main_Menu Scene Persistence.unity
+    guid: fb060ead67807e64dba433581c0362c0
   - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/Esentials.unity
-    guid: 793ca3bf62a507145a98b1944edb14d1
+    path: Assets/Scenes/Jesse Adams/Scene Persistence/Game Essentials.unity
+    guid: f8bc468f91c7ab04181316374a3b6009
   - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/1-1 Tunnel 1.unity
-    guid: 96ff5436c932a934dab313509ebd95ab
+    path: Assets/Scenes/Jesse Adams/Scene Persistence/City Essentials.unity
+    guid: 5b79a168fd63cc54a874d1f1a54a5909
   m_configObjects: {}
