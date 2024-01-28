@@ -30,8 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Jesse Adams/Scene Persistence/Game Essentials.unity
     guid: f8bc468f91c7ab04181316374a3b6009
   - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/0-3 Hub - Lobby (Alpha 1.01)
-      1.unity
+    path: Assets/Scenes/Jesse Adams/Scene Persistence/Hub Essentials.unity
     guid: f9138744c0992014c9c0cf0b0d67bc48
   - enabled: 1
     path: Assets/Scenes/Jesse Adams/Scene Persistence/City Essentials.unity

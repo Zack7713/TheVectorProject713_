@@ -59,6 +59,7 @@ public class playerController : MonoBehaviour, IDamage
         respawnPlayer();
         animPlayer = GetComponent<Animator>();
 
+        gameManager.instance.playerScript.respawnPlayer();
 
         gameManagerInstance = gameManager.instance;
     }
@@ -350,17 +351,17 @@ public class playerController : MonoBehaviour, IDamage
 
         selectedGun = gunList.Count - 1;
 
-        // Assuming PlayerLoader is static
-        if (PlayerLoader.instance != null)
-        {
-            //call the player loader instance to add the gunstat?
-            PlayerLoader.instance.acquiredGuns.Add(gun.gunName);
-            //PlayerLoader.instance.acquiredGuns.Add(gun);
-        }
-        else
-        {
-            Debug.LogError("PlayerLoader instance not found!");
-        }
+        //// Assuming PlayerLoader is static
+        //if (PlayerLoader.instance != null)
+        //{
+        //    //call the player loader instance to add the gunstat?
+        //    PlayerLoader.instance.acquiredGuns.Add(gun.gunName);
+        //    //PlayerLoader.instance.acquiredGuns.Add(gun);
+        //}
+        //else
+        //{
+        //    Debug.LogError("PlayerLoader instance not found!");
+        //}
 
     }
     public void getInventoryItem(inventoryItems item)
