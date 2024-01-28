@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+ 
 public class SceneLoader : MonoBehaviour
 {
     public int[] sceneIndices;
-
+    playerController player;
     void Start()
     {
-
+       
     }
 
     void Update()
@@ -21,10 +21,11 @@ public class SceneLoader : MonoBehaviour
         if (index >= 0 && index < sceneIndices.Length)
         {
             SceneManager.LoadScene(sceneIndices[index]);
-
+        
             if (gameManager.instance != null)
             {
                 gameManager.instance.stateUnpaused();
+               
             }
         }
         else
