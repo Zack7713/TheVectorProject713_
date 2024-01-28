@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 1814354820761460573, guid: d23d477346961b948968d668598926f2, type: 3}
       propertyPath: playerSpawnPos
       value: 
-      objectReference: {fileID: 988413350656552844, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
