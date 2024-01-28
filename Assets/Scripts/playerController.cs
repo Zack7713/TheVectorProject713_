@@ -92,6 +92,15 @@ public class playerController : MonoBehaviour, IDamage
             movement();
         }
     }
+
+    public void TeleportPlayer(Vector3 position)
+    {
+        controller.enabled = false;
+        transform.position = position;
+        controller.enabled = true;
+    }
+
+
     void HandleRecoil()
     {
         if (!isRecoiling && currentRecoilAngle > 0f)

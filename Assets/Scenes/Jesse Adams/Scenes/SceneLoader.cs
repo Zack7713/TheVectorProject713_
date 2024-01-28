@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+
 public class SceneLoader : MonoBehaviour
 {
     public int[] sceneIndices;
-    playerController player;
+
     void Start()
     {
-       
     }
 
     void Update()
@@ -20,12 +19,21 @@ public class SceneLoader : MonoBehaviour
     {
         if (index >= 0 && index < sceneIndices.Length)
         {
+            // Find the PlayerSpawnPos object in the loaded scene
+            PlayerSpawnPos playerSpawnPos = FindObjectOfType<PlayerSpawnPos>();
+
+            if (playerSpawnPos != null)
+            {
+                // Set the spawn position in the PlayerSpawnPos script
+                playerSpawnPos.SetSpawnPosition(transform.position);
+            }
+
+            // Load the scene
             SceneManager.LoadScene(sceneIndices[index]);
-        
+
             if (gameManager.instance != null)
             {
                 gameManager.instance.stateUnpaused();
-               
             }
         }
         else
