@@ -15,6 +15,9 @@ public class gunStats : ScriptableObject
     public int gunPellets;
     public int ammoCur;
     public int ammoMax;
+    public float recoilAngle;
+    public float recoilRecoverySpeed;
+    public float maxRecoilAngle;
 
     public GameObject model;
     public ParticleSystem hitEffect;
