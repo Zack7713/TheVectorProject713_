@@ -51,6 +51,7 @@ public class AdvanceSpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenSpawns);
         isSpawning = false;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

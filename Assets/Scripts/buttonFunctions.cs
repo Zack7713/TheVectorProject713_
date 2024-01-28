@@ -42,10 +42,10 @@ public class buttonFunctions : MonoBehaviour
 
     public void spawnBarricade()
     {
-     
+
         gameManager.instance.inBarricadePlacementMode = true;
         gameManager.instance.CreateBarricadePreview();
-      
+
     }
     public void spawnTurret()
     {
@@ -63,13 +63,19 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.DestroyBarricadePreview();
     }
     public void openBuyMenu()
-    { 
+    {
         gameManager.instance.openBuyMenu();
     }
     public void openSellMenu()
     {
         gameManager.instance.openSellMenu();
     }
+    public void openUpgradeMenu()
+    {
+         gameManager.instance.openUpgradeMenu();
+    }
+
+   
     public void sellFirstGun()
     {
         gameManager.instance.sellGunOne();
@@ -85,6 +91,18 @@ public class buttonFunctions : MonoBehaviour
     public void buyPistolInShop()
     {
         gameManager.instance.buyPistol();
+    }
+    public void upgradeMenuOne()
+    {
+        gameManager.instance.upgradeGunOne();
+    }
+    public void upgradeMenuTwo()
+    {
+        gameManager.instance.upgradeGunTwo();
+    }
+    public void upgradeMenuThree()
+    {
+        gameManager.instance.upgradeGunThree();
     }
     public void buyRifleInShop()
     {

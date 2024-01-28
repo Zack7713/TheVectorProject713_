@@ -11,9 +11,13 @@ public class barricadeUnit : MonoBehaviour, IDamage
     zombieAI zombie;
     playerController controller;
     int attackRate = 3;
+      [SerializeField] Transform target;
     [SerializeField] string enemyTag = "Enemy";
 
-
+    void Start()
+    {
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
     void Update()
     {
         GameObject zombieObject = GameObject.FindWithTag(enemyTag);

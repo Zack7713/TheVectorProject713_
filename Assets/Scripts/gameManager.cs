@@ -21,7 +21,8 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuShopKeep;
     [SerializeField] GameObject menuPlayerInventory;
     [SerializeField] GameObject menuBuy;
-   
+    [SerializeField] GameObject menuUpgrade;
+
     public Image playerHPBar;
 
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
@@ -222,11 +223,74 @@ public class gameManager : MonoBehaviour
         menuActive = menuPlayerInventory;
         menuActive.SetActive(true);
     }
+    public void openUpgradeMenu()
+    {
+        menuShopKeep.SetActive(false);
+        menuActive = menuUpgrade;
+        menuActive.SetActive(true);
+    }
+    public void upgradeGunOne()
+    {
+        increaseGunDamage(0, 1);
+        updatePointCount(-500);
+        closeMenu();
+    }
+    public void upgradeGunTwo()
+    {
+        increaseGunDamage(1, 1);
+        updatePointCount(-500);
+        closeMenu();
+    }
+    public void upgradeGunThree()
+    {
+        increaseGunDamage(2, 1);
+        updatePointCount(-500);
+        closeMenu();
+    }
+    public void increaseGunDamage(int gunIndex, int amount)
+    {
+        playerScript.getGunList(gunList);
+        if (gunIndex >= 0 && gunIndex < gunList.Count)
+        {
+            gunList[gunIndex].shootDamage += amount;
+      
+        }
+
+    }
+
+
+    public void sellGun(int gunIndex)
+    {
+        if (gunList.Count > 0)
+        {
+            if (gunIndex >= 0 && gunIndex < gunList.Count)
+            {
+                gunStats gunToSell = gunList[gunIndex]; 
+                if (gunToSell != null && gunToSell.gunName ==("Pistol"))
+                {
+                    gunToSell.ResetPistol();
+                }
+                else if(gunToSell != null && gunToSell.gunName == ("Rifle"))
+                {
+                    gunToSell.ResetRifle();
+                }
+                else if (gunToSell != null && gunToSell.gunName == ("Shotgun"))
+                {
+                    gunToSell.ResetShotgun();
+                }
+                         
+                            gunList.RemoveAt(gunIndex); 
+             
+            }
+   
+        }
+
+    }
     public void sellGunOne()
     {
         if (gunList.Count >= 1)
         {
-            gunList.RemoveAt(0);
+            sellGun(0);
             updatePointCount(+250);
         }
         if (gunList.Count == 0)
@@ -235,11 +299,12 @@ public class gameManager : MonoBehaviour
         }
         closeMenu();
     }
+
     public void sellGunTwo()
     {
         if (gunList.Count >= 2)
         {
-            gunList.RemoveAt(1);
+            sellGun(1); 
             updatePointCount(+250);
         }
         playerScript.sellSecondGun();
@@ -249,7 +314,7 @@ public class gameManager : MonoBehaviour
     {
         if (gunList.Count >= 3)
         {
-            gunList.RemoveAt(2);
+            sellGun(2);
             updatePointCount(+250);
         }
         playerScript.sellThirdGun();
@@ -267,6 +332,8 @@ public class gameManager : MonoBehaviour
         {
             if(gunList.Count < 3)
             {
+                gunStats newGun = Instantiate(pistol); 
+                newGun.Initialize(); 
                 gunList.Add(pistol);
                 playerScript.showBoughtGun();
                 updatePointCount(-500);

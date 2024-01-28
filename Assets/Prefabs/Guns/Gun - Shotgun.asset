@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Shotgun
   shootDamage: 2
-  shootRate: 1
+  shootRate: 2
   shootSpread: 0.03
   shootDist: 45
   gunPellets: 8
