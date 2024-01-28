@@ -17,7 +17,7 @@ public class claws : MonoBehaviour
         if (other.isTrigger)
             return;
         //added a check to compare the tag to avoid the Zombies to damage themselves 
-        if (!other.CompareTag("Zombie"))
+        if (!other.CompareTag("Enemy"))
         {
             IDamage dmg = other.GetComponent<IDamage>();
             if (dmg != null)

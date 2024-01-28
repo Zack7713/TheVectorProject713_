@@ -97,7 +97,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Center: {x: 0, y: -0.06, z: 0}
 --- !u!1 &573398065939732708
 GameObject:
@@ -425,7 +425,7 @@ Transform:
   - {fileID: 8834403759618704443}
   - {fileID: 7415152658277596588}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &6764271779134059935
 Animator:
@@ -464,7 +464,8 @@ MonoBehaviour:
   agent: {fileID: 4844830354797144528}
   headPos: {fileID: 51781423864671404}
   anim: {fileID: 6764271779134059935}
-  clawsCol: []
+  clawsCol:
+  - {fileID: 2586279789502609953}
   damageCol: {fileID: 3053521008654996851}
   HP: 5
   viewCone: 90

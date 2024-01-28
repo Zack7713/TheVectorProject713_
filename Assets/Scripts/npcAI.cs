@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class npcAI : MonoBehaviour
+public class npcAI : MonoBehaviour, IDamage
 {
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Renderer model;
     [SerializeField] Transform headPos;
     [SerializeField] Animator anim;
+    [SerializeField] Collider damageCol;
+    [Header("----- NPC Stats -----")]
+    [Range(1,10)][SerializeField] int HP;
     [SerializeField] int viewCone;
     [SerializeField] int targetFaceSpeed;
     [SerializeField] float animSpeedTrans;
@@ -85,6 +88,17 @@ public class npcAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+        }
+    }
+    public void takeDamage(int amount)
+    {
+        HP -= amount;
+
+        if (HP <= 0)
+        {
+            agent.enabled = false;
+            damageCol.enabled = false;
+            Destroy(gameObject);
         }
     }
 }
