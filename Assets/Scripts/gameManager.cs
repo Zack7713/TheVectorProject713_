@@ -23,7 +23,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuBuy;
     [SerializeField] GameObject menuUpgrade;
     [SerializeField] GameObject menuTowerSell;
-
+    [SerializeField] GameObject menuRoundStart;
     public Image playerHPBar;
 
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
@@ -126,6 +126,11 @@ public class gameManager : MonoBehaviour
             menuActive = null;
             openLevelMenu();
         }
+        if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart)
+        {
+            menuActive = null;
+        
+        }
         if (inBarricadePlacementMode)
         {
             UpdateBarricadePreview();
@@ -189,7 +194,7 @@ public class gameManager : MonoBehaviour
                     if (hit.collider.CompareTag("MissileTurret"))
                     {
                         SellMissileTurret(hit.collider.gameObject);
-                        inTowerBarricadeSellMode=false;
+                        inTowerBarricadeSellMode = false;
                     }
                     if (hit.collider.CompareTag("BasicTurret"))
                     {
@@ -508,7 +513,7 @@ public class gameManager : MonoBehaviour
     {
         // barricadeUnit barricadeScript = tower.GetComponent<barricadeUnit>();
 
-        buildUnits = buildUnits -3;
+        buildUnits = buildUnits - 3;
         BuildUnitText.text = buildUnits.ToString("0");
 
         updatePointCount(+100);
