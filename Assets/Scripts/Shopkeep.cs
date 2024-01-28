@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Shopkeep : MonoBehaviour
 {
-    public gameManager manager;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class Shopkeep : MonoBehaviour
     {
         if (other.CompareTag("Player") )
         {
-            manager.interactionMenu();
+            gameManager.instance.interactionMenu();
 
         }
     }
@@ -30,7 +30,7 @@ public class Shopkeep : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-          manager.closeInteractionMenu();
+          gameManager.instance.closeInteractionMenu();
         }
         
     }

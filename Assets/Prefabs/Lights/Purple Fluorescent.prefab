@@ -33,7 +33,7 @@ Transform:
   - {fileID: 4338312587094447299}
   - {fileID: 9175739897886251700}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &1316874919188061085
 GameObject:
@@ -327,7 +327,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 0.21698111, g: 0.03991634, b: 0.14721876, a: 1}
+  m_Color: {r: 0.41395313, g: 0, b: 0.6981132, a: 1}
   m_Intensity: 15
   m_Range: 20
   m_SpotAngle: 30

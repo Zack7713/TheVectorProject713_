@@ -24,7 +24,8 @@ public class mainMenu : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6, LoadSceneMode.Additive);
     }
     public void quit()
     {

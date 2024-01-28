@@ -49,6 +49,8 @@ public class playerController : MonoBehaviour, IDamage
 
 
     private gameManager gameManagerInstance;
+    private float currentRecoilAngle;
+    private bool isRecoiling;
 
     private void Start()
     {
@@ -65,16 +67,18 @@ public class playerController : MonoBehaviour, IDamage
     {
 
 
-         
-           if (Input.GetButtonDown("MeleeAttack"))
-           {
-               StartCoroutine( pAttack());
-           }
-        
+
+        if (Input.GetButtonDown("MeleeAttack"))
+        {
+            StartCoroutine(pAttack());
+        }
+
 
         if (!gameManager.instance.isPaused)
+            Camera.main.transform.Rotate(-currentRecoilAngle, 0f, 0f);
         {
-
+            HandleRecoil();
+            CameraRecoil();
 
             if (gunList.Count > 0)
             {
@@ -83,11 +87,40 @@ public class playerController : MonoBehaviour, IDamage
 
                 selectGun();
             }
-    
+
             movement();
         }
     }
-    IEnumerator playSteps()
+    void HandleRecoil()
+    {
+        if (!isRecoiling && currentRecoilAngle > 0f)
+        {
+            float recoveryStep = gunList[selectedGun].recoilRecoverySpeed * Time.deltaTime;
+            currentRecoilAngle = Mathf.Lerp(currentRecoilAngle, 0f, recoveryStep);
+            currentRecoilAngle = Mathf.Clamp(currentRecoilAngle, 0f, gunList[selectedGun].maxRecoilAngle);
+        }
+
+    }
+    void CameraRecoil()
+    {
+        if (!isRecoiling && currentRecoilAngle > 0f)
+        {
+            // Calculate the recoil rotation
+            Quaternion recoilRotation = Quaternion.Euler(-currentRecoilAngle, 0f, 0f);
+
+            // Apply the recoil rotation smoothly
+            Camera.main.transform.localRotation = Quaternion.Slerp(Camera.main.transform.localRotation, recoilRotation, Time.deltaTime * gunList[selectedGun].recoilRecoverySpeed);
+
+            // Reset the recoil angle if it reaches zero
+            if (Mathf.Approximately(Camera.main.transform.localRotation.eulerAngles.x, 0f))
+            {
+                currentRecoilAngle = 0f;
+                isRecoiling = false;
+            }
+        }
+    }
+
+        IEnumerator playSteps()
     {
         isPlayingSteps = true;
         aud.PlayOneShot(soundSteps[Random.Range(0, soundSteps.Length - 1)], soundStepVol);
@@ -120,7 +153,7 @@ public class playerController : MonoBehaviour, IDamage
         crouch();
         sprint();
 
-       
+
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && move.normalized.magnitude > 0.3f && !isPlayingSteps)
@@ -201,16 +234,26 @@ public class playerController : MonoBehaviour, IDamage
                     }
                 }
             }
+            float recoilAngle = gunList[selectedGun].recoilAngle;
+            float recoilRecoverySpeed = gunList[selectedGun].recoilRecoverySpeed;
+            Vector3 cameraForward = Camera.main.transform.forward;
+
+
+
+            currentRecoilAngle += recoilAngle;
+            isRecoiling = true;
+
 
             yield return new WaitForSeconds(shootRate);
+            isRecoiling = false;
             isShooting = false;
         }
     }
-    IEnumerator pAttack() 
+    IEnumerator pAttack()
     {
         isKnifing = true;
         animPlayer.SetTrigger("MeleeAttack");
-        yield return new WaitForSeconds(knifeColSpeed); 
+        yield return new WaitForSeconds(knifeColSpeed);
         isKnifing = false;
     }
     void crouch()
@@ -236,19 +279,20 @@ public class playerController : MonoBehaviour, IDamage
     //void prone()
     //{
 
-    //    if (Input.GetButtonDown("Prone") && !isSprinting && !isProne)
+    //    if (Input.GetButtonDown("Prone") && !isSprinting && !isCrouching)
     //    {
     //        // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - .1f, Camera.main.transform.position.z);
     //        controller.height = 1f;
     //        playerSpeed *= proneMod;
     //        isProne = true;
     //    }
-    //    else if (Input.GetButtonUp("Prone") && !isSprinting && !isProne)
+    //    else if (Input.GetButtonUp("Prone") && !isSprinting && !isCrouching)
     //    {
     //        // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + .1f, Camera.main.transform.position.z);
     //        controller.height = 3;
     //        playerSpeed = originalPlayerSpeed;
     //        isProne = false;
+
     //    }
     //}
     void sprint()
@@ -326,11 +370,11 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void showBoughtGun()
     {
-        if(gunList.Count >1 )
+        if (gunList.Count > 1)
         {
             selectedGun++;
         }
-      
+
         changeGun();
     }
     public void getGunList(List<gunStats> guns)
@@ -352,7 +396,7 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void sellSecondGun()
     {
-        if(gunList.Count >=1)
+        if (gunList.Count >= 1)
         {
             shootDamage = gunList[0].shootDamage;
             shootDist = gunList[0].shootDist;
@@ -409,5 +453,5 @@ public class playerController : MonoBehaviour, IDamage
         isShooting = false;
     }
 }
-    
+
 

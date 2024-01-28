@@ -13,6 +13,7 @@ public class AdvanceSpawner : MonoBehaviour
      int spawnCount;
     bool isSpawning;
     bool startSpawning;
+    bool wantsToBeginRound; 
     void Start()
     {
 
@@ -54,7 +55,7 @@ public class AdvanceSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && wantsToBeginRound )
         {
             startSpawning = true;
         }

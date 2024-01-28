@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HubKeep : MonoBehaviour
 {
-    public gameManager manager;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class HubKeep : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            manager.interactionHubMenu();
+            gameManager.instance.interactionHubMenu();
 
         }
     }
@@ -28,7 +28,7 @@ public class HubKeep : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            manager.closeInteractionHubMenu();
+            gameManager.instance.closeInteractionHubMenu();
         }
 
     }

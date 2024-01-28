@@ -74,7 +74,10 @@ public class buttonFunctions : MonoBehaviour
     {
          gameManager.instance.openUpgradeMenu();
     }
-
+    public void SellTowerMode()
+    {
+        gameManager.instance.OpenTowerSellMenu();
+    }
    
     public void sellFirstGun()
     {
