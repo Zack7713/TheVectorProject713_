@@ -22,10 +22,12 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuPlayerInventory;
     [SerializeField] GameObject menuBuy;
     [SerializeField] GameObject menuUpgrade;
+    [SerializeField] GameObject menuTowerSell;
 
     public Image playerHPBar;
 
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
+    private List<GameObject> builtTowers = new List<GameObject>();
     [SerializeField] gunStats pistol;
     [SerializeField] gunStats rifle;
     [SerializeField] gunStats shotgun;
@@ -60,6 +62,7 @@ public class gameManager : MonoBehaviour
     public bool inBarricadePlacementMode = false;
     public bool inTurretPlacementMode = false;
     public bool inTurretStandardPlacementMode = false;
+    public bool inTowerBarricadeSellMode = false;
 
     float playerDistance;
     public bool isPaused;
@@ -128,7 +131,7 @@ public class gameManager : MonoBehaviour
             UpdateBarricadePreview();
 
 
-     
+
             if (Input.GetMouseButtonDown(0)) // Left mouse button for confirmation
             {
                 ConfirmBarricadePlacement();
@@ -165,6 +168,46 @@ public class gameManager : MonoBehaviour
                 CancelStandardTurretPlacement();
             }
         }
+        if (inTowerBarricadeSellMode)
+        {
+
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("ray");
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+
+                    if (hit.collider.CompareTag("Barricade"))
+                    {
+                        SellBarricadeTower(hit.collider.gameObject);
+                        inTowerBarricadeSellMode = false;
+                    }
+                    if (hit.collider.CompareTag("MissileTurret"))
+                    {
+                        SellMissileTurret(hit.collider.gameObject);
+                        inTowerBarricadeSellMode=false;
+                    }
+                    if (hit.collider.CompareTag("BasicTurret"))
+                    {
+                        SellBasicTurret(hit.collider.gameObject);
+                        inTowerBarricadeSellMode = false;
+                    }
+                }
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                inTowerBarricadeSellMode = false;
+                if (menuActive != null)
+                {
+                    menuActive.SetActive(false);
+                    menuActive = null;
+                }
+            }
+        }
         playerScript.getGunList(gunList);
     }
     public void interactionMenu()
@@ -181,12 +224,12 @@ public class gameManager : MonoBehaviour
     }
     public void closeInteractionMenu()
     {
-        if(menuActive != null) 
+        if (menuActive != null)
         {
-          menuActive.SetActive(false);
-          menuActive = null;
+            menuActive.SetActive(false);
+            menuActive = null;
         }
-       
+
     }
     public void closeInteractionHubMenu()
     {
@@ -199,7 +242,7 @@ public class gameManager : MonoBehaviour
     }
     public void openShopMenu()
     {
-      
+
         statePaused();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -209,7 +252,7 @@ public class gameManager : MonoBehaviour
     }
     public void openLevelMenu()
     {
-   
+
         statePaused();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -228,6 +271,19 @@ public class gameManager : MonoBehaviour
         menuShopKeep.SetActive(false);
         menuActive = menuUpgrade;
         menuActive.SetActive(true);
+    }
+    public void OpenTowerSellMenu()
+    {
+
+        if (buildUnits > 0)
+        {
+            menuUtil.SetActive(false);
+            menuActive = menuTowerSell;
+            menuActive.SetActive(true);
+            inTowerBarricadeSellMode = true;
+            stateUnpaused();
+        }
+
     }
     public void upgradeGunOne()
     {
@@ -253,7 +309,7 @@ public class gameManager : MonoBehaviour
         if (gunIndex >= 0 && gunIndex < gunList.Count)
         {
             gunList[gunIndex].shootDamage += amount;
-      
+
         }
 
     }
@@ -265,12 +321,12 @@ public class gameManager : MonoBehaviour
         {
             if (gunIndex >= 0 && gunIndex < gunList.Count)
             {
-                gunStats gunToSell = gunList[gunIndex]; 
-                if (gunToSell != null && gunToSell.gunName ==("Pistol"))
+                gunStats gunToSell = gunList[gunIndex];
+                if (gunToSell != null && gunToSell.gunName == ("Pistol"))
                 {
                     gunToSell.ResetPistol();
                 }
-                else if(gunToSell != null && gunToSell.gunName == ("Rifle"))
+                else if (gunToSell != null && gunToSell.gunName == ("Rifle"))
                 {
                     gunToSell.ResetRifle();
                 }
@@ -278,11 +334,11 @@ public class gameManager : MonoBehaviour
                 {
                     gunToSell.ResetShotgun();
                 }
-                         
-                            gunList.RemoveAt(gunIndex); 
-             
+
+                gunList.RemoveAt(gunIndex);
+
             }
-   
+
         }
 
     }
@@ -304,7 +360,7 @@ public class gameManager : MonoBehaviour
     {
         if (gunList.Count >= 2)
         {
-            sellGun(1); 
+            sellGun(1);
             updatePointCount(+250);
         }
         playerScript.sellSecondGun();
@@ -324,25 +380,25 @@ public class gameManager : MonoBehaviour
     {
         menuShopKeep.SetActive(false);
         menuActive = menuBuy;
-        menuActive.SetActive(true); 
+        menuActive.SetActive(true);
     }
     public void buyPistol()
     {
         if (pointAmount >= 500)
         {
-            if(gunList.Count < 3)
+            if (gunList.Count < 3)
             {
-                gunStats newGun = Instantiate(pistol); 
-                newGun.Initialize(); 
+                gunStats newGun = Instantiate(pistol);
+                newGun.Initialize();
                 gunList.Add(pistol);
                 playerScript.showBoughtGun();
                 updatePointCount(-500);
             }
-         
-         
+
+
             closeMenu();
 
-      
+
         }
     }
     public void buyRifle()
@@ -381,7 +437,7 @@ public class gameManager : MonoBehaviour
     }
     public void closeMenu()
     {
-        if(isPaused == true)
+        if (isPaused == true)
         {
             stateUnpaused();
         }
@@ -404,9 +460,9 @@ public class gameManager : MonoBehaviour
         {
             DestroyBarricadePreview();
             inBarricadePlacementMode = false;
-         
+
         }
-        else if(inTurretPlacementMode)
+        else if (inTurretPlacementMode)
         {
             DestroyTurretPreview();
             inTurretPlacementMode = false;
@@ -417,7 +473,7 @@ public class gameManager : MonoBehaviour
             inTurretStandardPlacementMode = false;
         }
         stateUnpaused();
-        if(menuActive == true)
+        if (menuActive == true)
         {
             menuActive.SetActive(false);
             menuActive = null;
@@ -430,7 +486,55 @@ public class gameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         inBarricadePlacementMode = true;
 
-       
+
+    }
+    void SellBarricadeTower(GameObject tower)
+    {
+        // barricadeUnit barricadeScript = tower.GetComponent<barricadeUnit>();
+
+        buildUnits--;
+        BuildUnitText.text = buildUnits.ToString("0");
+
+        updatePointCount(+100);
+
+        Destroy(tower);
+        if (menuActive != null)
+        {
+            menuActive.SetActive(false);
+            menuActive = null;
+        }
+    }
+    void SellMissileTurret(GameObject tower)
+    {
+        // barricadeUnit barricadeScript = tower.GetComponent<barricadeUnit>();
+
+        buildUnits = buildUnits -3;
+        BuildUnitText.text = buildUnits.ToString("0");
+
+        updatePointCount(+100);
+
+        Destroy(tower);
+        if (menuActive != null)
+        {
+            menuActive.SetActive(false);
+            menuActive = null;
+        }
+    }
+    void SellBasicTurret(GameObject tower)
+    {
+        // barricadeUnit barricadeScript = tower.GetComponent<barricadeUnit>();
+
+        buildUnits = buildUnits - 2;
+        BuildUnitText.text = buildUnits.ToString("0");
+
+        updatePointCount(+100);
+
+        Destroy(tower);
+        if (menuActive != null)
+        {
+            menuActive.SetActive(false);
+            menuActive = null;
+        }
     }
     public void CreateBarricadePreview()
     {
@@ -507,7 +611,7 @@ public class gameManager : MonoBehaviour
             }
         }
     }
-    
+
     private void UpdateTurretPreview()
     {
         if (turretPreview != null)
@@ -520,7 +624,7 @@ public class gameManager : MonoBehaviour
                 Vector3 spawnPosition = hit.point + hit.normal * turretPreviewHeight;
 
                 turretPreview.transform.position = spawnPosition;
-          
+
 
                 Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(player.transform.forward, Vector3.up), Vector3.up);
                 turretPreview.transform.rotation = rotation;
@@ -592,7 +696,7 @@ public class gameManager : MonoBehaviour
     private void ConfirmTurretPlacement()
     {
 
-        if (buildUnits + 3 > buildUnitLimit )
+        if (buildUnits + 3 > buildUnitLimit)
         {
             DestroyTurretPreview();
             return;
@@ -604,7 +708,7 @@ public class gameManager : MonoBehaviour
                 DestroyTurretPreview();
                 return;
             }
-            // Perform the actual instantiation of the barricade
+
             Instantiate(turretPrefab, turretPreview.transform.position, turretPreview.transform.rotation);
             DestroyTurretPreview();
             inTurretPlacementMode = false;
@@ -628,9 +732,9 @@ public class gameManager : MonoBehaviour
                 DestroyStandardTurretPreview();
                 return;
             }
-            // Perform the actual instantiation of the barricade
+
             Instantiate(turretStandardPrefab, turretStandardPreview.transform.position, turretStandardPreview.transform.rotation);
-            DestroyTurretPreview();
+            DestroyStandardTurretPreview();
             inTurretStandardPlacementMode = false;
             buildUnits = buildUnits + 2;
             BuildUnitText.text = buildUnits.ToString("0");
@@ -645,7 +749,7 @@ public class gameManager : MonoBehaviour
     {
         DestroyTurretPreview();
         inTurretPlacementMode = false;
-    
+
     }
 
     private void CancelStandardTurretPlacement()
@@ -665,21 +769,19 @@ public class gameManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
     }
-
     public void stateUnpaused()
     {
         isPaused = !isPaused;
         Time.timeScale = timeScaleOriginal;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if(menuActive == true)
+        if (menuActive == true && inTowerBarricadeSellMode == false)
         {
             menuActive.SetActive(false);
             menuActive = null;
         }
- 
-    }
 
+    }
     public void updateGameGoal(int amount)
     {
         enemiesRemaining += amount;
@@ -695,11 +797,11 @@ public class gameManager : MonoBehaviour
                 {
                     advanceSpawner.numToSpawn = 250;
                 }
-               if(waveNumber == 10)
-               {
+                if (waveNumber == 10)
+                {
                     StartCoroutine(youWin());
-               }
-              
+                }
+
             }
         }
     }
@@ -722,8 +824,6 @@ public class gameManager : MonoBehaviour
 
 
     }
-
-
     public void updatePointCount(int amount)
     {
         pointAmount += amount;
@@ -741,45 +841,6 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(true);
     }
 }
-    //IEnumerator spawnRunnerEnemies()
-    //{
-    //    playerDistance = Vector3.Distance(player.transform.position, runnerSpawnPos.transform.position);
-    //    //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
-    //    if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
-    //    {
 
-    //        needsToSpawnRunner = true;
-
-    //        Instantiate(runnerZombie, runnerSpawnPos.transform.position, transform.rotation);
-    //        yield return new WaitForSeconds(spawnRate);
-    //        needsToSpawnRunner = false;
-
-    //    }
-    //    else
-    //    {
-    //        needsToSpawnRunner = false;
-    //    }
-
-    //}
-    //IEnumerator spawnWalkerEnemies()
-    //{
-    //    playerDistance = Vector3.Distance(player.transform.position, walkerSpawnPos1.transform.position);
-    //    //will need to adjust the player distance but i have the spawner working!!!!!!!!!!!
-    //    if (enemiesRemaining <= 20 && playerDistance < playerDistanceWanted)
-    //    {
-
-    //        needsToSpawnWalker = true;
-
-    //        Instantiate(walkerZombie, walkerSpawnPos1.transform.position, transform.rotation);
-    //        yield return new WaitForSeconds(spawnRate);
-    //        needsToSpawnWalker = false;
-
-    //    }
-    //    else
-    //    {
-    //        needsToSpawnWalker = false;
-    //    }
-
-    //}
 
 

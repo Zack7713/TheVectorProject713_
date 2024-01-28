@@ -17,6 +17,8 @@ TagManager:
   - Enemy
   - Zombie
   - Survivor
+  - MissileTurret
+  - BasicTurret
   layers:
   - Default
   - TransparentFX
