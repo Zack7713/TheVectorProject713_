@@ -90,6 +90,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
+        advanceSpawner.wantsToBeginRound = false;
     }
 
     // Update is called once per frame
@@ -126,9 +127,11 @@ public class gameManager : MonoBehaviour
             menuActive = null;
             openLevelMenu();
         }
-        if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart)
+        if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart && advanceSpawner.wantsToBeginRound == false)
         {
-            menuActive = null;
+           
+            advanceSpawner.wantsToBeginRound = true;
+            closeInteractionMenu();
         
         }
         if (inBarricadePlacementMode)
@@ -225,6 +228,15 @@ public class gameManager : MonoBehaviour
     {
         menuActive = menuHubInteract;
         menuActive.SetActive(true);
+
+    }
+    public void RoundStartPrompt()
+    {
+        if (advanceSpawner.wantsToBeginRound == false)
+        {
+            menuActive = menuRoundStart;
+            menuActive.SetActive(true);
+        }
 
     }
     public void closeInteractionMenu()
