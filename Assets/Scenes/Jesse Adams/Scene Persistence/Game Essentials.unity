@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: playerSpawnPos
       value: 
       objectReference: {fileID: 988413350656552844, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
+    - target: {fileID: 2466695161139243585, guid: d23d477346961b948968d668598926f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7507166493991912708, guid: d23d477346961b948968d668598926f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
