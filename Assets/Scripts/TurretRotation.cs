@@ -8,6 +8,9 @@ public class TurretRotation : MonoBehaviour
     [SerializeField] float range;
     //[SerializeField] GameObject sphereRange;
     //private Enemy targetEnemy;
+    [SerializeField] Material idle;
+    [SerializeField] Material live;
+    [SerializeField] GameObject status;
 
     [Header("-----Rotation-----")]
     [SerializeField] float turnSpeed;
@@ -15,9 +18,20 @@ public class TurretRotation : MonoBehaviour
 
     [Header("-----Use Bullets (default)-----")]
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform firePoint;
+    [SerializeField] Transform[] shootPositions;
     [SerializeField] float fireRate;
+
+    [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip turretShoot;
+
+    private int currentFirePoint = 0; // Turret barrel 1
     private float fireCountDown = 0;
+
+    [Header("-----Recoil Parameters-----")]
+    [SerializeField] bool useRecoil;
+    [SerializeField] float recoilDistance = 0.1f;
+    [SerializeField] float recoilSpeed = 0.2f;
 
     [Header("-----Use Laser-----")]
     public bool useLaser = false; // If checked to true in inspector, bullet prebab should be left empty
@@ -46,7 +60,7 @@ public class TurretRotation : MonoBehaviour
         if (target == null)
         {
             if (useLaser)
-            {               
+            {
                 if (lineRenderer.enabled)
                 {
                     lineRenderer.enabled = false;
@@ -106,11 +120,13 @@ public class TurretRotation : MonoBehaviour
             target = nearestEnemy.transform;
             // targetEnemy = nearestEnemy.GetComponent<Enemy>
             //sphereRange.SetActive(true);
+            status.GetComponent<Renderer>().material = live;
         }
         else
         {
             target = null;
             //sphereRange.SetActive(false);
+            status.GetComponent<Renderer>().material = idle;
         }
     }
     void Laser()
@@ -127,14 +143,17 @@ public class TurretRotation : MonoBehaviour
         }
 
         // Setting the start and end points of the lineRenderer
-        lineRenderer.SetPosition(0, firePoint.position);
+        //lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
     }
 
     void Shoot()
     {
+        // Get the current firePoint
+        Transform shootPos = shootPositions[currentFirePoint];
+
         // Instantiate the bullet object and get the script from the bullet object
-        GameObject turretBullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject turretBullet = (GameObject)Instantiate(bulletPrefab, shootPos.position, shootPos.rotation);
         TurretBullet bullet = turretBullet.GetComponent<TurretBullet>();
 
         // If we made a bullet, call the bullets function
@@ -142,12 +161,45 @@ public class TurretRotation : MonoBehaviour
         {
             bullet.Seek(target);
         }
-    }
 
+        if (useRecoil)
+        {
+            //StartCoroutine(Recoil(firePoint));
+        }
+
+        // Update the current firePoint index for the next shot
+        currentFirePoint = (currentFirePoint + 1) % shootPositions.Length;
+
+        // Sound and particles
+        audioSource.PlayOneShot(turretShoot);
+        
+        muzzleFlash.transform.position = shootPos.position;
+        muzzleFlash.transform.rotation = shootPos.rotation;
+        muzzleFlash.Play();
+    }
+    
     // Visually show max range in scene view 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(pivot.position, range);
     }
+
+    //IEnumerator Recoil(Transform barrel)
+    //{
+    //    Vector3 originalPosition = barrel.position;
+
+    //    // Move the barrel back
+    //    barrel.localPosition -= barrel.forward * recoilDistance;
+
+    //    // Smoothly move the barrel back to its original position
+    //    while (Vector3.Distance(barrel.localPosition, originalPosition) > 0.01f)
+    //    {
+    //        barrel.localPosition = Vector3.Lerp(barrel.localPosition, originalPosition, recoilSpeed * Time.deltaTime);
+    //        yield return null;
+    //    }
+
+    //    // Ensure the barrel is exactly in its original position
+    //    barrel.localPosition = originalPosition;
+    //}
 }
