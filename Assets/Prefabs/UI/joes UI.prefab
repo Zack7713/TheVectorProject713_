@@ -7982,7 +7982,7 @@ RectTransform:
   - {fileID: 8461122561529582098}
   - {fileID: 400199049096238221}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14522,12 +14522,12 @@ MonoBehaviour:
   barricadePrefab: {fileID: 6682885703480177346, guid: 9f6b7da21d8c3f746b88cbab3cd82619, type: 3}
   barricadePreviewPrefab: {fileID: 6771682932368983323, guid: 3282cbbd45334844aa0454905454cebe, type: 3}
   barricadePreviewHeight: 1
-  turretPrefab: {fileID: 4511172865093806249, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
-  turretPreviewPrefab: {fileID: 4511172865093806249, guid: ce3cafc5e479db049bb827a28c9a6eb1, type: 3}
+  turretPrefab: {fileID: 1009882957242052731, guid: 46ee853b4be84934698391903be060ec, type: 3}
+  turretPreviewPrefab: {fileID: 1009882957242052731, guid: bd16a95f0e40d6047b2c1267b5239dd0, type: 3}
   turretPreviewHeight: 0
-  turretStandardPrefab: {fileID: 8198608584501087526, guid: e0274484ebfbaa4439a932b6cfa72595, type: 3}
-  turretStandardPreviewPrefab: {fileID: 4699870818543402736, guid: 4091710c4c0e7e54684cd6e9595579d3, type: 3}
-  turretStandardPreviewHeight: 1
+  turretStandardPrefab: {fileID: 1009882957242052731, guid: 46ee853b4be84934698391903be060ec, type: 3}
+  turretStandardPreviewPrefab: {fileID: 1009882957242052731, guid: bd16a95f0e40d6047b2c1267b5239dd0, type: 3}
+  turretStandardPreviewHeight: 0
   inBarricadePlacementMode: 0
   inTurretPlacementMode: 0
   inTurretStandardPlacementMode: 0
