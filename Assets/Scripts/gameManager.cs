@@ -90,8 +90,8 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
+       // advanceSpawner.wantsToBeginRound = false;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -126,9 +126,11 @@ public class gameManager : MonoBehaviour
             menuActive = null;
             openLevelMenu();
         }
-        if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart)
+        if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart && advanceSpawner.wantsToBeginRound == false)
         {
-            menuActive = null;
+           
+            advanceSpawner.wantsToBeginRound = true;
+            closeInteractionMenu();
         
         }
         if (inBarricadePlacementMode)
@@ -227,6 +229,15 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(true);
 
     }
+    public void RoundStartPrompt()
+    {
+        if (advanceSpawner.wantsToBeginRound == false)
+        {
+            menuActive = menuRoundStart;
+            menuActive.SetActive(true);
+        }
+
+    }
     public void closeInteractionMenu()
     {
         if (menuActive != null)
@@ -318,8 +329,6 @@ public class gameManager : MonoBehaviour
         }
 
     }
-
-
     public void sellGun(int gunIndex)
     {
         if (gunList.Count > 0)
@@ -360,7 +369,6 @@ public class gameManager : MonoBehaviour
         }
         closeMenu();
     }
-
     public void sellGunTwo()
     {
         if (gunList.Count >= 2)
@@ -455,8 +463,6 @@ public class gameManager : MonoBehaviour
         }
 
     }
-
-
     public void closeUtilityMenu()
     {
         Cursor.visible = false;
@@ -495,7 +501,6 @@ public class gameManager : MonoBehaviour
     }
     void SellBarricadeTower(GameObject tower)
     {
-        // barricadeUnit barricadeScript = tower.GetComponent<barricadeUnit>();
 
         buildUnits--;
         BuildUnitText.text = buildUnits.ToString("0");
@@ -511,12 +516,12 @@ public class gameManager : MonoBehaviour
     }
     void SellMissileTurret(GameObject tower)
     {
-        // barricadeUnit barricadeScript = tower.GetComponent<barricadeUnit>();
+
 
         buildUnits = buildUnits - 3;
         BuildUnitText.text = buildUnits.ToString("0");
 
-        updatePointCount(+100);
+        updatePointCount(+250);
 
         Destroy(tower);
         if (menuActive != null)
@@ -527,13 +532,10 @@ public class gameManager : MonoBehaviour
     }
     void SellBasicTurret(GameObject tower)
     {
-        // barricadeUnit barricadeScript = tower.GetComponent<barricadeUnit>();
-
+  
         buildUnits = buildUnits - 2;
         BuildUnitText.text = buildUnits.ToString("0");
-
-        updatePointCount(+100);
-
+        updatePointCount(+150);
         Destroy(tower);
         if (menuActive != null)
         {
@@ -616,7 +618,6 @@ public class gameManager : MonoBehaviour
             }
         }
     }
-
     private void UpdateTurretPreview()
     {
         if (turretPreview != null)
@@ -690,6 +691,7 @@ public class gameManager : MonoBehaviour
                 inBarricadePlacementMode = false;
                 buildUnits += 1;
                 BuildUnitText.text = buildUnits.ToString("0");
+                updatePointCount(-200);
             }
             else
             {
@@ -719,6 +721,7 @@ public class gameManager : MonoBehaviour
             inTurretPlacementMode = false;
             buildUnits = buildUnits + 3;
             BuildUnitText.text = buildUnits.ToString("0");
+            updatePointCount(-500);
         }
     }
     private void ConfirmStandardTurretPlacement()
@@ -743,6 +746,7 @@ public class gameManager : MonoBehaviour
             inTurretStandardPlacementMode = false;
             buildUnits = buildUnits + 2;
             BuildUnitText.text = buildUnits.ToString("0");
+            updatePointCount(-300);
         }
     }
     private void CancelBarricadePlacement()
@@ -756,7 +760,6 @@ public class gameManager : MonoBehaviour
         inTurretPlacementMode = false;
 
     }
-
     private void CancelStandardTurretPlacement()
     {
         DestroyTurretPreview();

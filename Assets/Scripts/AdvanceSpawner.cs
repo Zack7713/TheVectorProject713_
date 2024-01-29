@@ -13,7 +13,7 @@ public class AdvanceSpawner : MonoBehaviour
      int spawnCount;
     bool isSpawning;
     bool startSpawning;
-    bool wantsToBeginRound; 
+    public bool wantsToBeginRound; 
     void Start()
     {
 
@@ -60,17 +60,17 @@ public class AdvanceSpawner : MonoBehaviour
             startSpawning = true;
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            startSpawning = false;
-            for (int i = 0; i < spawnList.Count; i++)
-            {
-                Destroy(spawnList[i]);
-            }
-            spawnList.Clear();
-            spawnCount = 0;
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        startSpawning = false;
+    //        for (int i = 0; i < spawnList.Count; i++)
+    //        {
+    //            Destroy(spawnList[i]);
+    //        }
+    //        spawnList.Clear();
+    //        spawnCount = 0;
+    //    }
+    //}
 }

@@ -31,6 +31,7 @@ public class playerController : MonoBehaviour, IDamage
     [Range(0, 1)][SerializeField] float soundHurtVol;
     [SerializeField] AudioClip[] soundSteps;
     [Range(0, 1)][SerializeField] float soundStepVol;
+    PlayerSpawnPos spawnPos;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private Vector3 move;
@@ -59,6 +60,7 @@ public class playerController : MonoBehaviour, IDamage
         respawnPlayer();
         animPlayer = GetComponent<Animator>();
 
+        gameManager.instance.playerScript.respawnPlayer();
 
         gameManagerInstance = gameManager.instance;
     }
@@ -91,6 +93,15 @@ public class playerController : MonoBehaviour, IDamage
             movement();
         }
     }
+
+    public void TeleportPlayer(Vector3 position)
+    {
+        controller.enabled = false;
+        transform.position = position;
+        controller.enabled = true;
+    }
+
+
     void HandleRecoil()
     {
         if (!isRecoiling && currentRecoilAngle > 0f)
@@ -138,14 +149,26 @@ public class playerController : MonoBehaviour, IDamage
     {
         HP = HPOrig;
         updatePlayerUI();
+        if (spawnPos != null)
+        {
+            controller.enabled = false;
+            transform.position = gameManager.instance.playerSpawnPos.transform.position;
+            controller.enabled = true;
+        }
+
+    }
+    PlayerSpawnPos position; 
+    public void respawnPlayerOnLoad(Vector3 SpawnPosit)
+    {
+        HP = HPOrig;
+        updatePlayerUI();
 
         controller.enabled = false;
-        transform.position = gameManager.instance.playerSpawnPos.transform.position;
+        transform.position = SpawnPosit; 
         controller.enabled = true;
 
 
     }
-
     void movement()
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.red);
@@ -350,17 +373,17 @@ public class playerController : MonoBehaviour, IDamage
 
         selectedGun = gunList.Count - 1;
 
-        // Assuming PlayerLoader is static
-        if (PlayerLoader.instance != null)
-        {
-            //call the player loader instance to add the gunstat?
-            PlayerLoader.instance.acquiredGuns.Add(gun.gunName);
-            //PlayerLoader.instance.acquiredGuns.Add(gun);
-        }
-        else
-        {
-            Debug.LogError("PlayerLoader instance not found!");
-        }
+        //// Assuming PlayerLoader is static
+        //if (PlayerLoader.instance != null)
+        //{
+        //    //call the player loader instance to add the gunstat?
+        //    PlayerLoader.instance.acquiredGuns.Add(gun.gunName);
+        //    //PlayerLoader.instance.acquiredGuns.Add(gun);
+        //}
+        //else
+        //{
+        //    Debug.LogError("PlayerLoader instance not found!");
+        //}
 
     }
     public void getInventoryItem(inventoryItems item)

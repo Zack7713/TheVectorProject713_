@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class npcAI : MonoBehaviour, IDamage
+public class npcAI : MonoBehaviour
 {
     [Header("----- Components -----")]
     [SerializeField] NavMeshAgent agent;
@@ -90,15 +90,5 @@ public class npcAI : MonoBehaviour, IDamage
             playerInRange = false;
         }
     }
-    public void takeDamage(int amount)
-    {
-        HP -= amount;
 
-        if (HP <= 0)
-        {
-            agent.enabled = false;
-            damageCol.enabled = false;
-            Destroy(gameObject);
-        }
-    }
 }

@@ -27,6 +27,16 @@ public class mainMenu : MonoBehaviour
         SceneManager.LoadScene(7);
         SceneManager.LoadScene(6, LoadSceneMode.Additive);
     }
+    public void LoadGameTunnel()
+    {
+        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6, LoadSceneMode.Additive);
+    }
+    public void LoadGameCity()
+    {
+        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6, LoadSceneMode.Additive);
+    }
     public void quit()
     {
 #if UNITY_EDITOR
