@@ -23,18 +23,18 @@ public class PlayerSpawnPos : MonoBehaviour
     void Start()
     {
         // Get the playerController component
-        controller = GameObject.FindWithTag("Player").GetComponent<playerController>();
+        //controller = GameObject.FindWithTag("Player").GetComponent<playerController>();
 
-        // Check if the controller is not null before calling methods
-        if (controller != null)
-        {
-            SetSpawnPosition(spawnPosition);
-            GetSpawnPosition();
-            controller.respawnPlayerOnLoad(spawnPosition);
-        }
-        else
-        {
-            Debug.LogError("Player controller not found!");
-        }
+        //// Check if the controller is not null before calling methods
+        //if (controller != null)
+        //{
+        //    SetSpawnPosition(spawnPosition);
+        //    GetSpawnPosition();
+        //    controller.respawnPlayerOnLoad(spawnPosition);
+        //}
+        //else
+        //{
+        //    Debug.LogError("Player controller not found!");
+        //}
     }
 }

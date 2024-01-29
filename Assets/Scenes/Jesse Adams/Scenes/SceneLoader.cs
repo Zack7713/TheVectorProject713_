@@ -7,10 +7,14 @@ public class SceneLoader : MonoBehaviour
 {
     public int[] sceneIndices;
     PlayerSpawnPos playerSpawnPos;
-    playerController controller; 
+    playerController controller;
+    Vector3 spawnplace;
+
     void Start()
     {
-         playerSpawnPos = FindObjectOfType<PlayerSpawnPos>();
+  
+        //controller.respawnPlayerOnLoad(spawnplace);
+        //gameManager.instance.playerSpawnPos.transform.position = spawnplace;
     }
 
     void Update()
@@ -22,16 +26,17 @@ public class SceneLoader : MonoBehaviour
         if (index >= 0 && index < sceneIndices.Length)
         {
             // Find the PlayerSpawnPos object in the loaded scene
-      
 
+
+
+
+            // Set the spawn position in the PlayerSpawnPos script
          
-            
-                // Set the spawn position in the PlayerSpawnPos script
-                playerSpawnPos.SetSpawnPosition(transform.position);
-                playerController.Instantiate(playerSpawnPos);
-           
-            controller = FindObjectOfType<playerController>();
-        
+
+            playerSpawnPos = FindObjectOfType<PlayerSpawnPos>();
+            spawnplace = playerSpawnPos.GetSpawnPosition();
+            gameManager.instance.playerSpawnPos.transform.position = spawnplace;
+
 
 
 
