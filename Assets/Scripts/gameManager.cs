@@ -219,24 +219,7 @@ public class gameManager : MonoBehaviour
         playerScript.getGunList(gunList);
     }
 
-    public void RespawnPlayer()
-    {
-        // Find the PlayerSpawnPos object in the scene
-        PlayerSpawnPos playerSpawnPos = FindObjectOfType<PlayerSpawnPos>();
 
-        if (playerSpawnPos != null)
-        {
-            // Get the spawn position from PlayerSpawnPos
-            Vector3 spawnPosition = playerSpawnPos.GetSpawnPosition();
-
-            // Teleport the player to the spawn position
-            playerScript.TeleportPlayer(spawnPosition);
-        }
-        else
-        {
-            Debug.LogError("PlayerSpawnPos not found!");
-        }
-    }
 
 
     public void interactionMenu()

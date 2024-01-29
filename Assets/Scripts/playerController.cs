@@ -155,7 +155,18 @@ public class playerController : MonoBehaviour, IDamage
 
 
     }
+    PlayerSpawnPos position; 
+    public void respawnPlayerOnLoad(Vector3 SpawnPosit)
+    {
+        HP = HPOrig;
+        updatePlayerUI();
 
+        controller.enabled = false;
+        transform.position = SpawnPosit; 
+        controller.enabled = true;
+
+
+    }
     void movement()
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.red);
