@@ -47,6 +47,7 @@ public class npcAI : MonoBehaviour
             }
         }
     }
+
     bool canSeePlayer()
     {
         playerDir = gameManager.instance.player.transform.position - headPos.position;

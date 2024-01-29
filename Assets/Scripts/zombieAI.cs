@@ -71,7 +71,7 @@ public class zombieAI : MonoBehaviour, IDamage
             float animSpeed = agent.velocity.normalized.magnitude;
             anim.SetFloat("Speed", Mathf.Lerp(anim.GetFloat("Speed"), animSpeed, Time.deltaTime * animSpeedTrans));
             //adding the bool check for other types of zombies
-            if (isRunner || isBloater)
+            if (isRunner)
             {
                 agent.SetDestination(gameManager.instance.player.transform.position);
             }
@@ -118,7 +118,8 @@ public class zombieAI : MonoBehaviour, IDamage
                 //adding another check in the can see player for the different zombie types, since the following code affects the destination and movement of the zombie when getting the player enters their sphere collider
                 if(isBloater)
                 {
-                    if (distanceToPlayer <= 3f && !isAttacking)
+                    agent.SetDestination(gameManager.instance.player.transform.position);
+                    if (!isAttacking)
                     {
                         StartCoroutine(bloaterAttack());
                     }
@@ -127,7 +128,6 @@ public class zombieAI : MonoBehaviour, IDamage
                         faceTarget();
                     }
                     agent.stoppingDistance = stoppingDistOrig;
-                    takeDamage(HP);
                     return true;
                 }
                 if (isStalker)
@@ -183,7 +183,7 @@ public class zombieAI : MonoBehaviour, IDamage
     IEnumerator bloaterAttack()
     {
         isAttacking = true;
-        anim.SetTrigger("Explode");
+        anim.SetTrigger("Bite");
         yield return new WaitForSeconds(attackDur);
         isAttacking = false;
     }
@@ -272,7 +272,6 @@ public class zombieAI : MonoBehaviour, IDamage
             gameManager.instance.updateGameGoal(-1);
             //model.sharedMaterial.color = Color.white;
             gameManager.instance.updatePointCount(+zombiePointValue);
-            anim.SetBool("Dead", true);
             agent.enabled = false;
             damageCol.enabled = false;
             //Destroy(gameObject);//take out the destroy object so we can play our dead animation
