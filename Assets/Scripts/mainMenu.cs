@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -10,6 +11,10 @@ using UnityEditor;
 
 public class mainMenu : MonoBehaviour
 {
+
+    public Slider musicVolumeSlider;
+    public Slider soundEffectsVolumeSlider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,18 +29,43 @@ public class mainMenu : MonoBehaviour
 
     public void LoadGame()
     {
+        
         SceneManager.LoadScene(7);
         SceneManager.LoadScene(6, LoadSceneMode.Additive);
     }
-    public void LoadGameTunnel()
+    //public void LoadGameTunnel()
+    //{
+    //    SceneManager.LoadScene(7);
+    //    SceneManager.LoadScene(6, LoadSceneMode.Additive);
+    //}
+    //public void LoadGameCity()
+    //{
+    //    SceneManager.LoadScene(7);
+    //    SceneManager.LoadScene(6, LoadSceneMode.Additive);
+    //}
+
+    public void ApplySettings()
     {
-        SceneManager.LoadScene(7);
-        SceneManager.LoadScene(6, LoadSceneMode.Additive);
+        SetVolume();
     }
-    public void LoadGameCity()
+
+    private void SetVolume()
     {
-        SceneManager.LoadScene(7);
-        SceneManager.LoadScene(6, LoadSceneMode.Additive);
+        float musicVolume = musicVolumeSlider.value;
+        float soundEffectsVolume = soundEffectsVolumeSlider.value;
+
+        GameObject persistence = GameObject.Find("Persistence");
+
+        if (persistence != null)
+        {
+            persistence.GetComponent<optionsSettings>().SetMusicVolume(musicVolume);
+            persistence.GetComponent<optionsSettings>().SetSoundEffectsVolume(soundEffectsVolume);
+        }
+        else
+        {
+            Debug.LogError("Persistence object not found!");
+        }
+
     }
     public void quit()
     {
