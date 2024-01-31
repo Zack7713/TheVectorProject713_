@@ -38,7 +38,8 @@ public class gameManager : MonoBehaviour
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
     [SerializeField] TMP_Text WaveNumberText;
-    [SerializeField] TMP_Text BuildUnitText;
+    public TMP_Text BuildUnitText;
+    
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;

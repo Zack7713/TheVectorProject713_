@@ -153,6 +153,7 @@ public class playerController : MonoBehaviour, IDamage
         {
             controller.enabled = false;
             transform.position = gameManager.instance.playerSpawnPos.transform.position;
+            gameManager.instance.buildUnits = 0;
             controller.enabled = true;
         }
 
@@ -164,7 +165,8 @@ public class playerController : MonoBehaviour, IDamage
         updatePlayerUI();
 
         controller.enabled = false;
-        transform.position = SpawnPosit; 
+        transform.position = SpawnPosit;
+        gameManager.instance.buildUnits = 0;
         controller.enabled = true;
 
 

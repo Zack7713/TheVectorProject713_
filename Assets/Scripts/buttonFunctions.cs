@@ -19,6 +19,8 @@ public class buttonFunctions : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gameManager.instance.buildUnits = 0;
+        gameManager.instance.BuildUnitText.text = gameManager.instance.buildUnits.ToString("0");
         gameManager.instance.stateUnpaused();
     }
 
