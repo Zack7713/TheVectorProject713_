@@ -30,8 +30,8 @@ public class mainMenu : MonoBehaviour
     public void LoadGame()
     {
         
-        SceneManager.LoadScene(7);
-        SceneManager.LoadScene(6, LoadSceneMode.Additive);
+        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
     }
     //public void LoadGameTunnel()
     //{

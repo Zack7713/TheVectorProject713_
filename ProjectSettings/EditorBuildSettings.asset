@@ -6,33 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Alpha Scenes/0-1 Team Logo.unity
+    path: Assets/Scenes/Scene Persistence/0-1 Team Logo.unity
     guid: 3a11379bf5bc68c428f53e6f528b543e
   - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/0-2 Main_Menu Scene Persistence.unity
+    path: Assets/Scenes/Scene Persistence/0-2 Main_Menu Scene Persistence.unity
     guid: fb060ead67807e64dba433581c0362c0
   - enabled: 1
-    path: Assets/Scenes/Alpha Scenes/0-2 Main_Menu.unity
-    guid: 44270c67793d8314f96119a320c80581
-  - enabled: 1
-    path: Assets/Scenes/Alpha Scenes/0-3 Hub - Lobby (Alpha 1.01).unity
-    guid: de19dc44c41663848970afce8fe1dd5d
-  - enabled: 1
-    path: Assets/Scenes/Alpha Scenes/1-1 Tunnel.unity
-    guid: 14580aff9f18a774d812d418b9c90314
-  - enabled: 0
-    path: Assets/Scenes/Jesse Adams/Scenes/3-1 Studio (Pre-Prototype).unity
-    guid: cc483489a198a624892cd5381b5e00fb
-  - enabled: 1
-    path: Assets/Scenes/Alpha Scenes/2-1 City.unity
-    guid: bf6d33d34c5a1704b8ad70c200d3e2fc
-  - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/Game Essentials.unity
+    path: Assets/Scenes/Scene Persistence/Game Essentials.unity
     guid: f8bc468f91c7ab04181316374a3b6009
   - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/Hub Essentials.unity
+    path: Assets/Scenes/Scene Persistence/Hub Essentials.unity
     guid: f9138744c0992014c9c0cf0b0d67bc48
   - enabled: 1
-    path: Assets/Scenes/Jesse Adams/Scene Persistence/City Essentials.unity
+    path: Assets/Scenes/Scene Persistence/1-1 Tunnel 1.unity
+    guid: 83df8dfc892c09d46b565bcbf1d06824
+  - enabled: 1
+    path: Assets/Scenes/Scene Persistence/City Essentials.unity
     guid: 5b79a168fd63cc54a874d1f1a54a5909
   m_configObjects: {}
