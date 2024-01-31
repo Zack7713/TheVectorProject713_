@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
     public int[] sceneIndices;
     PlayerSpawnPos playerSpawnPos;
     playerController controller;
-    Vector3 spawnplace;
+    //Vector3 spawnplace;
 
     void Start()
     {
@@ -34,8 +34,8 @@ public class SceneLoader : MonoBehaviour
          
 
             playerSpawnPos = FindObjectOfType<PlayerSpawnPos>();
-            spawnplace = playerSpawnPos.GetSpawnPosition();
-            gameManager.instance.playerSpawnPos.transform.position = spawnplace;
+            //spawnplace = gameManager.instance.playerSpawnPos();
+            //gameManager.instance.playerSpawnPos.transform.position = spawnplace;
 
 
 
