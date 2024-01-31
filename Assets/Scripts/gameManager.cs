@@ -31,6 +31,9 @@ public class gameManager : MonoBehaviour
     [SerializeField] gunStats pistol;
     [SerializeField] gunStats rifle;
     [SerializeField] gunStats shotgun;
+    public bool hasPistol = false;
+    public bool hasRifle = false;
+    public bool hasShotgun = false;
     [SerializeField] TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
     [SerializeField] TMP_Text pointAmountText;
@@ -305,19 +308,19 @@ public class gameManager : MonoBehaviour
     {
         increaseGunDamage(0, 1);
         updatePointCount(-500);
-        closeMenu();
+        closeShopMenu();
     }
     public void upgradeGunTwo()
     {
         increaseGunDamage(1, 1);
         updatePointCount(-500);
-        closeMenu();
+        closeShopMenu();
     }
     public void upgradeGunThree()
     {
         increaseGunDamage(2, 1);
         updatePointCount(-500);
-        closeMenu();
+        closeShopMenu();
     }
     public void increaseGunDamage(int gunIndex, int amount)
     {
@@ -339,14 +342,17 @@ public class gameManager : MonoBehaviour
                 if (gunToSell != null && gunToSell.gunName == ("Pistol"))
                 {
                     gunToSell.ResetPistol();
+                    hasPistol = false;
                 }
                 else if (gunToSell != null && gunToSell.gunName == ("Rifle"))
                 {
                     gunToSell.ResetRifle();
+                    hasRifle = false;
                 }
                 else if (gunToSell != null && gunToSell.gunName == ("Shotgun"))
                 {
                     gunToSell.ResetShotgun();
+                    hasShotgun = false;
                 }
 
                 gunList.RemoveAt(gunIndex);
@@ -367,7 +373,7 @@ public class gameManager : MonoBehaviour
         {
             playerScript.showBoughtGun();
         }
-        closeMenu();
+        closeShopMenu();
     }
     public void sellGunTwo()
     {
@@ -376,8 +382,13 @@ public class gameManager : MonoBehaviour
             sellGun(1);
             updatePointCount(+250);
         }
+        if (gunList.Count == 0)
+        {
+            playerScript.showBoughtGun();
+        }
+   
         playerScript.sellSecondGun();
-        closeMenu();
+        closeShopMenu();
     }
     public void sellGunThree()
     {
@@ -386,8 +397,13 @@ public class gameManager : MonoBehaviour
             sellGun(2);
             updatePointCount(+250);
         }
+        if (gunList.Count == 0)
+        {
+            playerScript.showBoughtGun();
+        }
+
         playerScript.sellThirdGun();
-        closeMenu();
+        closeShopMenu();
     }
     public void openBuyMenu()
     {
@@ -397,54 +413,59 @@ public class gameManager : MonoBehaviour
     }
     public void buyPistol()
     {
-        if (pointAmount >= 500)
+        if (pointAmount >= 500 && !hasPistol)
         {
             if (gunList.Count < 3)
             {
                 gunStats newGun = Instantiate(pistol);
                 newGun.Initialize();
-                gunList.Add(pistol);
+                gunList.Add(newGun);
                 playerScript.showBoughtGun();
                 updatePointCount(-500);
+                hasPistol = true;
             }
 
 
-            closeMenu();
+           closeShopMenu();
 
 
         }
     }
     public void buyRifle()
     {
-        if (pointAmount >= 500)
+        if (pointAmount >= 500 && !hasRifle)
         {
             if (gunList.Count < 3)
             {
-                gunList.Add(rifle);
+                gunStats newGun = Instantiate(rifle);
+                newGun.Initialize();
+                gunList.Add(newGun);
                 playerScript.showBoughtGun();
                 updatePointCount(-500);
+                hasRifle = true;
             }
 
 
-            closeMenu();
+            closeShopMenu();
 
 
         }
     }
     public void buyShotgun()
     {
-        if (pointAmount >= 500)
+        if (pointAmount >= 500 && !hasShotgun)
         {
             if (gunList.Count < 3)
             {
-                gunList.Add(shotgun);
+                gunStats newGun = Instantiate(shotgun);
+                newGun.Initialize();
+                gunList.Add(newGun);
                 playerScript.showBoughtGun();
                 updatePointCount(-500);
+                hasShotgun = true;
+
             }
-
-
-            closeMenu();
-
+            closeShopMenu();
 
         }
     }
@@ -461,6 +482,21 @@ public class gameManager : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+
+    }
+    public void closeShopMenu()
+    {
+        if (isPaused == true)
+        {
+            stateUnpaused();
+        }
+
+
+        menuActive = menuInteract;
+        menuActive.SetActive(true);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
 
     }
     public void closeUtilityMenu()

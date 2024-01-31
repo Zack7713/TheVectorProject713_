@@ -19,6 +19,9 @@ TagManager:
   - Survivor
   - MissileTurret
   - BasicTurret
+  - GunPistol
+  - GunRifle
+  - GunShotgun
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1295951945316341770}
   m_Layer: 0
   m_Name: Gun - Shotgun
-  m_TagString: Untagged
+  m_TagString: GunShotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
