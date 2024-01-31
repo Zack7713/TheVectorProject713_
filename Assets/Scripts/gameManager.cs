@@ -545,30 +545,45 @@ public class gameManager : MonoBehaviour
     }
     public void CreateBarricadePreview()
     {
-        menuActive = null;
-        menuUtil.SetActive(false);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        barricadePreview = Instantiate(barricadePreviewPrefab);
-        stateUnpaused();
+        if(pointAmount >= 200)
+        {
+            menuActive = null;
+            menuUtil.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            barricadePreview = Instantiate(barricadePreviewPrefab);
+            stateUnpaused();
+        }
+        else
+            closeUtilityMenu();
     }
     public void CreateTurretPreview()
     {
-        menuActive = null;
-        menuUtil.SetActive(false);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        turretPreview = Instantiate(turretPreviewPrefab);
-        stateUnpaused();
+        if(pointAmount >= 500)
+        {
+            menuActive = null;
+            menuUtil.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            turretPreview = Instantiate(turretPreviewPrefab);
+            stateUnpaused();
+        }
+        else 
+            closeUtilityMenu();
     }
     public void CreateStandardTurretPreview()
     {
-        menuActive = null;
-        menuUtil.SetActive(false);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        turretStandardPreview = Instantiate(turretStandardPreviewPrefab);
-        stateUnpaused();
+        if(pointAmount >= 300)
+        {
+            menuActive = null;
+            menuUtil.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            turretStandardPreview = Instantiate(turretStandardPreviewPrefab);
+            stateUnpaused();
+        }
+        else
+            closeUtilityMenu();
     }
     public void DestroyBarricadePreview()
     {
