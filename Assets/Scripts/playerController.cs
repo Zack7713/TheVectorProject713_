@@ -154,7 +154,7 @@ public class playerController : MonoBehaviour, IDamage
             controller.enabled = false;
             transform.position = gameManager.instance.playerSpawnPos.transform.position;
             gameManager.instance.buildUnits = 0;
-            advanceSpawner.wantsToBeginRound = false;
+            gameManager.instance.wantsToBeginRound = false;
             controller.enabled = true;
         }
 
