@@ -88,7 +88,7 @@ public class gameManager : MonoBehaviour
 
     void Awake()
     {
-        updatePointCount(+5000);
+        updatePointCount(+10000);
         instance = this;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
@@ -307,18 +307,42 @@ public class gameManager : MonoBehaviour
     }
     public void upgradeGunOne()
     {
+        if (gunList[0].isUpgraded == true)
+        {
+       
+      
+                gunList[0].upgradeCost *= 2;
+            
+        }
+        updatePointCount(gunList[0].upgradeCost);
         increaseGunDamage(0, 1);
-        updatePointCount(-500);
+        gunList[0].isUpgraded = true;
         closeShopMenu();
     }
     public void upgradeGunTwo()
     {
+        if (gunList[1].isUpgraded == true)
+        {
+
+
+            gunList[1].upgradeCost *= 2;
+
+        }
+        updatePointCount(gunList[1].upgradeCost);
         increaseGunDamage(1, 1);
         updatePointCount(-500);
         closeShopMenu();
     }
     public void upgradeGunThree()
     {
+        if (gunList[2].isUpgraded == true)
+        {
+
+
+            gunList[2].upgradeCost *= 2;
+
+        }
+        updatePointCount(gunList[2].upgradeCost);
         increaseGunDamage(2, 1);
         updatePointCount(-500);
         closeShopMenu();
@@ -532,7 +556,7 @@ public class gameManager : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        inBarricadePlacementMode = true;
+        //inBarricadePlacementMode = true;
 
 
     }
@@ -584,8 +608,11 @@ public class gameManager : MonoBehaviour
     {
         if(pointAmount >= 200)
         {
-            menuActive = null;
-            menuUtil.SetActive(false);
+            
+            
+                menuActive.SetActive(false);
+                menuActive = null;
+            
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             barricadePreview = Instantiate(barricadePreviewPrefab);
@@ -598,8 +625,11 @@ public class gameManager : MonoBehaviour
     {
         if(pointAmount >= 500)
         {
-            menuActive = null;
-            menuUtil.SetActive(false);
+          
+           
+                menuActive.SetActive(false);
+                menuActive = null;
+            
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             turretPreview = Instantiate(turretPreviewPrefab);
@@ -612,8 +642,11 @@ public class gameManager : MonoBehaviour
     {
         if(pointAmount >= 300)
         {
-            menuActive = null;
-            menuUtil.SetActive(false);
+            if (menuActive != null)
+            {
+                menuActive.SetActive(false);
+                menuActive = null;
+            }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             turretStandardPreview = Instantiate(turretStandardPreviewPrefab);
@@ -627,6 +660,7 @@ public class gameManager : MonoBehaviour
         if (barricadePreview != null)
         {
             Destroy(barricadePreview);
+            inBarricadePlacementMode = false;
         }
     }
     public void DestroyTurretPreview()
@@ -634,6 +668,7 @@ public class gameManager : MonoBehaviour
         if (turretPreview != null)
         {
             Destroy(turretPreview);
+            inTurretPlacementMode = false;
         }
     }
     public void DestroyStandardTurretPreview()
@@ -641,6 +676,7 @@ public class gameManager : MonoBehaviour
         if (turretStandardPreview != null)
         {
             Destroy(turretStandardPreview);
+            inTurretStandardPlacementMode = false;
         }
     }
     private void UpdateBarricadePreview()
@@ -727,12 +763,14 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmBarricadePlacement()
     {
-        if (buildUnits + 1 > buildUnitLimit)
+        buildUnits++;
+        if (buildUnits  > buildUnitLimit)
         {
             DestroyBarricadePreview();
+            buildUnits--;
             return;
         }
-
+        buildUnits--;
         if (barricadePreview != null)
         {
             Vector3 spawnPosition = barricadePreview.transform.position;
@@ -741,7 +779,7 @@ public class gameManager : MonoBehaviour
                 Instantiate(barricadePrefab, spawnPosition, barricadePreview.transform.rotation);
                 DestroyBarricadePreview();
                 inBarricadePlacementMode = false;
-                buildUnits += 1;
+                buildUnits ++;
                 BuildUnitText.text = buildUnits.ToString("0");
                 updatePointCount(-200);
             }
@@ -751,20 +789,24 @@ public class gameManager : MonoBehaviour
                 // Optionally, provide feedback to the player that the placement is invalid.
             }
         }
+        
     }
     private void ConfirmTurretPlacement()
     {
-
-        if (buildUnits + 3 > buildUnitLimit)
+        buildUnits = buildUnits + 3;
+        if (buildUnits  > buildUnitLimit)
         {
             DestroyTurretPreview();
+            buildUnits = buildUnits - 3; 
             return;
         }
+        buildUnits = buildUnits - 3;
         if (turretPreview != null)
         {
             if (!IsPositionOnNavMesh(turretPreview.transform.position))
             {
                 DestroyTurretPreview();
+
                 return;
             }
 
@@ -778,13 +820,14 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmStandardTurretPlacement()
     {
-
-        if (buildUnits + 2 > buildUnitLimit)
+        buildUnits = buildUnits + 2;
+        if (buildUnits > buildUnitLimit)
         {
             DestroyStandardTurretPreview();
+            buildUnits = buildUnits - 2;
             return;
         }
-
+        buildUnits = buildUnits - 2;
         if (turretStandardPreview != null)
         {
             if (!IsPositionOnNavMesh(turretStandardPreview.transform.position))

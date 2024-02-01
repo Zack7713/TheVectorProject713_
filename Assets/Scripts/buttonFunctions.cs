@@ -11,6 +11,7 @@ using UnityEditor;
 
 public class buttonFunctions : MonoBehaviour
 {
+    AdvanceSpawner AdvanceSpawner;
     public void resume()
     {
         gameManager.instance.stateUnpaused();
@@ -21,6 +22,7 @@ public class buttonFunctions : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.instance.buildUnits = 0;
         gameManager.instance.BuildUnitText.text = gameManager.instance.buildUnits.ToString("0");
+        
         gameManager.instance.stateUnpaused();
     }
 

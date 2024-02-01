@@ -126,7 +126,8 @@ public class TurretRotation : MonoBehaviour
         {
             target = null;
             //sphereRange.SetActive(false);
-            status.GetComponent<Renderer>().material = idle;
+            //commented out to get functionality
+            //status.GetComponent<Renderer>().material = idle;
         }
     }
     void Laser()

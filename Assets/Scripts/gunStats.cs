@@ -18,7 +18,8 @@ public class gunStats : ScriptableObject
     public float recoilAngle;
     public float recoilRecoverySpeed;
     public float maxRecoilAngle;
-
+    public bool isUpgraded = false;
+    public int upgradeCost = 500; 
     public GameObject model;
     public ParticleSystem hitEffect;
     public AudioClip shootSound;
@@ -49,15 +50,21 @@ public class gunStats : ScriptableObject
     {
         shootDamage = 1;
         shootRate = 1;
+        upgradeCost = 500;
+        isUpgraded = false;
     }
     public void ResetRifle()
     {
         shootDamage = 1;
         shootRate = 0.3f;
+        upgradeCost = 500;
+        isUpgraded = false;
     }
     public void ResetShotgun()
     {
         shootDamage = 2;
         shootRate = 2;
+        upgradeCost = 500;
+        isUpgraded = false;
     }
 }
