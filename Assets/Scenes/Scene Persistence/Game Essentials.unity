@@ -184,6 +184,10 @@ PrefabInstance:
       value: Game Essentials
       objectReference: {fileID: 0}
     - target: {fileID: 1814354820761460573, guid: d23d477346961b948968d668598926f2, type: 3}
+      propertyPath: advanceSpawner
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814354820761460573, guid: d23d477346961b948968d668598926f2, type: 3}
       propertyPath: playerSpawnPos
       value: 
       objectReference: {fileID: 988413350656552844, guid: 8a7e98085ea56874580df1538eedca97, type: 3}
@@ -252,6 +256,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3108600829174235289, guid: d23d477346961b948968d668598926f2, type: 3}
     - {fileID: 8127093321878673120, guid: d23d477346961b948968d668598926f2, type: 3}
+    - {fileID: 7850570825261414848, guid: d23d477346961b948968d668598926f2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 920992162417106615, guid: d23d477346961b948968d668598926f2, type: 3}

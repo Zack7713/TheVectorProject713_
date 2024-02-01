@@ -120,7 +120,7 @@ public class TurretRotation : MonoBehaviour
             target = nearestEnemy.transform;
             // targetEnemy = nearestEnemy.GetComponent<Enemy>
             //sphereRange.SetActive(true);
-            status.GetComponent<Renderer>().material = live;
+           // status.GetComponent<Renderer>().material = live;
         }
         else
         {

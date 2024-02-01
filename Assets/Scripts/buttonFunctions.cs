@@ -22,6 +22,9 @@ public class buttonFunctions : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.instance.buildUnits = 0;
         gameManager.instance.BuildUnitText.text = gameManager.instance.buildUnits.ToString("0");
+        gameManager.instance.pointAmount = 5000;
+        gameManager.instance.pointAmountText.text = gameManager.instance.pointAmount.ToString("0000");
+        gameManager.instance.enemyCountText.text = gameManager.instance.advanceSpawner.spawnCount.ToString();
         
         gameManager.instance.stateUnpaused();
     }

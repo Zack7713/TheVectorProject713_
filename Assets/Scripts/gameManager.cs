@@ -10,7 +10,7 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     [Header("------Menu Components-----")]
-    [SerializeField] GameObject menuActive;
+    public GameObject menuActive;
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
@@ -34,9 +34,9 @@ public class gameManager : MonoBehaviour
     public bool hasPistol = false;
     public bool hasRifle = false;
     public bool hasShotgun = false;
-    [SerializeField] TMP_Text enemyCountText;
+    public TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
-    [SerializeField] TMP_Text pointAmountText;
+    public TMP_Text pointAmountText;
     [SerializeField] TMP_Text WaveNumberText;
     public TMP_Text BuildUnitText;
     
@@ -80,7 +80,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] int buildUnitLimit = 35;
     int enemiesRemaining;
     int enemiesKilled;
-    int pointAmount;
+    public int pointAmount;
     int waveNumber = 1;
     int waveLimit = 5;
 
@@ -88,6 +88,7 @@ public class gameManager : MonoBehaviour
 
     void Awake()
     {
+        
         updatePointCount(+10000);
         instance = this;
         player = GameObject.FindWithTag("Player");
@@ -100,6 +101,7 @@ public class gameManager : MonoBehaviour
     void Update()
     {
 
+       
 
 
         if (Input.GetButtonDown("Utility") && menuActive == null)
@@ -111,7 +113,7 @@ public class gameManager : MonoBehaviour
             menuActive = menuUtil;
             menuActive.SetActive(menuUtil);
 
-
+            
         }
 
         if (Input.GetButtonDown("Cancel") && menuActive == null)
