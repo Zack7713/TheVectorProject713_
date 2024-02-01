@@ -50,7 +50,7 @@ public class playerController : MonoBehaviour, IDamage
     private float originalPlayerSpeed;
     private bool isProne;
 
-
+    AdvanceSpawner advanceSpawner;
     private gameManager gameManagerInstance;
     private float currentRecoilAngle;
     private bool isRecoiling;
@@ -159,6 +159,7 @@ public class playerController : MonoBehaviour, IDamage
             controller.enabled = false;
             transform.position = gameManager.instance.playerSpawnPos.transform.position;
             gameManager.instance.buildUnits = 0;
+            gameManager.instance.wantsToBeginRound = false;
             controller.enabled = true;
         }
 
@@ -172,6 +173,7 @@ public class playerController : MonoBehaviour, IDamage
         controller.enabled = false;
         transform.position = SpawnPosit;
         gameManager.instance.buildUnits = 0;
+    
         controller.enabled = true;
 
 

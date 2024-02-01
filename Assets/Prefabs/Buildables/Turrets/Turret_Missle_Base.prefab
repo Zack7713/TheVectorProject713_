@@ -371,12 +371,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 30
-  sphereRange: {fileID: 6209603934957458541}
+  idle: {fileID: 0}
+  live: {fileID: 0}
+  status: {fileID: 0}
   turnSpeed: 5
   pivot: {fileID: 660570206914321321}
   bulletPrefab: {fileID: 8901712543067025338, guid: a07f1979e3870984da40d762efec31f4, type: 3}
-  firePoint: {fileID: 230781558403835221}
+  shootPositions: []
   fireRate: 0.25
+  muzzleFlash: {fileID: 0}
+  audioSource: {fileID: 0}
+  turretShoot: {fileID: 0}
+  useRecoil: 0
+  recoilDistance: 0.1
+  recoilSpeed: 0.2
   useLaser: 0
   laserBarrel: {fileID: 0}
   damageOverTime: 0
@@ -418,7 +426,7 @@ Transform:
   m_Children:
   - {fileID: 660570206914321321}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &312955120798916099
 MonoBehaviour:
@@ -6630,7 +6638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7516143421895193900
 Transform:
   m_ObjectHideFlags: 0

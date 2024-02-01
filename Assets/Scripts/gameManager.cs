@@ -10,7 +10,7 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     [Header("------Menu Components-----")]
-    [SerializeField] GameObject menuActive;
+    public GameObject menuActive;
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
@@ -34,9 +34,9 @@ public class gameManager : MonoBehaviour
     public bool hasPistol = false;
     public bool hasRifle = false;
     public bool hasShotgun = false;
-    [SerializeField] TMP_Text enemyCountText;
+    public TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
-    [SerializeField] TMP_Text pointAmountText;
+    public TMP_Text pointAmountText;
     [SerializeField] TMP_Text WaveNumberText;
     public TMP_Text BuildUnitText;
     
@@ -72,34 +72,43 @@ public class gameManager : MonoBehaviour
     public bool isPaused;
     public bool inMenu;
     public float spawnRate;
+    public bool wantsToBeginRound = false;
     //changed advance spawner to spawner door for testing purposes
     public AdvanceSpawner advanceSpawner;
     //public spawnDoor advanceSpawner;
     float timeScaleOriginal;
     public int buildUnits;
     [SerializeField] int buildUnitLimit = 35;
-    int enemiesRemaining;
+    public int enemiesRemaining;
     int enemiesKilled;
-    int pointAmount;
-    int waveNumber = 1;
+    public int pointAmount;
+    public int waveNumber = 1;
     int waveLimit = 5;
 
 
 
     void Awake()
     {
-        updatePointCount(+5000);
+        
+        updatePointCount(+10000);
+       
         instance = this;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         //playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
        // advanceSpawner.wantsToBeginRound = false;
+
+
     }
     // Update is called once per frame
     void Update()
     {
-
+        if(!wantsToBeginRound)
+        {
+            enemiesRemaining = 0;
+            enemyCountText.text = enemiesRemaining.ToString();
+        }
 
 
         if (Input.GetButtonDown("Utility") && menuActive == null)
@@ -110,8 +119,6 @@ public class gameManager : MonoBehaviour
             utilityMenu();
             menuActive = menuUtil;
             menuActive.SetActive(menuUtil);
-
-
         }
 
         if (Input.GetButtonDown("Cancel") && menuActive == null)
@@ -130,10 +137,15 @@ public class gameManager : MonoBehaviour
             menuActive = null;
             openLevelMenu();
         }
-        if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart && advanceSpawner.wantsToBeginRound == false)
+        if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart && wantsToBeginRound == false)
         {
            
-            advanceSpawner.wantsToBeginRound = true;
+            wantsToBeginRound = true;
+            if(enemiesRemaining == 0)
+            {
+                enemiesRemaining = 6;
+            }
+            enemyCountText.text = enemiesRemaining.ToString();
             closeInteractionMenu();
         
         }
@@ -235,7 +247,7 @@ public class gameManager : MonoBehaviour
     }
     public void RoundStartPrompt()
     {
-        if (advanceSpawner.wantsToBeginRound == false)
+        if (wantsToBeginRound == false)
         {
             menuActive = menuRoundStart;
             menuActive.SetActive(true);
@@ -307,18 +319,42 @@ public class gameManager : MonoBehaviour
     }
     public void upgradeGunOne()
     {
+        if (gunList[0].isUpgraded == true)
+        {
+       
+      
+                gunList[0].upgradeCost *= 2;
+            
+        }
+        updatePointCount(gunList[0].upgradeCost);
         increaseGunDamage(0, 1);
-        updatePointCount(-500);
+        gunList[0].isUpgraded = true;
         closeShopMenu();
     }
     public void upgradeGunTwo()
     {
+        if (gunList[1].isUpgraded == true)
+        {
+
+
+            gunList[1].upgradeCost *= 2;
+
+        }
+        updatePointCount(gunList[1].upgradeCost);
         increaseGunDamage(1, 1);
         updatePointCount(-500);
         closeShopMenu();
     }
     public void upgradeGunThree()
     {
+        if (gunList[2].isUpgraded == true)
+        {
+
+
+            gunList[2].upgradeCost *= 2;
+
+        }
+        updatePointCount(gunList[2].upgradeCost);
         increaseGunDamage(2, 1);
         updatePointCount(-500);
         closeShopMenu();
@@ -532,7 +568,7 @@ public class gameManager : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        inBarricadePlacementMode = true;
+        //inBarricadePlacementMode = true;
 
 
     }
@@ -584,8 +620,11 @@ public class gameManager : MonoBehaviour
     {
         if(pointAmount >= 200)
         {
-            menuActive = null;
-            menuUtil.SetActive(false);
+            
+            
+                menuActive.SetActive(false);
+                menuActive = null;
+            
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             barricadePreview = Instantiate(barricadePreviewPrefab);
@@ -598,8 +637,11 @@ public class gameManager : MonoBehaviour
     {
         if(pointAmount >= 500)
         {
-            menuActive = null;
-            menuUtil.SetActive(false);
+          
+           
+                menuActive.SetActive(false);
+                menuActive = null;
+            
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             turretPreview = Instantiate(turretPreviewPrefab);
@@ -612,8 +654,11 @@ public class gameManager : MonoBehaviour
     {
         if(pointAmount >= 300)
         {
-            menuActive = null;
-            menuUtil.SetActive(false);
+            if (menuActive != null)
+            {
+                menuActive.SetActive(false);
+                menuActive = null;
+            }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             turretStandardPreview = Instantiate(turretStandardPreviewPrefab);
@@ -627,6 +672,7 @@ public class gameManager : MonoBehaviour
         if (barricadePreview != null)
         {
             Destroy(barricadePreview);
+            inBarricadePlacementMode = false;
         }
     }
     public void DestroyTurretPreview()
@@ -634,6 +680,7 @@ public class gameManager : MonoBehaviour
         if (turretPreview != null)
         {
             Destroy(turretPreview);
+            inTurretPlacementMode = false;
         }
     }
     public void DestroyStandardTurretPreview()
@@ -641,6 +688,7 @@ public class gameManager : MonoBehaviour
         if (turretStandardPreview != null)
         {
             Destroy(turretStandardPreview);
+            inTurretStandardPlacementMode = false;
         }
     }
     private void UpdateBarricadePreview()
@@ -727,12 +775,14 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmBarricadePlacement()
     {
-        if (buildUnits + 1 > buildUnitLimit)
+        buildUnits++;
+        if (buildUnits  > buildUnitLimit)
         {
             DestroyBarricadePreview();
+            buildUnits--;
             return;
         }
-
+        buildUnits--;
         if (barricadePreview != null)
         {
             Vector3 spawnPosition = barricadePreview.transform.position;
@@ -741,7 +791,7 @@ public class gameManager : MonoBehaviour
                 Instantiate(barricadePrefab, spawnPosition, barricadePreview.transform.rotation);
                 DestroyBarricadePreview();
                 inBarricadePlacementMode = false;
-                buildUnits += 1;
+                buildUnits ++;
                 BuildUnitText.text = buildUnits.ToString("0");
                 updatePointCount(-200);
             }
@@ -751,20 +801,24 @@ public class gameManager : MonoBehaviour
                 // Optionally, provide feedback to the player that the placement is invalid.
             }
         }
+        
     }
     private void ConfirmTurretPlacement()
     {
-
-        if (buildUnits + 3 > buildUnitLimit)
+        buildUnits = buildUnits + 3;
+        if (buildUnits  > buildUnitLimit)
         {
             DestroyTurretPreview();
+            buildUnits = buildUnits - 3; 
             return;
         }
+        buildUnits = buildUnits - 3;
         if (turretPreview != null)
         {
             if (!IsPositionOnNavMesh(turretPreview.transform.position))
             {
                 DestroyTurretPreview();
+
                 return;
             }
 
@@ -778,13 +832,14 @@ public class gameManager : MonoBehaviour
     }
     private void ConfirmStandardTurretPlacement()
     {
-
-        if (buildUnits + 2 > buildUnitLimit)
+        buildUnits = buildUnits + 2;
+        if (buildUnits > buildUnitLimit)
         {
             DestroyStandardTurretPreview();
+            buildUnits = buildUnits - 2;
             return;
         }
-
+        buildUnits = buildUnits - 2;
         if (turretStandardPreview != null)
         {
             if (!IsPositionOnNavMesh(turretStandardPreview.transform.position))
@@ -851,17 +906,15 @@ public class gameManager : MonoBehaviour
         {
             {
                 updateWaveNumber(+1);
-                advanceSpawner.numToSpawn = advanceSpawner.numToSpawn += waveNumber + 6;
-                updateGameGoal(advanceSpawner.numToSpawn);
-                if (advanceSpawner.numToSpawn > 250)
-                {
-                    advanceSpawner.numToSpawn = 250;
-                }
+                wantsToBeginRound = false;
+                //do something else 
+                
+
                 if (waveNumber == 10)
                 {
                     StartCoroutine(youWin());
                 }
-
+                
             }
         }
     }

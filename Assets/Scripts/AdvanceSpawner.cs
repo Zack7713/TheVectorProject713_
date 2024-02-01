@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AdvanceSpawner : MonoBehaviour
@@ -10,10 +11,11 @@ public class AdvanceSpawner : MonoBehaviour
     [SerializeField] int timeBetweenSpawns;
     [SerializeField] Transform[] spawnPos;
     [SerializeField] List<GameObject> spawnList = new List<GameObject>();
-     int spawnCount;
+    public int spawnCount;
     bool isSpawning;
     bool startSpawning;
-    public bool wantsToBeginRound; 
+
+    gameManager manager;
     void Start()
     {
 
@@ -26,7 +28,20 @@ public class AdvanceSpawner : MonoBehaviour
         if (startSpawning && spawnCount < numToSpawn && !isSpawning&& spawnCount<15 )
         {
       
+            if(gameManager.instance.enemiesRemaining <= 0)
+            {
             
+                gameManager.instance.wantsToBeginRound = false; 
+                numToSpawn = numToSpawn + gameManager.instance.waveNumber + 6;
+                gameManager.instance.updateGameGoal(numToSpawn);
+                                        
+                if (numToSpawn > 250)
+                {
+                    numToSpawn = 250;
+
+                }
+    
+            }
 
 
                 //start spawning
@@ -52,10 +67,14 @@ public class AdvanceSpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenSpawns);
         isSpawning = false;
     }
+    void UpdateWaveStats(int waveNumber)
+    {
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && wantsToBeginRound )
+        if (other.CompareTag("Player") && gameManager.instance.wantsToBeginRound == true )
         {
             startSpawning = true;
         }
