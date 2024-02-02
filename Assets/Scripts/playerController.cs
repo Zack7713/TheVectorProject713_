@@ -9,6 +9,8 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] private CharacterController controller;
     [SerializeField] AudioSource aud;
     [SerializeField] Animator animPlayer;
+    //adding anim sped trans for smoother animation
+    [SerializeField] float animSpeedTrans;
     [Header("----- Stats -----")]
     [Range(1, 10)][SerializeField] int HP;
     [Range(1, 8)][SerializeField] private float playerSpeed;
@@ -57,6 +59,7 @@ public class playerController : MonoBehaviour, IDamage
     {
         originalPlayerSpeed = playerSpeed;
         HPOrig = HP;
+   
         respawnPlayer();
         animPlayer = GetComponent<Animator>();
 
@@ -68,6 +71,12 @@ public class playerController : MonoBehaviour, IDamage
     void Update()
     {
 
+        if(gameManager.instance.wantsToBeginRound == false)
+
+        {
+           HPOrig = HP;
+        }
+
 
 
         if (Input.GetButtonDown("MeleeAttack"))
@@ -75,17 +84,20 @@ public class playerController : MonoBehaviour, IDamage
             StartCoroutine(pAttack());
         }
 
-
         if (!gameManager.instance.isPaused)
-            Camera.main.transform.Rotate(-currentRecoilAngle, 0f, 0f);
         {
+            Camera.main.transform.Rotate(-currentRecoilAngle, 0f, 0f);
+
             HandleRecoil();
             CameraRecoil();
 
             if (gunList.Count > 0)
             {
                 if (Input.GetButton("Shoot") && !isShooting)
+                {
+                    animPlayer.SetTrigger("Shoot");
                     StartCoroutine(shoot());
+                }
 
                 selectGun();
             }
@@ -131,7 +143,7 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-        IEnumerator playSteps()
+    IEnumerator playSteps()
     {
         isPlayingSteps = true;
         aud.PlayOneShot(soundSteps[Random.Range(0, soundSteps.Length - 1)], soundStepVol);
@@ -154,12 +166,12 @@ public class playerController : MonoBehaviour, IDamage
             controller.enabled = false;
             transform.position = gameManager.instance.playerSpawnPos.transform.position;
             gameManager.instance.buildUnits = 0;
-            advanceSpawner.wantsToBeginRound = false;
+            gameManager.instance.wantsToBeginRound = false;
             controller.enabled = true;
         }
 
     }
-    PlayerSpawnPos position; 
+    PlayerSpawnPos position;
     public void respawnPlayerOnLoad(Vector3 SpawnPosit)
     {
         HP = HPOrig;
@@ -168,7 +180,7 @@ public class playerController : MonoBehaviour, IDamage
         controller.enabled = false;
         transform.position = SpawnPosit;
         gameManager.instance.buildUnits = 0;
-    
+
         controller.enabled = true;
 
 
@@ -203,10 +215,15 @@ public class playerController : MonoBehaviour, IDamage
 
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-        if (move.magnitude >= 0.1f)
+        if (move.z > 0f) //will try to use this to set the backwards movement
         {
             // Set the Animator parameter "Speed" based on your movement speed
-            animPlayer.SetFloat("Speed", playerSpeed);
+            // adding the math lerp
+            animPlayer.SetFloat("Speed", Mathf.Lerp(animPlayer.GetFloat("Speed"), playerSpeed, Time.deltaTime * animSpeedTrans));
+        }
+        else if (move.z < 0f)
+        {
+            animPlayer.SetFloat("Speed", -1);
         }
         else
         {
@@ -217,6 +234,7 @@ public class playerController : MonoBehaviour, IDamage
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && jumpCount < jumpMax)
         {
+            animPlayer.SetTrigger("Jump");
             playerVelocity.y = jumpHeight;
             jumpCount++;
         }
@@ -368,6 +386,7 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void getGunStats(gunStats gun)
     {
+        animPlayer.SetBool("hasRangeWeapon", true);
         gunList.Add(gun);
         shootDamage = gun.shootDamage;
         shootDist = gun.shootDist;

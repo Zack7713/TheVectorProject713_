@@ -1,38 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AdvanceSpawner : MonoBehaviour
 {
     [SerializeField] int difficulty;
     [SerializeField] GameObject[] objectTOSpawn;
-    public int numToSpawn;
+    int numToSpawn = 6;
     [SerializeField] int timeBetweenSpawns;
     [SerializeField] Transform[] spawnPos;
     [SerializeField] List<GameObject> spawnList = new List<GameObject>();
     public int spawnCount;
     bool isSpawning;
     bool startSpawning;
-    public bool wantsToBeginRound; 
+    int spawnedCounter;
+    int numberToStart = 6; 
+    bool hasStarted = false; 
+    gameManager manager;
     void Start()
     {
 
-        gameManager.instance.updateGameGoal(numToSpawn);
+            gameManager.instance.updateGameGoal(gameManager.instance.numToSpawn);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (startSpawning && spawnCount < numToSpawn && !isSpawning&& spawnCount<15 )
+        if (startSpawning && spawnCount < numToSpawn && !isSpawning && spawnCount < 15 && gameManager.instance.wantsToBeginRound == true)
         {
-      
-            
 
-
-                //start spawning
-                StartCoroutine(spawn());
-            
+            StartCoroutine(spawn());
+            gameManager.instance.hasStartedWaves = true;
         }
+        if(numToSpawn == 0 && gameManager.instance.wantsToBeginRound == false&& gameManager.instance.hasStartedWaves == true)
+        {
+            StopCoroutine(spawn());
+            gameManager.instance.updateWaveNumber(+1);
+            gameManager.instance.ended = false;
+            spawnList.Clear();
+            numToSpawn = gameManager.instance.updateSpawnCount(numToSpawn);   
+        }
+
     }
     public void heyIDied()
     {
@@ -53,9 +64,10 @@ public class AdvanceSpawner : MonoBehaviour
         isSpawning = false;
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && wantsToBeginRound )
+        if (other.CompareTag("Player") && gameManager.instance.wantsToBeginRound == true )
         {
             startSpawning = true;
         }

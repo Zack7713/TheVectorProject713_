@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+guid: 5c0da8e3634f69a4cb693b9efd4c2c1b
+=======
+<<<<<<<< HEAD:Assets/Prefabs/Player/PLayer 3rd Person/3rd Person View.prefab.meta
+guid: 5fbce6dc299a60847a2a73fc7c903c2f
+========
+guid: 5c0da8e3634f69a4cb693b9efd4c2c1b
+>>>>>>>> 7d01bd5dbee3f54ea2fe5c494641ec346fc4c013:Assets/Prefabs/Buildables/Turrets/Turret_Missile2.0.prefab.meta
+>>>>>>> Stashed changes
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

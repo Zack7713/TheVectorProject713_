@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+guid: 8c796eae8477273429679fc2dad44448
+=======
+<<<<<<<< HEAD:Assets/Prefabs/Player/3rd Person View.prefab.meta
+guid: 12be1983bb16b9543b2a9d6f5a10e988
+========
+guid: 8c796eae8477273429679fc2dad44448
+>>>>>>>> 7d01bd5dbee3f54ea2fe5c494641ec346fc4c013:Assets/Prefabs/Buildables/Turret_Missle/Missle2.0.prefab.meta
+>>>>>>> Stashed changes
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
