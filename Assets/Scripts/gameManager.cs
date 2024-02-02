@@ -111,8 +111,6 @@ public class gameManager : MonoBehaviour
             enemiesRemaining = 0;
             enemyCountText.text = enemiesRemaining.ToString();
         }
-
-
         if (Input.GetButtonDown("Utility") && menuActive == null)
         {
             Cursor.visible = true;
@@ -989,6 +987,13 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(true);
     }
 }
+
+
+
+
+
+
+
 
 
 
