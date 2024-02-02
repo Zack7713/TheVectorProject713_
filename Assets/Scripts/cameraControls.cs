@@ -12,7 +12,7 @@ public class cameraControls : MonoBehaviour
     [Header("---------3rd Person View---------")]
     [SerializeField] bool is3rdPercam;
     public Cinemachine.AxisState xAxis, yAxis;
-    [SerializeField] Transform camFollowPos;
+    //[SerializeField] Transform camFollowPos;
     //adding variables to move the player weapon when aiming in 3rd person 
 
 
@@ -30,12 +30,12 @@ public class cameraControls : MonoBehaviour
     void Update()
     {
         //added check for 3rd person view
-        if (is3rdPercam)
-        {
-            xAxis.Update(Time.deltaTime);
-            yAxis.Update(Time.deltaTime);
-        }
-        else
+        //if (is3rdPercam)
+        //{
+        //    xAxis.Update(Time.deltaTime);
+        //    yAxis.Update(Time.deltaTime);
+        //}
+        //else
         {
             //get input
             float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity;
@@ -58,9 +58,9 @@ public class cameraControls : MonoBehaviour
         }
     }
     //3rd person camera functionality 
-    private void LateUpdate()
-    {
-        camFollowPos.localEulerAngles = new Vector3(yAxis.Value, camFollowPos.localEulerAngles.y, camFollowPos.localEulerAngles.z);
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, xAxis.Value, transform.eulerAngles.z);
-    }
+    //private void LateUpdate()
+    //{
+    //    camFollowPos.localEulerAngles = new Vector3(yAxis.Value, camFollowPos.localEulerAngles.y, camFollowPos.localEulerAngles.z);
+    //    transform.eulerAngles = new Vector3(transform.eulerAngles.x, xAxis.Value, transform.eulerAngles.z);
+    //}
 }

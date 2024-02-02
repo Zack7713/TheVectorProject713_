@@ -27,6 +27,10 @@ public class buttonFunctions : MonoBehaviour
         //gameManager.instance.enemyCountText.text = gameManager.instance.advanceSpawner.spawnCount.ToString();
         gameManager.instance.wantsToBeginRound = false; 
         gameManager.instance.enemiesRemaining = 0;
+        gameManager.instance.hasStartedWaves = false;
+        gameManager.instance.waveNumber = 1;
+        gameManager.instance.WaveNumberText.text = gameManager.instance.waveNumber.ToString("0");
+
         gameManager.instance.stateUnpaused();
     }
 

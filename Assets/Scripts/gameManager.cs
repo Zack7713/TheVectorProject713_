@@ -37,9 +37,9 @@ public class gameManager : MonoBehaviour
     public TMP_Text enemyCountText;
     [SerializeField] TMP_Text killCountText;
     public TMP_Text pointAmountText;
-    [SerializeField] TMP_Text WaveNumberText;
+    public TMP_Text WaveNumberText;
     public TMP_Text BuildUnitText;
-    
+
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;
@@ -73,6 +73,7 @@ public class gameManager : MonoBehaviour
     public bool inMenu;
     public float spawnRate;
     public bool wantsToBeginRound = false;
+    public bool hasStartedWaves = false;
     //changed advance spawner to spawner door for testing purposes
     public AdvanceSpawner advanceSpawner;
     //public spawnDoor advanceSpawner;
@@ -84,27 +85,28 @@ public class gameManager : MonoBehaviour
     public int pointAmount;
     public int waveNumber = 1;
     int waveLimit = 5;
-
-
+    public int numToSpawn = 6;
+    int result =6;
+    public bool ended = false;
 
     void Awake()
     {
-        
+
         updatePointCount(+10000);
-       
+
         instance = this;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         //playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
-       // advanceSpawner.wantsToBeginRound = false;
+        // advanceSpawner.wantsToBeginRound = false;
 
 
     }
     // Update is called once per frame
     void Update()
     {
-        if(!wantsToBeginRound)
+        if (!wantsToBeginRound)
         {
             enemiesRemaining = 0;
             enemyCountText.text = enemiesRemaining.ToString();
@@ -139,15 +141,25 @@ public class gameManager : MonoBehaviour
         }
         if (Input.GetButtonDown("Interact") && menuActive == menuRoundStart && wantsToBeginRound == false)
         {
-           
+            int currentNumToSpawn = numToSpawn;
+            getEnemyCount();
             wantsToBeginRound = true;
-            if(enemiesRemaining == 0)
+            if (enemiesRemaining == 0)
             {
-                enemiesRemaining = 6;
+                enemiesRemaining = result;
             }
             enemyCountText.text = enemiesRemaining.ToString();
+            hasStartedWaves = true;
             closeInteractionMenu();
-        
+
+        }
+        if(hasStartedWaves ==false)
+        {
+            numToSpawn = 6;
+        }
+        if (hasStartedWaves == true && enemiesRemaining == 0)
+        {
+            wantsToBeginRound = false;
         }
         if (inBarricadePlacementMode)
         {
@@ -321,10 +333,10 @@ public class gameManager : MonoBehaviour
     {
         if (gunList[0].isUpgraded == true)
         {
-       
-      
-                gunList[0].upgradeCost *= 2;
-            
+
+
+            gunList[0].upgradeCost *= 2;
+
         }
         updatePointCount(gunList[0].upgradeCost);
         increaseGunDamage(0, 1);
@@ -423,7 +435,7 @@ public class gameManager : MonoBehaviour
         {
             playerScript.showBoughtGun();
         }
-   
+
         playerScript.sellSecondGun();
         closeShopMenu();
     }
@@ -463,7 +475,7 @@ public class gameManager : MonoBehaviour
             }
 
 
-           closeShopMenu();
+            closeShopMenu();
 
 
         }
@@ -605,7 +617,7 @@ public class gameManager : MonoBehaviour
     }
     void SellBasicTurret(GameObject tower)
     {
-  
+
         buildUnits = buildUnits - 2;
         BuildUnitText.text = buildUnits.ToString("0");
         updatePointCount(+150);
@@ -618,13 +630,13 @@ public class gameManager : MonoBehaviour
     }
     public void CreateBarricadePreview()
     {
-        if(pointAmount >= 200)
+        if (pointAmount >= 200)
         {
-            
-            
-                menuActive.SetActive(false);
-                menuActive = null;
-            
+
+
+            menuActive.SetActive(false);
+            menuActive = null;
+
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             barricadePreview = Instantiate(barricadePreviewPrefab);
@@ -635,24 +647,24 @@ public class gameManager : MonoBehaviour
     }
     public void CreateTurretPreview()
     {
-        if(pointAmount >= 500)
+        if (pointAmount >= 500)
         {
-          
-           
-                menuActive.SetActive(false);
-                menuActive = null;
-            
+
+
+            menuActive.SetActive(false);
+            menuActive = null;
+
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             turretPreview = Instantiate(turretPreviewPrefab);
             stateUnpaused();
         }
-        else 
+        else
             closeUtilityMenu();
     }
     public void CreateStandardTurretPreview()
     {
-        if(pointAmount >= 300)
+        if (pointAmount >= 300)
         {
             if (menuActive != null)
             {
@@ -776,7 +788,7 @@ public class gameManager : MonoBehaviour
     private void ConfirmBarricadePlacement()
     {
         buildUnits++;
-        if (buildUnits  > buildUnitLimit)
+        if (buildUnits > buildUnitLimit)
         {
             DestroyBarricadePreview();
             buildUnits--;
@@ -791,7 +803,7 @@ public class gameManager : MonoBehaviour
                 Instantiate(barricadePrefab, spawnPosition, barricadePreview.transform.rotation);
                 DestroyBarricadePreview();
                 inBarricadePlacementMode = false;
-                buildUnits ++;
+                buildUnits++;
                 BuildUnitText.text = buildUnits.ToString("0");
                 updatePointCount(-200);
             }
@@ -801,15 +813,15 @@ public class gameManager : MonoBehaviour
                 // Optionally, provide feedback to the player that the placement is invalid.
             }
         }
-        
+
     }
     private void ConfirmTurretPlacement()
     {
         buildUnits = buildUnits + 3;
-        if (buildUnits  > buildUnitLimit)
+        if (buildUnits > buildUnitLimit)
         {
             DestroyTurretPreview();
-            buildUnits = buildUnits - 3; 
+            buildUnits = buildUnits - 3;
             return;
         }
         buildUnits = buildUnits - 3;
@@ -897,26 +909,49 @@ public class gameManager : MonoBehaviour
         }
 
     }
+    public int updateSpawnCount(int spawnCount)
+    {
+        getEnemyCount();
+        spawnCount = numToSpawn;
+        return spawnCount;
+    }
+    public void getEnemyCount()
+    {
+
+        if (enemiesRemaining <= 0 && hasStartedWaves == true && ended == false)
+        {
+
+
+
+            numToSpawn = numToSpawn + waveNumber + 6;
+            result = numToSpawn;
+            ended = true;
+         
+
+            //wantsToBeginRound = false;
+            //do something else 
+
+
+            if (waveNumber == 10)
+            {
+                StartCoroutine(youWin());
+            }
+
+
+        }
+        else if(hasStartedWaves == false)
+        {
+            numToSpawn = 6;
+        }
+        numToSpawn = result;
+    }
     public void updateGameGoal(int amount)
     {
         enemiesRemaining += amount;
+        
         enemyCountText.text = enemiesRemaining.ToString("0");
 
-        if (enemiesRemaining <= 0)
-        {
-            {
-                updateWaveNumber(+1);
-                wantsToBeginRound = false;
-                //do something else 
-                
 
-                if (waveNumber == 10)
-                {
-                    StartCoroutine(youWin());
-                }
-                
-            }
-        }
     }
     IEnumerator youWin()
     {
