@@ -69,18 +69,15 @@ public class playerController : MonoBehaviour, IDamage
 
     void Update()
     {
-
-
-
         if (Input.GetButtonDown("MeleeAttack"))
         {
             StartCoroutine(pAttack());
         }
 
-
         if (!gameManager.instance.isPaused)
-            Camera.main.transform.Rotate(-currentRecoilAngle, 0f, 0f);
         {
+            Camera.main.transform.Rotate(-currentRecoilAngle, 0f, 0f);
+
             HandleRecoil();
             CameraRecoil();
 
@@ -136,7 +133,7 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-        IEnumerator playSteps()
+    IEnumerator playSteps()
     {
         isPlayingSteps = true;
         aud.PlayOneShot(soundSteps[Random.Range(0, soundSteps.Length - 1)], soundStepVol);
@@ -164,7 +161,7 @@ public class playerController : MonoBehaviour, IDamage
         }
 
     }
-    PlayerSpawnPos position; 
+    PlayerSpawnPos position;
     public void respawnPlayerOnLoad(Vector3 SpawnPosit)
     {
         HP = HPOrig;
@@ -173,7 +170,7 @@ public class playerController : MonoBehaviour, IDamage
         controller.enabled = false;
         transform.position = SpawnPosit;
         gameManager.instance.buildUnits = 0;
-    
+
         controller.enabled = true;
 
 
