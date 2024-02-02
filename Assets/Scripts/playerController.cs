@@ -59,6 +59,7 @@ public class playerController : MonoBehaviour, IDamage
     {
         originalPlayerSpeed = playerSpeed;
         HPOrig = HP;
+   
         respawnPlayer();
         animPlayer = GetComponent<Animator>();
 
@@ -69,6 +70,15 @@ public class playerController : MonoBehaviour, IDamage
 
     void Update()
     {
+
+        if(gameManager.instance.wantsToBeginRound == false)
+
+        {
+           HPOrig = HP;
+        }
+
+
+
         if (Input.GetButtonDown("MeleeAttack"))
         {
             StartCoroutine(pAttack());
