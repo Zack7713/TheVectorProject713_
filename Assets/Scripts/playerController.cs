@@ -98,6 +98,10 @@ public class playerController : MonoBehaviour, IDamage
                 if (Input.GetButton("Shoot") && !isShooting)
                 {
                     animPlayer.SetTrigger("Shoot");
+                    if(gameManager.instance.isPaused == true)
+                    {
+                        return;
+                    }
                     StartCoroutine(shoot());
                 }
 
