@@ -100,7 +100,10 @@ public class gameManager : MonoBehaviour
         //playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
         // advanceSpawner.wantsToBeginRound = false;
-
+        if(wantsToBeginRound == false)
+        {
+            playerScript.HPOrig = 10; 
+        }
 
     }
     // Update is called once per frame
