@@ -28,7 +28,8 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
     private List<GameObject> builtTowers = new List<GameObject>();
-    [SerializeField] gunStats pistol;
+    public gunStats currentGun;
+    public gunStats pistol;
     [SerializeField] gunStats rifle;
     [SerializeField] gunStats shotgun;
     public bool hasPistol = false;
@@ -39,7 +40,9 @@ public class gameManager : MonoBehaviour
     public TMP_Text pointAmountText;
     public TMP_Text WaveNumberText;
     public TMP_Text BuildUnitText;
-
+    public TMP_Text gunNameText;
+    public TMP_Text gunAmmoCur;
+    public TMP_Text gunAmmoMax;
     public GameObject player;
     public playerController playerScript;
     public GameObject playerSpawnPos;
@@ -116,6 +119,7 @@ public class gameManager : MonoBehaviour
         {
             enemiesRemaining = 0;
             enemyCountText.text = enemiesRemaining.ToString();
+
         }
         if (Input.GetButtonDown("Utility") && menuActive == null)
         {
@@ -247,6 +251,23 @@ public class gameManager : MonoBehaviour
             }
         }
         playerScript.getGunList(gunList);
+        if(currentGun != null )
+        {
+            if (currentGun != null && currentGun.gunName != gunNameText.text)
+            {
+                gunNameText.text = currentGun.gunName;
+                gunAmmoCur.text = currentGun.ammoCur.ToString();
+                gunAmmoMax.text = currentGun.ammoMax.ToString();
+            }
+            if(currentGun.ammoCur != currentGun.ammoMax)
+            {
+                gunAmmoCur.text = currentGun.ammoCur.ToString();
+                gunAmmoMax.text = currentGun.ammoMax.ToString();
+            }
+
+        }
+
+
     }
     public void interactionMenu()
     {

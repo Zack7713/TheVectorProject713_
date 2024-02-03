@@ -27,6 +27,7 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] int shootDamage;
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
+    [SerializeField] string gunName;
     [SerializeField] GameObject gunModel;
     [SerializeField] float knifeColSpeed;
     [Header("----- Audio -----")]
@@ -105,6 +106,7 @@ public class playerController : MonoBehaviour, IDamage
 
             movement();
         }
+
     }
 
     public void TeleportPlayer(Vector3 position)
@@ -172,7 +174,7 @@ public class playerController : MonoBehaviour, IDamage
         }
 
     }
-    PlayerSpawnPos position;
+
     public void respawnPlayerOnLoad(Vector3 SpawnPosit)
     {
         HPForPlayer = HPOrig;
@@ -256,6 +258,9 @@ public class playerController : MonoBehaviour, IDamage
         if (gunList[selectedGun].ammoCur > 0)
         {
             gunList[selectedGun].ammoCur--; // Subtract pellets from ammo count
+            //gameManager.instance.currentGun.ammoCur--;
+            gameManager.instance.gunAmmoCur.text =  gameManager.instance.currentGun.ammoCur.ToString();
+
             aud.PlayOneShot(gunList[selectedGun].shootSound, gunList[selectedGun].shootSoundVolume);
             isShooting = true;
 
@@ -383,12 +388,7 @@ public class playerController : MonoBehaviour, IDamage
         yield return new WaitForSeconds(0.1f);
         gameManager.instance.playerDamageScreen.SetActive(false);
     }
-    IEnumerator interact()
-    {
-        isInteracting = true;
-        yield return new WaitForSeconds(0.5f);
-        isInteracting = false;
-    }
+
     public void updatePlayerUI()
     {
         gameManager.instance.playerHPBar.fillAmount = (float)HPForPlayer / HPOrig;
@@ -400,6 +400,7 @@ public class playerController : MonoBehaviour, IDamage
         shootDamage = gun.shootDamage;
         shootDist = gun.shootDist;
         shootRate = gun.shootRate;
+        gunName = gun.gunName;
         gunModel.GetComponent<MeshFilter>().sharedMesh = gun.model.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.model.GetComponent<MeshRenderer>().sharedMaterial;
 
@@ -483,6 +484,7 @@ public class playerController : MonoBehaviour, IDamage
             shootDamage = 0;
             shootDist = 0;
             shootRate = 0;
+            gunName = " ";
             gunModel.GetComponent<MeshFilter>().sharedMesh = null;
             gunModel.GetComponent<MeshRenderer>().sharedMaterial = null;
             isShooting = false;
@@ -498,9 +500,12 @@ public class playerController : MonoBehaviour, IDamage
 
         // Update properties based on the selected gun
         shootDamage = gunList[selectedGun].shootDamage;
+     
+   
         shootDist = gunList[selectedGun].shootDist;
         shootRate = gunList[selectedGun].shootRate;
-
+        gunName = gunList[selectedGun].gunName;
+        gameManager.instance.currentGun = gunList[selectedGun];
         // Update gun model
         gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;

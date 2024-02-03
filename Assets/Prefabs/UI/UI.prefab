@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 2103388072189637431}
   - component: {fileID: 3598073648633791713}
   m_Layer: 5
-  m_Name: Press T Text
+  m_Name: gun name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Build Units
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -343,10 +343,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -4103,7 +4103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3081679339841990525}
   m_Layer: 0
-  m_Name: build unit HUD
+  m_Name: current ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4117,7 +4117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2218245690588099542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 279.6772, y: -476.30786, z: -9.76935}
+  m_LocalPosition: {x: 304.49994, y: -476.30786, z: -9.76935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5772,7 +5772,7 @@ GameObject:
   - component: {fileID: 4985369878301242595}
   - component: {fileID: 8779224861252597325}
   m_Layer: 5
-  m_Name: Press T BG
+  m_Name: gun name bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6919,7 +6919,7 @@ GameObject:
   - component: {fileID: 6273904032135741777}
   - component: {fileID: 5749594778042865725}
   m_Layer: 5
-  m_Name: Press T Text (1)
+  m_Name: max ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6973,7 +6973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: /35
+  m_text: 00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f46eba8326059846b29bac7c578b18f, type: 2}
   m_sharedMaterial: {fileID: -5616269611770388618, guid: 2f46eba8326059846b29bac7c578b18f, type: 2}
@@ -7672,7 +7672,7 @@ GameObject:
   - component: {fileID: 7603391967705893134}
   - component: {fileID: 3982749060836561452}
   m_Layer: 5
-  m_Name: build unit text
+  m_Name: current ammo txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9018,7 +9018,7 @@ RectTransform:
   - {fileID: 9026330439282397029}
   - {fileID: 5729943062298546696}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13406,7 +13406,7 @@ GameObject:
   - component: {fileID: 3113199830230270978}
   - component: {fileID: 101233097279721999}
   m_Layer: 0
-  m_Name: bg
+  m_Name: current ammo bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16349,6 +16349,7 @@ MonoBehaviour:
   menuRoundStart: {fileID: 1225416804955072446}
   playerHPBar: {fileID: 578140314983011832}
   gunList: []
+  currentGun: {fileID: 0}
   pistol: {fileID: 11400000, guid: 7903fd8d49bd41c449ea4b5b7ab31685, type: 2}
   rifle: {fileID: 11400000, guid: 2dc276233fd3b2f4c87c9a617b6dfacc, type: 2}
   shotgun: {fileID: 11400000, guid: 04fcaf31792b64c45ba77cb04a6101cd, type: 2}
@@ -16360,6 +16361,9 @@ MonoBehaviour:
   pointAmountText: {fileID: 7840218508703126929}
   WaveNumberText: {fileID: 8183188215536930452}
   BuildUnitText: {fileID: 7663737494782993885}
+  gunNameText: {fileID: 3598073648633791713}
+  gunAmmoCur: {fileID: 3982749060836561452}
+  gunAmmoMax: {fileID: 5749594778042865725}
   player: {fileID: 0}
   playerScript: {fileID: 0}
   playerSpawnPos: {fileID: 0}

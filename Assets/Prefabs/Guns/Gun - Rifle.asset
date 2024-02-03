@@ -18,8 +18,13 @@ MonoBehaviour:
   shootSpread: 0.02
   shootDist: 175
   gunPellets: 1
-  ammoCur: 9266
-  ammoMax: 9999
+  ammoCur: 200
+  ammoMax: 200
+  recoilAngle: 0
+  recoilRecoverySpeed: 0
+  maxRecoilAngle: 0
+  isUpgraded: 0
+  upgradeCost: 500
   model: {fileID: 4698201593948852689, guid: 185ce04d44da342739f0bef843698e6c, type: 3}
   hitEffect: {fileID: 9086467017834978298, guid: a2080b313eea36241a6dc2e431f0fdad, type: 3}
   shootSound: {fileID: 8300000, guid: 26bdab847b1e2794cb61ab718e1bac76, type: 3}

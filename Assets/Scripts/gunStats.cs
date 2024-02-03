@@ -35,19 +35,11 @@ public class gunStats : ScriptableObject
     }
 
     // Reset stats to original values
-    public void ResetStats()
-    {
-        if(gunName == ("Pistol"))
-        {
-            shootDamage = 1;
-            shootRate = 1;
-        }
 
-        shootDamage = originalDamage;
-        shootRate = originalFireRate;
-    }
     public void ResetPistol()
     {
+        ammoCur = 200;
+   
         shootDamage = 1;
         shootRate = 1;
         upgradeCost = 500;
