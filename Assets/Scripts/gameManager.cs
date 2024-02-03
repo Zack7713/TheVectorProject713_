@@ -111,8 +111,6 @@ public class gameManager : MonoBehaviour
             enemiesRemaining = 0;
             enemyCountText.text = enemiesRemaining.ToString();
         }
-
-
         if (Input.GetButtonDown("Utility") && menuActive == null)
         {
             Cursor.visible = true;
@@ -331,50 +329,59 @@ public class gameManager : MonoBehaviour
     }
     public void upgradeGunOne()
     {
-        if (gunList[0].isUpgraded == true)
+        if (pointAmount >= gunList[0].upgradeCost)
         {
+            if (gunList[0].isUpgraded == true)
+            {
 
 
-            gunList[0].upgradeCost *= 2;
+                gunList[0].upgradeCost *= 2;
 
+            }
+            updatePointCount(-gunList[0].upgradeCost);
+            increaseGunDamage(0, 1);
+            gunList[0].isUpgraded = true;
+            closeShopMenu();
         }
-        updatePointCount(gunList[0].upgradeCost);
-        increaseGunDamage(0, 1);
-        gunList[0].isUpgraded = true;
-        closeShopMenu();
     }
     public void upgradeGunTwo()
     {
-        if (gunList[1].isUpgraded == true)
+        if (pointAmount >= gunList[1].upgradeCost)
         {
+            if (gunList[1].isUpgraded == true)
+            {
 
 
-            gunList[1].upgradeCost *= 2;
+                gunList[1].upgradeCost *= 2;
 
+            }
+            updatePointCount(-gunList[1].upgradeCost);
+            increaseGunDamage(1, 1);
+            updatePointCount(-500);
+            closeShopMenu();
         }
-        updatePointCount(gunList[1].upgradeCost);
-        increaseGunDamage(1, 1);
-        updatePointCount(-500);
-        closeShopMenu();
     }
     public void upgradeGunThree()
     {
-        if (gunList[2].isUpgraded == true)
+        if (pointAmount >= gunList[2].upgradeCost)
         {
+            if (gunList[2].isUpgraded == true)
+            {
 
 
-            gunList[2].upgradeCost *= 2;
+                gunList[2].upgradeCost *= 2;
 
+            }
+            updatePointCount(-gunList[2].upgradeCost);
+            increaseGunDamage(2, 1);
+            updatePointCount(-500);
+            closeShopMenu();
         }
-        updatePointCount(gunList[2].upgradeCost);
-        increaseGunDamage(2, 1);
-        updatePointCount(-500);
-        closeShopMenu();
     }
     public void increaseGunDamage(int gunIndex, int amount)
     {
         playerScript.getGunList(gunList);
-        if (gunIndex >= 0 && gunIndex < gunList.Count)
+        if (gunIndex >= -1 && gunIndex < gunList.Count)
         {
             gunList[gunIndex].shootDamage += amount;
 
@@ -989,6 +996,13 @@ public class gameManager : MonoBehaviour
         menuActive.SetActive(true);
     }
 }
+
+
+
+
+
+
+
 
 
 
