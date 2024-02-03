@@ -410,7 +410,7 @@ public class gameManager : MonoBehaviour
         if (gunIndex >= -1 && gunIndex < gunList.Count)
         {
             gunList[gunIndex].shootDamage += amount;
-
+            playerScript.shootDamage = gunList[gunIndex].shootDamage;
         }
 
     }

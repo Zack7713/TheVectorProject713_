@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class barricadeUnit : MonoBehaviour, IDamage
+public class barricadeUnit : MonoBehaviour//, IDamage
 {
 
     [SerializeField] int HP;
@@ -33,16 +33,16 @@ public class barricadeUnit : MonoBehaviour, IDamage
         //}
     }
 
-    public void takeDamage(int amount)
-    {
-        HP -= amount;
-        StartCoroutine(flashRed());
-        if (HP <= 0)
-        {
-            Destroy(gameObject);
-        }
+    //public void takeDamage(int amount)
+    //{
+    //    HP -= amount;
+    //    StartCoroutine(flashRed());
+    //    if (HP <= 0)
+    //    {
+    //        Destroy(gameObject);
+    //    }
 
-    }
+    //}
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(enemyTag))

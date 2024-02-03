@@ -24,7 +24,7 @@ public class playerController : MonoBehaviour, IDamage
     [SerializeField] List<inventoryItems> inventoryList = new List<inventoryItems>();
     [Header("----- Weapon -----")]
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
-    [SerializeField] int shootDamage;
+    public int shootDamage;
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
     [SerializeField] string gunName;
