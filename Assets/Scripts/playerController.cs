@@ -12,7 +12,7 @@ public class playerController : MonoBehaviour, IDamage
     //adding anim sped trans for smoother animation
     [SerializeField] float animSpeedTrans;
     [Header("----- Stats -----")]
-    [Range(1, 10)][SerializeField] int HP;
+    [Range(1, 10)][SerializeField] int HPForPlayer;
     [Range(1, 8)][SerializeField] private float playerSpeed;
     [Range(8, 30)][SerializeField] private float jumpHeight;
     [Range(-10, -40)][SerializeField] private float gravityValue;
@@ -39,7 +39,7 @@ public class playerController : MonoBehaviour, IDamage
     private Vector3 move;
     private int jumpCount;
     private bool isShooting;
-    int HPOrig;
+    public int HPOrig;
     int selectedGun;
     bool isPlayingSteps;
     bool isSprinting;
@@ -58,7 +58,8 @@ public class playerController : MonoBehaviour, IDamage
     private void Start()
     {
         originalPlayerSpeed = playerSpeed;
-        HPOrig = HP;
+        HPOrig = HPForPlayer;
+   
         respawnPlayer();
         animPlayer = GetComponent<Animator>();
 
@@ -70,6 +71,12 @@ public class playerController : MonoBehaviour, IDamage
     void Update()
     {
 
+        if(gameManager.instance.wantsToBeginRound == false)
+
+        {
+           HPOrig = HPForPlayer;
+        }
+
 
 
         if (Input.GetButtonDown("MeleeAttack"))
@@ -77,10 +84,10 @@ public class playerController : MonoBehaviour, IDamage
             StartCoroutine(pAttack());
         }
 
-
         if (!gameManager.instance.isPaused)
             Camera.main.transform.Rotate(-currentRecoilAngle, 0f, 0f);
         {
+
             HandleRecoil();
             CameraRecoil();
 
@@ -136,7 +143,7 @@ public class playerController : MonoBehaviour, IDamage
         }
     }
 
-        IEnumerator playSteps()
+    IEnumerator playSteps()
     {
         isPlayingSteps = true;
         aud.PlayOneShot(soundSteps[Random.Range(0, soundSteps.Length - 1)], soundStepVol);
@@ -152,7 +159,7 @@ public class playerController : MonoBehaviour, IDamage
 
     public void respawnPlayer()
     {
-        HP = HPOrig;
+        HPForPlayer = HPOrig;
         updatePlayerUI();
         if (spawnPos != null)
         {
@@ -164,16 +171,16 @@ public class playerController : MonoBehaviour, IDamage
         }
 
     }
-    PlayerSpawnPos position; 
+    PlayerSpawnPos position;
     public void respawnPlayerOnLoad(Vector3 SpawnPosit)
     {
-        HP = HPOrig;
+        HPForPlayer = HPOrig;
         updatePlayerUI();
 
         controller.enabled = false;
         transform.position = SpawnPosit;
         gameManager.instance.buildUnits = 0;
-    
+
         controller.enabled = true;
 
 
@@ -350,12 +357,12 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void takeDamage(int amount)
     {
-        HP -= amount;
+        HPForPlayer -= amount;
         aud.PlayOneShot(soundHurt[Random.Range(0, soundHurt.Length - 1)], soundHurtVol);
         updatePlayerUI();
         StartCoroutine(playerFlashDamage());
 
-        if (HP <= 0)
+        if (HPForPlayer <= 0)
         {
             //im dead
             gameManager.instance.youLose();
@@ -375,7 +382,7 @@ public class playerController : MonoBehaviour, IDamage
     }
     public void updatePlayerUI()
     {
-        gameManager.instance.playerHPBar.fillAmount = (float)HP / HPOrig;
+        gameManager.instance.playerHPBar.fillAmount = (float)HPForPlayer / HPOrig;
     }
     public void getGunStats(gunStats gun)
     {
