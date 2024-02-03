@@ -8898,7 +8898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508439966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.8, y: 1, z: -1.8}
+  m_LocalPosition: {x: -4.37, y: 1, z: 13.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10240,7 +10240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519176420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.75, y: 1, z: 1.77}
+  m_LocalPosition: {x: 11.83, y: 1, z: 12.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11069,7 +11069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103148453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.05, y: 1, z: -15.66}
+  m_LocalPosition: {x: -13.54, y: 1, z: 7.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11692,7 +11692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378850093}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -8.4, y: 20.000004, z: 3}
+  m_LocalPosition: {x: 2.8000002, y: 20.000004, z: 6.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19084,10 +19084,6 @@ PrefabInstance:
     - target: {fileID: 9068009528402867154, guid: 5c0da8e3634f69a4cb693b9efd4c2c1b, type: 3}
       propertyPath: m_Name
       value: Turret_Missile2.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068009528402867154, guid: 5c0da8e3634f69a4cb693b9efd4c2c1b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

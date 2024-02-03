@@ -120,14 +120,14 @@ public class TurretRotation : MonoBehaviour
             target = nearestEnemy.transform;
             // targetEnemy = nearestEnemy.GetComponent<Enemy>
             //sphereRange.SetActive(true);
-           // status.GetComponent<Renderer>().material = live;
+            status.GetComponent<Renderer>().material = live;
         }
         else
         {
             target = null;
             //sphereRange.SetActive(false);
             //commented out to get functionality
-            //status.GetComponent<Renderer>().material = idle;
+            status.GetComponent<Renderer>().material = idle;
         }
     }
     void Laser()
