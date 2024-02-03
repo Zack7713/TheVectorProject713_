@@ -50,26 +50,32 @@ public class mainMenu : MonoBehaviour
     public void OpenSettings()
     {
 
-      menuOptions.SetActive(true);
+        menuOptions.SetActive(true);
 
     }
-    public void ApplySettings()
+    public void CloseSettings()
     {
-        SetVolume();
-    }
-    private void SetVolume()
-    {
-        float musicVolume = musicVolumeSlider.value;
-        float soundEffectsVolume = soundEffectsVolumeSlider.value;
 
-        // Apply volume settings to audio sources or any other components requiring volume control
-        // For example, you can use AudioManager.SetMusicVolume(musicVolume) and AudioManager.SetSoundEffectsVolume(soundEffectsVolume)
+        menuOptions.SetActive(false);
 
-        // Save the current volume settings
-        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
-        PlayerPrefs.SetFloat("SoundEffectsVolume", soundEffectsVolume);
-        PlayerPrefs.Save();
     }
+    //public void ApplySettings()
+    //{
+    //    SetVolume();
+    //}
+    //private void SetVolume()
+    //{
+    //    float musicVolume = musicVolumeSlider.value;
+    //    float soundEffectsVolume = soundEffectsVolumeSlider.value;
+
+    //    // Apply volume settings to audio sources or any other components requiring volume control
+    //    // For example, you can use AudioManager.SetMusicVolume(musicVolume) and AudioManager.SetSoundEffectsVolume(soundEffectsVolume)
+
+    //    // Save the current volume settings
+    //    PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+    //    PlayerPrefs.SetFloat("SoundEffectsVolume", soundEffectsVolume);
+    //    PlayerPrefs.Save();
+    //}
     public void quit()
     {
 #if UNITY_EDITOR
