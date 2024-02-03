@@ -75,8 +75,8 @@ public class playerController : MonoBehaviour, IDamage
         }
 
         if (!gameManager.instance.isPaused)
-        {
             Camera.main.transform.Rotate(-currentRecoilAngle, 0f, 0f);
+        {
 
             HandleRecoil();
             CameraRecoil();
