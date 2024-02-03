@@ -96,7 +96,10 @@ public class gameManager : MonoBehaviour
 
         instance = this;
         player = GameObject.FindWithTag("Player");
+
         playerScript = player.GetComponent<playerController>();
+        
+    
         //playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
         // advanceSpawner.wantsToBeginRound = false;
@@ -123,7 +126,6 @@ public class gameManager : MonoBehaviour
             menuActive = menuUtil;
             menuActive.SetActive(menuUtil);
         }
-
         if (Input.GetButtonDown("Cancel") && menuActive == null)
         {
             statePaused();
@@ -288,11 +290,11 @@ public class gameManager : MonoBehaviour
     public void openShopMenu()
     {
 
-        statePaused();
+        statePaused();//pausing the game 
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
-        menuInteract.SetActive(false);
-        menuActive = menuShopKeep;
+        Cursor.lockState = CursorLockMode.Confined;//locking the cursor 
+        menuInteract.SetActive(false);//closing the previous menu if needed
+        menuActive = menuShopKeep;//setting the active 
         menuActive.SetActive(true);
     }
     public void openLevelMenu()

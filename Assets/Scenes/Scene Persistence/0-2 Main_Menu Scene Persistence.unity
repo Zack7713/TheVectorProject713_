@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -497,12 +497,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 473694986}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MaxValue: 10
+  m_WholeNumbers: 1
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1649984608}
+        m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
+        m_MethodName: ApplySettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &290200309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2183,6 +2195,7 @@ GameObject:
   - component: {fileID: 1145815994}
   - component: {fileID: 1145815993}
   - component: {fileID: 1145815992}
+  - component: {fileID: 1145815995}
   m_Layer: 5
   m_Name: Options Menu
   m_TagString: Untagged
@@ -2274,6 +2287,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1145815995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145815990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84956b0d64f3a74fa48f813c06392f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1152604085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2896,7 +2921,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1433860127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1649984608}
+        m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
+        m_MethodName: ApplySettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1433860127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3288,7 +3325,7 @@ GameObject:
   - component: {fileID: 1649984605}
   - component: {fileID: 1649984610}
   m_Layer: 5
-  m_Name: UI
+  m_Name: MainMenuUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3369,8 +3406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c6a53236181b445ac99d91c4cbb779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolumeSlider: {fileID: 0}
-  soundEffectsVolumeSlider: {fileID: 0}
+  menuActive: {fileID: 0}
+  menuOptions: {fileID: 1145815990}
+  musicVolumeSlider: {fileID: 147043591}
+  soundEffectsVolumeSlider: {fileID: 992639804}
 --- !u!224 &1649984609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3568,7 +3607,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1649984608}
         m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OpenSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3577,7 +3616,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1710146481
 MonoBehaviour:
   m_ObjectHideFlags: 0

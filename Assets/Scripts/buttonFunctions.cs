@@ -128,5 +128,9 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.buyShotgun();
         
     }
+    public void openOptionsMenu()
+    {
+        mainMenu.instance.OpenSettings();
+    }
 }
 

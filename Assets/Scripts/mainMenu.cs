@@ -11,6 +11,9 @@ using UnityEditor;
 
 public class mainMenu : MonoBehaviour
 {
+    public static mainMenu instance;
+    public GameObject menuActive;
+    [SerializeField] GameObject menuOptions;
 
     public Slider musicVolumeSlider;
     public Slider soundEffectsVolumeSlider;
@@ -18,13 +21,13 @@ public class mainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+           instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LoadGame()
@@ -44,28 +47,28 @@ public class mainMenu : MonoBehaviour
     //    SceneManager.LoadScene(6, LoadSceneMode.Additive);
     //}
 
+    public void OpenSettings()
+    {
+
+      menuOptions.SetActive(true);
+
+    }
     public void ApplySettings()
     {
         SetVolume();
     }
-
     private void SetVolume()
     {
         float musicVolume = musicVolumeSlider.value;
         float soundEffectsVolume = soundEffectsVolumeSlider.value;
 
-        GameObject persistence = GameObject.Find("Persistence");
+        // Apply volume settings to audio sources or any other components requiring volume control
+        // For example, you can use AudioManager.SetMusicVolume(musicVolume) and AudioManager.SetSoundEffectsVolume(soundEffectsVolume)
 
-        if (persistence != null)
-        {
-            persistence.GetComponent<optionsSettings>().SetMusicVolume(musicVolume);
-            persistence.GetComponent<optionsSettings>().SetSoundEffectsVolume(soundEffectsVolume);
-        }
-        else
-        {
-            Debug.LogError("Persistence object not found!");
-        }
-
+        // Save the current volume settings
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
+        PlayerPrefs.SetFloat("SoundEffectsVolume", soundEffectsVolume);
+        PlayerPrefs.Save();
     }
     public void quit()
     {
