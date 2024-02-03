@@ -116,12 +116,12 @@ public class zombieAI : MonoBehaviour, IDamage
             {
                 distanceToPlayer = Vector3.Distance(transform.position, gameManager.instance.player.transform.position);
                 //adding another check in the can see player for the different zombie types, since the following code affects the destination and movement of the zombie when getting the player enters their sphere collider
-                if(isBloater)
+                if(isWalker)
                 {
                     agent.SetDestination(gameManager.instance.player.transform.position);
-                    if (!isAttacking)
+                    if (!isAttacking && distanceToPlayer <= 3)
                     {
-                        StartCoroutine(bloaterAttack());
+                        StartCoroutine(walkerAttack());
                     }
                     if (agent.remainingDistance < agent.stoppingDistance)
                     {
@@ -180,11 +180,11 @@ public class zombieAI : MonoBehaviour, IDamage
         agent.stoppingDistance = 0;
         return false;
     }
-    IEnumerator bloaterAttack()
+    IEnumerator walkerAttack()
     {
         isAttacking = true;
         anim.SetTrigger("Bite");
-        yield return new WaitForSeconds(attackDur);
+        yield return new WaitForSeconds(attackRate);
         isAttacking = false;
     }
     void faceTarget()

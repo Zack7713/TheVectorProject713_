@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class playerController : MonoBehaviour, IDamage
@@ -192,8 +193,6 @@ public class playerController : MonoBehaviour, IDamage
         crouch();
         sprint();
 
-
-
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && move.normalized.magnitude > 0.3f && !isPlayingSteps)
         {
@@ -208,20 +207,18 @@ public class playerController : MonoBehaviour, IDamage
             jumpCount = 0;
         }
 
-
-
         move = Input.GetAxis("Horizontal") * transform.right +
                Input.GetAxis("Vertical") * transform.forward;
 
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-        if (move.z > 0f) //will try to use this to set the backwards movement
+        if (Input.GetAxis("Vertical") > 0f) //will try to use this to set the backwards movement
         {
             // Set the Animator parameter "Speed" based on your movement speed
             // adding the math lerp
             animPlayer.SetFloat("Speed", Mathf.Lerp(animPlayer.GetFloat("Speed"), playerSpeed, Time.deltaTime * animSpeedTrans));
         }
-        else if (move.z < 0f)
+        else if (Input.GetAxis("Vertical") < 0f)
         {
             animPlayer.SetFloat("Speed", -1);
         }
@@ -229,6 +226,18 @@ public class playerController : MonoBehaviour, IDamage
         {
             // If there's no movement, set the "Speed" parameter to 0
             animPlayer.SetFloat("Speed", 0f);
+        }
+        if (Input.GetAxis("Horizontal") > 0f)
+        {
+            animPlayer.SetFloat("Strafe", 1);
+        }
+        else if (Input.GetAxis("Horizontal") < 0f)
+        {
+            animPlayer.SetFloat("Strafe", -1);
+        }
+        else
+        {
+            animPlayer.SetFloat("Strafe", 0f);
         }
 
         // Changes the height position of the player..
