@@ -14,9 +14,6 @@ public class PlayerLoader : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
     }
 }

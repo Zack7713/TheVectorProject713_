@@ -14,9 +14,8 @@ public class mainMenu : MonoBehaviour
     public static mainMenu instance;
     public GameObject menuActive;
     [SerializeField] GameObject menuOptions;
+    [SerializeField] GameObject menuCredits;
 
-    public Slider musicVolumeSlider;
-    public Slider soundEffectsVolumeSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -36,16 +35,7 @@ public class mainMenu : MonoBehaviour
         SceneManager.LoadScene(3);
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
     }
-    //public void LoadGameTunnel()
-    //{
-    //    SceneManager.LoadScene(7);
-    //    SceneManager.LoadScene(6, LoadSceneMode.Additive);
-    //}
-    //public void LoadGameCity()
-    //{
-    //    SceneManager.LoadScene(7);
-    //    SceneManager.LoadScene(6, LoadSceneMode.Additive);
-    //}
+
 
     public void OpenSettings()
     {
@@ -59,23 +49,19 @@ public class mainMenu : MonoBehaviour
         menuOptions.SetActive(false);
 
     }
-    //public void ApplySettings()
-    //{
-    //    SetVolume();
-    //}
-    //private void SetVolume()
-    //{
-    //    float musicVolume = musicVolumeSlider.value;
-    //    float soundEffectsVolume = soundEffectsVolumeSlider.value;
+    public void OpenCredits()
+    {
 
-    //    // Apply volume settings to audio sources or any other components requiring volume control
-    //    // For example, you can use AudioManager.SetMusicVolume(musicVolume) and AudioManager.SetSoundEffectsVolume(soundEffectsVolume)
+        menuCredits.SetActive(true);
 
-    //    // Save the current volume settings
-    //    PlayerPrefs.SetFloat("MusicVolume", musicVolume);
-    //    PlayerPrefs.SetFloat("SoundEffectsVolume", soundEffectsVolume);
-    //    PlayerPrefs.Save();
-    //}
+    }
+    public void CloseCredits()
+    {
+
+        menuCredits.SetActive(false);
+
+    }
+
     public void quit()
     {
 #if UNITY_EDITOR
