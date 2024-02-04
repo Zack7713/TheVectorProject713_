@@ -24,6 +24,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject menuUpgrade;
     [SerializeField] GameObject menuTowerSell;
     [SerializeField] GameObject menuRoundStart;
+    [SerializeField] GameObject menuOptions;
     public Image playerHPBar;
 
     [SerializeField] List<gunStats> gunList = new List<gunStats>();
@@ -1020,6 +1021,19 @@ public class gameManager : MonoBehaviour
         statePaused();
         menuActive = menuLose;
         menuActive.SetActive(true);
+    }
+
+    public void optionsMenuOpen()
+    {
+        menuActive = menuOptions;
+        menuActive.SetActive(true);
+
+    }
+    public void optionsMenuClose()
+    {
+        menuActive = menuOptions;
+        menuActive.SetActive(false);
+
     }
 }
 

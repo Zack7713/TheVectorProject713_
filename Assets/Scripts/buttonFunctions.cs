@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -128,9 +127,13 @@ public class buttonFunctions : MonoBehaviour
         gameManager.instance.buyShotgun();
         
     }
-    public void openOptionsMenu()
+    public void OptionsMenuOpen()
     {
-        mainMenu.instance.OpenSettings();
+        gameManager.instance.optionsMenuOpen();
+    }
+    public void OptionsMenuClose()
+    {
+        gameManager.instance.optionsMenuClose();
     }
 }
 
