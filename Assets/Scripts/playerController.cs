@@ -79,8 +79,6 @@ public class playerController : MonoBehaviour, IDamage
            HPOrig = HPForPlayer;
         }
 
-
-
         if (Input.GetButtonDown("MeleeAttack"))
         {
             StartCoroutine(pAttack());
