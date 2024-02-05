@@ -72,7 +72,10 @@ public class playerController : MonoBehaviour, IDamage
 
     void Update()
     {
-
+        if(gameManager.instance.hasPistol||gameManager.instance.hasRifle||gameManager.instance.hasShotgun)
+        {
+            animPlayer.SetBool("hasRangeWeapon", true);
+        }
         if(gameManager.instance.wantsToBeginRound == false)
 
         {
@@ -97,6 +100,7 @@ public class playerController : MonoBehaviour, IDamage
                 {
                     animPlayer.SetTrigger("Shoot");
                     if(gameManager.instance.isPaused == true)
+                      if( gameManager.instance.inBarricadePlacementMode == true || gameManager.instance.inTurretPlacementMode == true || gameManager.instance.inTurretStandardPlacementMode == true || gameManager.instance.inTowerBarricadeSellMode == true)
                     {
                         return;
                     }

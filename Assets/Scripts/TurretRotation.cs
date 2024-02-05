@@ -156,9 +156,9 @@ public class TurretRotation : MonoBehaviour
         // Instantiate the bullet object and get the script from the bullet object
         GameObject turretBullet = (GameObject)Instantiate(bulletPrefab, shootPos.position, shootPos.rotation);
         TurretBullet bullet = turretBullet.GetComponent<TurretBullet>();
-
+        ; 
         // If we made a bullet, call the bullets function
-        if (bullet != null)
+        if (bullet != null )
         {
             bullet.Seek(target);
         }

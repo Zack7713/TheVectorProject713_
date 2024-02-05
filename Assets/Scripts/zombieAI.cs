@@ -54,13 +54,14 @@ public class zombieAI : MonoBehaviour, IDamage
     float distanceToPlayer;
     public AdvanceSpawner mySpawner;
     public spawnDoor myRunner;//test code to use the updated spawner door
-
+    public static zombieAI instance; 
     // Start is called before the first frame update
     void Start()
     {
         //gameManager.instance.updateGameGoal(1); //our game objctive is been updated in the game manager with the advance spawnerds
         startingPos = transform.position;
         stoppingDistOrig = agent.stoppingDistance;
+        instance = this;
     }
 
     // Update is called once per frame
@@ -253,6 +254,11 @@ public class zombieAI : MonoBehaviour, IDamage
             }
         }
     }
+    IEnumerator playDeathAnim()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+    }
     public void takeDamage(int amount)
     {
         if(damageCol.enabled)
@@ -274,7 +280,9 @@ public class zombieAI : MonoBehaviour, IDamage
                 gameManager.instance.updateGameGoal(-1);
                 //model.sharedMaterial.color = Color.white;
                 gameManager.instance.updatePointCount(+zombiePointValue);
-                //Destroy(gameObject);//take out the destroy object so we can play our dead animation
+                StartCoroutine(playDeathAnim());
+
+               //take out the destroy object so we can play our dead animation
             }
             else
             {
