@@ -161,7 +161,7 @@ public class gameManager : MonoBehaviour
             closeInteractionMenu();
 
         }
-        if(hasStartedWaves ==false)
+        if (hasStartedWaves ==false)
         {
             numToSpawn = 6;
         }
@@ -267,7 +267,6 @@ public class gameManager : MonoBehaviour
             }
 
         }
-
 
     }
     public void interactionMenu()
@@ -520,6 +519,7 @@ public class gameManager : MonoBehaviour
         {
             if (gunList.Count < 3)
             {
+                
                 gunStats newGun = Instantiate(rifle);
                 newGun.Initialize();
                 gunList.Add(newGun);
