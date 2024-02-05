@@ -37,7 +37,7 @@ public class AdvanceSpawner : MonoBehaviour
         }
         if(numToSpawn == 0 && gameManager.instance.wantsToBeginRound == false&& gameManager.instance.hasStartedWaves == true)
         {
-            StopCoroutine(spawn());
+            StopCoroutine(spawn()); //stops enemies from spawning
             gameManager.instance.updateWaveNumber(+1);
             gameManager.instance.ended = false;
             spawnList.Clear();

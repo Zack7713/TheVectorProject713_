@@ -173,12 +173,12 @@ public class TurretRotation : MonoBehaviour
 
         // Sound and particles
         audioSource.PlayOneShot(turretShoot);
-        
+
         muzzleFlash.transform.position = shootPos.position;
         muzzleFlash.transform.rotation = shootPos.rotation;
         muzzleFlash.Play();
     }
-    
+
     // Visually show max range in scene view 
     private void OnDrawGizmosSelected()
     {

@@ -18,7 +18,7 @@ public class zombieAI : MonoBehaviour, IDamage
     [SerializeField] Transform headPos;
     [SerializeField] Animator anim;
     [SerializeField] Collider[] clawsCol;
-    [SerializeField] Collider damageCol;
+    [SerializeField] public Collider damageCol;
 
     [Header("----- Enemy Stats-----")]
     [SerializeField] int HP;
@@ -255,37 +255,38 @@ public class zombieAI : MonoBehaviour, IDamage
     }
     public void takeDamage(int amount)
     {
-        HP -= amount;
-
-        StopAllCoroutines();//used stop all coroutines
-
-        //checking if enemie is a certain type of zombie so it wont break its logic
-        if (HP <= 0)
+        if(damageCol.enabled)
         {
-            //comment out mySpawner and add myRunner for test purposes
-            anim.SetBool("Dead", true);
-            agent.enabled = false;
-            damageCol.enabled = false;
-            mySpawner.heyIDied();
-            //myRunner.zombiesKilled();
-            gameManager.instance.updateKillCount(+1);
-            gameManager.instance.updateGameGoal(-1);
-            //model.sharedMaterial.color = Color.white;
-            gameManager.instance.updatePointCount(+zombiePointValue);
-            agent.enabled = false;
-            damageCol.enabled = false;
-            //Destroy(gameObject);//take out the destroy object so we can play our dead animation
-        }
-        else
-        {
-            gameManager.instance.updatePointCount(+10);
-            isAttacking = false;
-            anim.SetTrigger("Damage");
-            destinationChosen = false;
-            //StartCoroutine(flashRed());
-            if (!isRunner)
+            HP -= amount;
+
+            StopAllCoroutines();//used stop all coroutines
+
+            //checking if enemie is a certain type of zombie so it wont break its logic
+            if (HP <= 0)
             {
-                agent.SetDestination(gameManager.instance.player.transform.position);
+                //comment out mySpawner and add myRunner for test purposes
+                agent.enabled = false;
+                damageCol.enabled = false;
+                anim.SetBool("Dead", true);
+                mySpawner.heyIDied();
+                //myRunner.zombiesKilled();
+                gameManager.instance.updateKillCount(+1);
+                gameManager.instance.updateGameGoal(-1);
+                //model.sharedMaterial.color = Color.white;
+                gameManager.instance.updatePointCount(+zombiePointValue);
+                //Destroy(gameObject);//take out the destroy object so we can play our dead animation
+            }
+            else
+            {
+                gameManager.instance.updatePointCount(+10);
+                isAttacking = false;
+                anim.SetTrigger("Damage");
+                destinationChosen = false;
+                //StartCoroutine(flashRed());
+                if (!isRunner)
+                {
+                    agent.SetDestination(gameManager.instance.player.transform.position);
+                }
             }
         }
     }
